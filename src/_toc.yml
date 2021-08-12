@@ -2,4 +2,6 @@
 - file: strain
 - file: stress  
 - file: eq-of-motion
+- file: constitutive
+- file: summary
 - file: greek
