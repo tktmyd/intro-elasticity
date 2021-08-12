@@ -41,7 +41,7 @@
 と表される．このような弾性体を**線形等方弾性体**と呼ぶ．
 
 ````{admonition} 数学メモ：クロネッカーのデルタ
-:class: tip, 
+:class: tip, dropdown 
   {eq}`eq:constitutive-lame`式に現れる $\delta_{ij}$ はクロネッカー（Kronecker）のデルタと呼ばれ，
   ```{math}
 :label: 
@@ -74,7 +74,7 @@
 と表すことができることが知られている．
 
 ````{admonition} 演習：線形等方弾性体の構成関係式  
-:class:
+:class: dropdown
   {eq}`eq:Cijkl`を{eq}`eq:constitutive-eq-general`に代入して $j,l$ について和を取り，クロネッカーのデルタの定義を用いることで，線形等方弾性体の構成関係式{eq}`eq:constitutive-lame`が得られることを確認せよ．
 ````
 
@@ -130,7 +130,7 @@
 である．
 
 ````{admonition} 演習：弾性コンプライアンス
-:class:
+:class: dropdown
   線形等方弾性体の構成関係式{eq}`eq:constitutive-lame`を $\varepsilon_{ij}$ について解いて{eq}`eq:complience_isotropic`を証明せよ．6元の連立方程式であるが，以下のステップで計算することにより比較的簡単に解くことができる．
 
   (i)  $i\neq j$ の場合について $\varepsilon_{ij} = (1/2 \mu) \sigma_{ij}$ を満たすことを示せ．
@@ -184,7 +184,7 @@
 このように， $11$ ,  $22$ ,  $33$ ,  $23$ ,  $13$ ,  $12$ 成分の順番に応力・ひずみテンソルを並べて，あたかも擬似的な6次元ベクトルのように表すと，構成関係を簡単に表現することができる．このような表記法は**フォークト（Voigt）記法**と呼ばれる．剪断ひずみのベクトル化表現に係数2がつくのは慣習に基づくものだ．ただし，分野によっては， $\varepsilon_{23}, \varepsilon_{13}, \varepsilon_{12}$ ではなく係数行列の $\mu$ に係数2を掛ける定義のしかたもある．
 ．
 ````{admonition} 演習：フォークト記法の確認
-:class:
+:class: dropdown
   フォークト記法に基づく構成関係式{eq}`eq:constitutive_equation_voigt`を展開して，もとの構成関係式{eq}`eq:constitutive_equation`に一致することを確認せよ．
 ````
 
@@ -298,7 +298,7 @@
 である．
 
 ````{admonition} 演習：弾性係数の相互変換
-:class:
+:class: dropdown
   構成関係式{eq}`eq:constitutive_equation`に以下の条件をそれぞれ代入することで，ヤング率・ポアソン比・体積弾性率のラメの定数による表現{eq}`eq:young_lame`, {eq}`eq:poisson_lame`, {eq}`eq:bulk_lame`を導出せよ，
 
   (1)  $\sigma_{11}=\sigma_{22}=0$ ,  $\sigma_{33}>0$ ,  $\sigma_{ij}=0$   $(i\neq j)$ ,  $\varepsilon_{ij}=0$   $(i \neq j)$ のとき， $E=\sigma_{33}/\varepsilon_{33}$ 

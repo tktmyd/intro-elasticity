@@ -289,12 +289,12 @@
 
 
 ````{admonition} 演習問題：コーシーの関係式
-:class: 
+:class: dropdown
   式{eq}`eq:kitei-kankei`と{eq}`eq:traction-tsuriai`から，コーシーの関係式{eq}`eq:traction_represent`を導出されることを計算して確かめよ．
 ````
 
 ````{admonition} 演習問題：応力テンソルとトラクション
-:class: 
+:class: dropdown
   2次元 $x_1$ -- $x_2$ 平面内の応力テンソルが
   \begin{align*}
     \boldsymbol{\sigma} =

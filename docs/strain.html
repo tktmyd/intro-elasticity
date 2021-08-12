@@ -258,11 +258,11 @@
 各点における変位は向き（動いた方向）と大きさ（動いた大きさ）を持っているのでベクトルだ．
 しかも，変位は弾性体内の位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> （これも位置を表すベクトルだ）によって異なることがあるため，位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> の関数でもある．
 3次元空間では位置ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> は3つの要素を持つから，変位ベクトルは3つの変数を持つ多変数関数でもある．</p>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">数学メモ：場</p>
 <p>位置によって値が定まる物理量のことを，<strong>『場』</strong> ということがある．いま扱っているのは変位の場なので，ひとまとめに変位場と呼ぶ．「場」はfieldの和訳語のひとつで，高校までの理科では別の訳語「界」が使われていた．たとえば電界と磁界は電場，磁場と同じ意味である．</p>
 </div>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">座標系の表現</p>
 <p>これまでは三次元空間上の位置といえば図 <a class="reference internal" href="#fig-xyz-123"><span class="std std-numref">1</span></a>a のように <span class="math notranslate nohighlight">\((x,y,z)\)</span> の記号を用いて表すのが普通だっであろうが，本書では，<span class="math notranslate nohighlight">\((x,y,z)\)</span>のかわりに下付きの<strong>添字</strong>を使って， <span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1, x_2, x_3)\)</span> と図 <a class="reference internal" href="#fig-xyz-123"><span class="std std-numref">1</span></a>bのように表す．</p>
 <p>このような記法を用いるのは，これから沢山の記号が出てくるのに，位置を表すだけのために3つもアルファベットを使っていては記号が足りないという（切実な！）理由のためである．
@@ -294,7 +294,11 @@
 <a class="reference internal image-reference" href="_images/deformation.png"><img alt="_images/deformation.png" src="_images/deformation.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">物体の変形を表すベクトル．実黒線矢印が変形を，点線矢印が相対位置ベクトルをそれぞれ表す．</span><a class="headerlink" href="#fig-deformation" title="Permalink to this image">¶</a></p>
 </div>
-<p>ところで，ここでは2点間の相対位置をベクトルで表しているので，そのベクトルの絶対値（ベクトルの長さ）を取れば，2点間の距離になる．もし2点間の距離 <span class="math notranslate nohighlight">\(d=|\boldsymbol{d}|\)</span> が十分に小さいとすると，<strong>テイラー展開</strong>によって <span class="math notranslate nohighlight">\(\boldsymbol{u}(\boldsymbol{x})=\boldsymbol{u}(\boldsymbol{x_0}+\boldsymbol{d})\)</span> を以下のように近似表現できる．</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>ここでは2点間の相対位置をベクトルで表しているので，そのベクトルの絶対値（ベクトルの長さ）を取れば，2点間の距離になる．</p>
+</div>
+<p>もし2点間の距離 <span class="math notranslate nohighlight">\(d=|\boldsymbol{d}|\)</span> が十分に小さいとすると，<strong>テイラー展開</strong>によって <span class="math notranslate nohighlight">\(\boldsymbol{u}(\boldsymbol{x})=\boldsymbol{u}(\boldsymbol{x_0}+\boldsymbol{d})\)</span> を以下のように近似表現できる．</p>
 <div class="math notranslate nohighlight" id="equation-eq-u-taylor">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eq-u-taylor" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
   \begin{split}
@@ -312,24 +316,23 @@
   \frac{\partial u_3}{\partial x_3} d_3 \\  
 \end{split}
 \end{align}\end{split}\]</div>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">数学メモ：等号・不等号のいろいろ</p>
 <p><a class="reference internal" href="#equation-eq-u-taylor">(2)</a>式で用いられている記号  <span class="math notranslate nohighlight">\(\simeq\)</span>  は，<strong>左辺と右辺が近似的に等しい</strong>という意味だ．
 この場合は，右辺のテイラー展開を1次で打ち切っているため， <span class="math notranslate nohighlight">\(|d_i|\)</span>  ( <span class="math notranslate nohighlight">\(i=1,\cdots 3\)</span> )が十分に小さいときに成立する近似式である．近似式が表れたときには，<strong>どのような近似のもとで成立する式なのか</strong>ということもとても重要だ．
 この記号は左辺から右辺への計算の過程で用いるため，通常は右辺が近似された（あるいは比例する）量であり，逆に左辺が近似された量であることはほとんどない．
 等号( <span class="math notranslate nohighlight">\(=\)</span> )の場合はどちらが右辺でどちらが左辺であっても意味は同じであったが，近似計算のときには注意が必要である．</p>
-<p>そのほかにも，本書ではいろいろな記号が用いられる．たとえば  <span class="math notranslate nohighlight">\(\equiv\)</span>  は，量の<strong>定義</strong>に用いる等号だ．本書で <span class="math notranslate nohighlight">\(A\equiv B\)</span> とあったら，「 <span class="math notranslate nohighlight">\(A\)</span> という量を <span class="math notranslate nohighlight">\(B\)</span> で定義する」という意味になる．一方， <span class="math notranslate nohighlight">\(\propto\)</span>  は左辺が右辺に
+<p>そのほか， <span class="math notranslate nohighlight">\(\equiv\)</span>  は，量の<strong>定義</strong>に用いる等号だ．本書で <span class="math notranslate nohighlight">\(A\equiv B\)</span> とあったら，「 <span class="math notranslate nohighlight">\(A\)</span> という量を <span class="math notranslate nohighlight">\(B\)</span> で定義する」という意味になる．一方， <span class="math notranslate nohighlight">\(\propto\)</span>  は左辺が右辺に
 <strong>比例する</strong> ことを表す．</p>
-<p><span class="math notranslate nohighlight">\(\ll\)</span> と <span class="math notranslate nohighlight">\(\gg\)</span> は不等号だが，それぞれ左辺より右辺が<strong>十分に大きい</strong>あるいは<strong>十分に小さい</strong>ということを意味する．「十分に」とは，値が一桁以上違う，あるいは微小量のべき乗の指数が異なる．たとえば， <span class="math notranslate nohighlight">\(1\)</span> よりも十分に小さい量  <span class="math notranslate nohighlight">\(|a|\ll 1\)</span>  に対して， <span class="math notranslate nohighlight">\(|a| \gg |a|^2 \gg |a|^3 \)</span>  といった具合である．</p>
+<p><span class="math notranslate nohighlight">\(\ll\)</span> と <span class="math notranslate nohighlight">\(\gg\)</span> は不等号だが，それぞれ左辺より右辺が<strong>十分に大きい</strong>あるいは<strong>十分に小さい</strong>ということを意味する．「十分に」とは，値が一桁以上違う，あるいは微小量のべき乗の指数が異なるという意味だ．たとえば， <span class="math notranslate nohighlight">\(1\)</span> よりも十分に小さい量  <span class="math notranslate nohighlight">\(|a|\ll 1\)</span>  に対して， <span class="math notranslate nohighlight">\(|a| \gg |a|^2 \gg |a|^3 \)</span>  といった具合である．</p>
 </div>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">数学メモ：導関数（微分）の定義</p>
 <p>関数 <span class="math notranslate nohighlight">\(f(x)\)</span> の微分（導関数）は，</p>
 <div class="math notranslate nohighlight" id="equation-strain-0">
 <span class="eqno">(3)<a class="headerlink" href="#equation-strain-0" title="Permalink to this equation">¶</a></span>\[\begin{align}
-  \frac{df}{dx} = f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} 
-\end{align}\]</div>
-</div>
+    \frac{df}{dx} = f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} 
+  \end{align}\]</div>
 <p>と定義される．
 刻み幅 <span class="math notranslate nohighlight">\(h\)</span> だけ離した2点間で関数 <span class="math notranslate nohighlight">\(f\)</span> の傾きを計算し，その刻み幅を無限に小さくする，というのがその意味であった．
 刻み幅は極限によって無限に小さくするので，関数が連続でなめらかであれば，その傾きを調べる位置が <span class="math notranslate nohighlight">\(x+h\)</span> と <span class="math notranslate nohighlight">\(x\)</span> であろうと， <span class="math notranslate nohighlight">\(x\)</span> と <span class="math notranslate nohighlight">\(x-h\)</span> であろうと，あるいは <span class="math notranslate nohighlight">\(x+h/2\)</span> と <span class="math notranslate nohighlight">\(x-h/2\)</span> であろうと同じ値に収束する．つまり，</p>
@@ -348,7 +351,8 @@
   \frac{\partial f}{\partial x}, \, \frac{\partial f}{\partial y}
 \end{align}\]</div>
 <p>のように書く．その意味するところは1変数関数の微分と同じで，わずかに変数 <span class="math notranslate nohighlight">\(x\)</span> （あるいは <span class="math notranslate nohighlight">\(y\)</span> ）が変化したときの関数 <span class="math notranslate nohighlight">\(f\)</span> の変化率である．</p>
-<div class="tip admonition">
+</div>
+<div class="tip dropdown admonition">
 <p class="admonition-title">数学メモ：1変数と多変数関数のテイラー展開</p>
 <p>連続かつ無限回微分可能な関数 <span class="math notranslate nohighlight">\(f(x)\)</span> に対し，微小量 <span class="math notranslate nohighlight">\(\delta x\)</span> だけ離れた場所での値 <span class="math notranslate nohighlight">\(f(x+\delta x)\)</span> は，1次の<strong>テイラー展開</strong>によって</p>
 <div class="math notranslate nohighlight" id="equation-strain-3">
@@ -405,7 +409,7 @@
 <p>と書くことができる．
 式<a class="reference internal" href="#equation-eq-deformation-general">(1)</a> と<a class="reference internal" href="#equation-eq-deformation-matrix">(9)</a> を見比べると，
 この行列とベクトルの積 <span class="math notranslate nohighlight">\(\boldsymbol{J}\boldsymbol{d}\)</span> が相対変位ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{\delta u}(\boldsymbol{x})\)</span> の正体であることがわかるだろう．</p>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">数学メモ：行列とベクトルの基礎</p>
 <p>行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> （成分 <span class="math notranslate nohighlight">\(A_{ij}\)</span> ,  <span class="math notranslate nohighlight">\(1\le i \le 3\)</span> ,  <span class="math notranslate nohighlight">\(1 \le j \le 3\)</span> ）と縦ベクトル  <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> （成分 <span class="math notranslate nohighlight">\(b_i\)</span> ,  <span class="math notranslate nohighlight">\(1\le i \le 3\)</span> ）の積は</p>
 <div class="math notranslate nohighlight" id="equation-eq-matrix-vector-mul">
@@ -438,7 +442,7 @@
 <span class="eqno">(11)<a class="headerlink" href="#equation-eq-matrix-vector-mul2" title="Permalink to this equation">¶</a></span>\[\begin{align}
   c_i = \sum_{k=1}^3 A_{ik} b_k
 \end{align}\]</div>
-<p>とコンパクトに書くことができる．今後は成分による後者の表現もよく用いるので，慣れていってほしい．また，
+<p>とコンパクトに書くことができる．また，
 行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> とベクトル <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> の積を計算することを，行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> にベクトル <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> を<strong>作用させる</strong>ということがある．
 <a class="reference internal" href="#equation-eq-matrix-vector-mul">(10)</a> を <span class="math notranslate nohighlight">\(b_i\)</span> についての連立方程式として見ると，これは形式的に</p>
 <div class="math notranslate nohighlight" id="equation-strain-5">
@@ -489,7 +493,7 @@
 \end{align}\end{split}\]</div>
 <p>は <span class="math notranslate nohighlight">\(3\times 3\)</span> の行列になってしまう．行列の乗算は順番に注意する必要があるし，縦ベクトルと横ベクトルは互いに区別しなくてはいけない．</p>
 </div>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">数学メモ：転置・対称・単位・直交行列</p>
 <p>行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> の成分を <span class="math notranslate nohighlight">\(A_{ij}\)</span> とするとき，その行列の成分の <span class="math notranslate nohighlight">\(i\)</span> と <span class="math notranslate nohighlight">\(j\)</span> をひっくり返した行列を<strong>転置行列</strong>といい， <span class="math notranslate nohighlight">\(\boldsymbol{A}^T\)</span> で表す． <span class="math notranslate nohighlight">\(2\times 2\)</span> の行列で陽に書いてみると，</p>
 <div class="math notranslate nohighlight" id="equation-strain-12">
@@ -552,16 +556,16 @@
   \boldsymbol{J}_{(b)} = \left( \begin{matrix} 1 &amp; -\theta \\ \theta &amp; 1 \end{matrix}\right)
 \end{align}\end{split}\]</div>
 <p>のように表される．次の演習問題で確かめてみよう．</p>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：変位勾配テンソル</p>
-<p>図<a class="reference internal" href="#fig-deformation-basis"><span class="std std-numref">4</span></a>のように <span class="math notranslate nohighlight">\(12\)</span> 平面に左下の原点 <span class="math notranslate nohighlight">\(\boldsymbol{x}_0=(0,0)\)</span> から四角形の各頂点までの3つの相対位置ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{d}_1=(0,1)^T\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{d}_2=(1,0)^T\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{d}_3=(1,1)^T\)</span> を変位勾配テンソル（式<a class="reference internal" href="#equation-eq-deform-example">(25)</a> の <span class="math notranslate nohighlight">\(\boldsymbol{J}_{(a)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{J}_{(b)}\)</span> ）に作用させて，図<a class="reference internal" href="#fig-deformation-j"><span class="std std-numref">3</span></a>(a), (b)のような変形が現れることを確認せよ．
+<p>図<a class="reference internal" href="#fig-deformation-basis"><span class="std std-numref">4</span></a>のように <span class="math notranslate nohighlight">\(x_1\)</span>–<span class="math notranslate nohighlight">\(x_2\)</span> 平面に左下の原点 <span class="math notranslate nohighlight">\(\boldsymbol{x}_0=(0,0)\)</span> から四角形の各頂点までの3つの相対位置ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{d}_1=(0,1)^T\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{d}_2=(1,0)^T\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{d}_3=(1,1)^T\)</span> を変位勾配テンソル（式<a class="reference internal" href="#equation-eq-deform-example">(25)</a> の <span class="math notranslate nohighlight">\(\boldsymbol{J}_{(a)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{J}_{(b)}\)</span> ）に作用させて，図<a class="reference internal" href="#fig-deformation-j"><span class="std std-numref">3</span></a>(a), (b)のような変形が現れることを確認せよ．
 ただし，基準位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}_0\)</span> を原点に固定しているため，式<a class="reference internal" href="#equation-eq-deformation-matrix">(9)</a> において <span class="math notranslate nohighlight">\(\boldsymbol{u}(\boldsymbol{x}_0)=\boldsymbol{0}\)</span> としている．</p>
 </div>
 <div class="figure align-center" id="fig-deformation-basis">
 <a class="reference internal image-reference" href="_images/deform_basis.png"><img alt="_images/deform_basis.png" src="_images/deform_basis.png" style="width: 60%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">図<a class="reference internal" href="#fig-deformation-j"><span class="std std-numref">3</span></a>の変形を確認するための単位四角形と左下点を原点とする3つの相対位置ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{d}_i\)</span>   <span class="math notranslate nohighlight">\((i=1,\cdots,3)\)</span> の定義．</span><a class="headerlink" href="#fig-deformation-basis" title="Permalink to this image">¶</a></p>
 </div>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">数学ノート：回転行列</p>
 <p>より一般には，2次元で回転を表す行列は，回転角を <span class="math notranslate nohighlight">\(\theta\)</span> として</p>
 <div class="math notranslate nohighlight" id="equation-eq-rotation-2d">
@@ -571,11 +575,11 @@
 <p>と書くことができる．
 この行列に，任意のベクトル <span class="math notranslate nohighlight">\(\boldsymbol{v}=(v_1, v_2)^T\)</span> を作用させた結果得られるベクトルは， <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> と同じ長さで，かつ原点を中心として角度 <span class="math notranslate nohighlight">\(\theta\)</span> だけ反時計回りに回転したものである．</p>
 </div>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：微小回転近似</p>
 <p>2次元の回転行列<a class="reference internal" href="#equation-eq-rotation-2d">(26)</a> において，回転角 <span class="math notranslate nohighlight">\(\theta\)</span> の大きさが十分に小さいという条件（ <span class="math notranslate nohighlight">\(|\theta| \ll 1\)</span> ）が満たされるときは， <span class="math notranslate nohighlight">\(\cos \theta \simeq 1\)</span> ,  <span class="math notranslate nohighlight">\(\sin \theta \simeq \theta\)</span> と近似できる．このとき，回転行列 <span class="math notranslate nohighlight">\(R\)</span> は<a class="reference internal" href="#equation-eq-deform-example">(25)</a> の <span class="math notranslate nohighlight">\(\boldsymbol{J}_{(b)}\)</span> に一致することを確かめよ．</p>
 </div>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：回転行列</p>
 <p><span class="math notranslate nohighlight">\(\theta=\pi/4 \)</span>  に対する回転行列を以下のベクトルに作用させて，回転行列 <span class="math notranslate nohighlight">\(R\)</span> が反時計回りの回転を意味していることを確認せよ．</p>
 <div class="amsmath math notranslate nohighlight">
@@ -599,7 +603,7 @@
         \right)
   \end{align*}\]</div>
 </div>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：ベクトルの回転</p>
 <p>今，図のように <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 座標の原点を中心とする半径1の単位円上に，点 <span class="math notranslate nohighlight">\(\boldsymbol{r}_1\)</span> と <span class="math notranslate nohighlight">\(\boldsymbol{r}_2\)</span> がある．</p>
 <p>(i)  <span class="math notranslate nohighlight">\(\boldsymbol{r}_1\)</span> と <span class="math notranslate nohighlight">\(\boldsymbol{r}_2\)</span> の成分を，それぞれ角度 <span class="math notranslate nohighlight">\(\theta_1\)</span> と <span class="math notranslate nohighlight">\(\theta_1+\theta_2\)</span> に関した三角関数を用いて表せ．</p>
@@ -689,11 +693,11 @@
 <p>が得られる．
 右辺第1項は平行移動分，第2項は回転の寄与，そして最後の第3項 <span class="math notranslate nohighlight">\(\boldsymbol{\varepsilon} \boldsymbol{d}\)</span> が真の変形を表している．
 ひずみテンソルがわかっていれば，任意の微小距離間の相対位置ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{d}\)</span> をひずみテンソルに作用させることにより，変形が抽出できるのだ．</p>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：ひずみ・回転テンソルの定義と対称性</p>
 <p>ひずみテンソルと回転テンソルの対称性<a class="reference internal" href="#equation-eq-strain-symmetry">(31)</a> と<a class="reference internal" href="#equation-eq-rotation-antisymmetry">(32)</a> を式<a class="reference internal" href="#equation-eq-strain-all">(29)</a> と<a class="reference internal" href="#equation-eq-rotation-all">(30)</a> から確認せよ．また，ひずみテンソルと回転テンソルの和が変位勾配テンソル <span class="math notranslate nohighlight">\(\boldsymbol{J}\)</span> になることを，成分毎に確かめてみよう．</p>
 </div>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：ひずみの計算</p>
 <p><span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 空間の2次元の変位場が</p>
 <div class="amsmath math notranslate nohighlight">
@@ -706,13 +710,13 @@
   \end{align*}\]</div>
 <p>で与えられるとき，その変位場の2次元ひずみテンソル成分（ <span class="math notranslate nohighlight">\(\varepsilon_{11}\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_{12}\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_{22}\)</span> ）を求めよ．</p>
 </div>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：3次元中の2次元変位</p>
 <p>前の演習問題で「2次元の変位場」という表現が出てきた．これは厳密には「変位の <span class="math notranslate nohighlight">\(x_3\)</span> 成分がゼロ（ <span class="math notranslate nohighlight">\(u_3=0\)</span> ）」かつ「変位量が <span class="math notranslate nohighlight">\(x_3\)</span> 方向に変化しない」ということである．</p>
 <p>後者の条件は， <span class="math notranslate nohighlight">\(x_3\)</span> 方向への微分がすべてゼロである（変化しないから）ことを意味している．そのため，2次元の変形（ <span class="math notranslate nohighlight">\(x_3\)</span> 方向に変化しない媒質の変形）の歪テンソルや回転テンソルは，成分の範囲が <span class="math notranslate nohighlight">\(i,j=1,2\)</span> だけの <span class="math notranslate nohighlight">\(2\times 2\)</span> の行列形式で表される．</p>
 <p>このことを踏まえてひずみテンソルの定義に立ち返り， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 空間の2次元の変形の場合，ひずみテンソルの <span class="math notranslate nohighlight">\(\varepsilon_{11}\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_{12}\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_{22}\)</span> 以外の成分がすべてゼロになることを確かめよ．</p>
 </div>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：2次元空間のひずみ・回転テンソル</p>
 <p><span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面の2次元のひずみテンソルと回転テンソルの独立成分はそれぞれいくつあるか？</p>
 </div>
@@ -748,7 +752,7 @@
 <a class="reference internal image-reference" href="_images/strain_example.png"><img alt="_images/strain_example.png" src="_images/strain_example.png" style="width: 95%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">2次元 <span class="math notranslate nohighlight">\(12\)</span> 平面における変形の例．それぞれ(a) 伸長 (b) 剪断の場合．</span><a class="headerlink" href="#fig-strain-example" title="Permalink to this image">¶</a></p>
 </div>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：地殻変動によるひずみの概算</p>
 <p><span class="math notranslate nohighlight">\(x_1\)</span> 軸上にあり，200 km 離れた2点A, Bを考える．地殻変動により，点Aが <span class="math notranslate nohighlight">\(x_1\)</span> 軸上に沿って+1 m，点Bが+5 mそれぞれ移動したとき，この点AB間の平均的な法線ひずみ量を求めよ．分母と分子で単位が異なるので注意すること． <span class="math notranslate nohighlight">\(1\)</span>  km =  <span class="math notranslate nohighlight">\(10^3\)</span>  m による換算が必要である．</p>
 </div>
@@ -813,7 +817,7 @@
 これらの成分のことを <strong>剪断ひずみ（shear strain）</strong> と呼ぶ．定義により，ひずみテンソルの成分は，法線ひずみか剪断ひずみかのどちらかに分類されることになる．</p>
 <p>まとめると，どちらの例からもひずみテンソル <span class="math notranslate nohighlight">\(\varepsilon_{ij}\)</span> は，<span class="math notranslate nohighlight">\(i\)</span> 方向の座標軸からみた <span class="math notranslate nohighlight">\(j\)</span> 方向への変形の単位距離あたりの大きさ（あるいは距離に対する傾き）である ，ということができる．
 ただし，ひずみテンソルは対称性 <span class="math notranslate nohighlight">\(\varepsilon_{ij}=\varepsilon_{ji}\)</span> があるため， <span class="math notranslate nohighlight">\(i\neq j\)</span> の場合は図<a class="reference internal" href="#fig-strain-example2"><span class="std std-numref">6</span></a>(b)のように勾配は半分になり，そのかわりに <span class="math notranslate nohighlight">\(j\)</span> 方向の座標軸からみた <span class="math notranslate nohighlight">\(i\)</span> 方向の変形にも同じひずみが現れるのだ．</p>
-<div class="admonition">
+<div class="dropdown admonition">
 <p class="admonition-title">演習問題：ひずみテンソルと物体の変形</p>
 <p>2次元空間において，変形によって以下のようなひずみテンソルで表されるようなひずみが生じたとする．</p>
 <div class="amsmath math notranslate nohighlight">

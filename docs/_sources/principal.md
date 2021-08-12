@@ -18,7 +18,7 @@
 ```
 であった．この関係は，いずれもあるベクトル（ $\boldsymbol{d}$ ,  $\hat{\boldsymbol{n}}$ ）を別のベクトル（ $\boldsymbol{u}$ ,  $\boldsymbol{T}^{(\hat{\boldsymbol{n}})}$ ）に変換（写像）するもの，とやや抽象的に捉えることができる．また，この変換は，**線形**であるという顕著な特徴を持つ．
 ````{admonition} 数学メモ：線形性
-:class: tip,
+:class: tip, dropdown
 ある関数 $f(x)$ が**線形**であるとは，変数 $a$ ,  $b$ と定数 $k$ に対して以下の2つの条件を満たすことを言う．
 ```{math}
 :label: eq:linearity_1
@@ -33,7 +33,7 @@
 たとえば， $f(x)=3x$ は線形だが， $f(x)=\sin(x)$ は線形ではない．
 ````
 ````{admonition} 演習：線形性の確認
-:class: 
+:class: dropdown
   以下の関数は線形だろうか？定義を満たすかどうかを確かめて判定せよ．
 
   (i)  $f(x) = 3 x + 4$  
@@ -43,7 +43,7 @@
   (iii)  $f(x) = x^2 + 3x  + 1$ 
 ````
 ````{admonition} 数学メモ：線形変換
-:class: tip,
+:class: tip, dropdown
 ベクトルをベクトルに変換する関数 $\boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x})$ が，線形性を満たす，すなわち
 ```{math}
 :label: eq:linearity_2
@@ -64,7 +64,7 @@
 と書くことができる．
 ````
 ````{admonition} 演習：線形変換とテンソル
-:class: 
+:class: dropdown
   (i) もし関数 $\boldsymbol{f}$ が  $ \boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x})  = \boldsymbol{A}\boldsymbol{x}$  と書けるとき，その右辺が線形性{eq}`eq:linearity_2`を満たすことを示せ．
 
   (ii) 任意のベクトル  $\boldsymbol{x} = (x_1, x_2, x_3)$ は，各軸方向の単位ベクトル（法線ベクトルに等しい）を用いて， $\boldsymbol{x} = x_1 \hat{\boldsymbol{n}}_1 + x_2 \hat{\boldsymbol{n}}_2  + x_3 \hat{\boldsymbol{n}}_3$ と表すことができる．法線ベクトルの定義{eq}`eq:normalvector_definition`からこのことを確認せよ．
@@ -129,7 +129,7 @@
 この関係{eq}`eq:linear_normal_traction_special`は，数学的にはテンソル $\boldsymbol{\sigma}$ の**固有値問題**に相当する．以下では，この問題を解きつつ，それがどういう物理的意味を持つのかを詳しく調べていくことにしよう．
 
 ````{admonition} 数学メモ：固有値・固有ベクトル
-:class: tip,
+:class: tip, dropdown
   行列（あるいは2階のテンソル） $\boldsymbol{A}$ とベクトル $\boldsymbol{x}$ が，スカラー量 $\lambda$ に対して
   ```{math}
 :label: 
@@ -242,7 +242,7 @@
 という**関係性**だけであり，唯一解は存在しない．もちろん $x=y=0$ はこの関係性を満たしいるので，解のひとつではある．だが， $x=1, y=-2$ でも， $x=2, y=-4$ でも同様に同じ方程式を満たしているのだ．このような解を**非自明な解**と呼ぶ．連立方程式が唯一解を持つかどうかは，係数行列の**行列式**から判別できる．
 
 ````{admonition} 数学メモ：逆行列と連立方程式
-:class: tip,{inverse-matrix}
+:class: tip, dropdown
 行列 $\boldsymbol{A}$ を係数にもつ連立方程式
 ```{math}
 :label: eq:linear-matrix
@@ -269,7 +269,7 @@
 逆に， $\det(\boldsymbol{A})=0$ のとき，その行列を係数としてもつ定数項がゼロの連立方程式 $\boldsymbol{A} \boldsymbol{x} = \boldsymbol{0}$ は非自明な解を持つ．
 ````
 ````{admonition} 数学メモ：行列式と逆行列
-:class: tip,
+:class: tip, dropdown
 行列式は2次元の行列
 ```{math}
 :label: 
@@ -302,7 +302,7 @@
 ````
 
 ````{admonition} 演習：逆行列
-:class: 
+:class: dropdown
   (i) {eq}`eq:linear-matrix`の両辺に左から $\boldsymbol{A}^{-1}$ を掛けることによって，{eq}`eq:linear-matrix-sol`を証明せよ．
   
   (ii) 次の連立方程式が唯一解を持つかどうかを判別せよ．解をもつ場合には係数行列の逆行列と，連立方程式の解を求めよ．
@@ -365,7 +365,7 @@
 ```
 と表される．一般に，2次方程式の実数解の個数は根号内（判別式）の符号によって定まり，解が常に2つあるとは限らない．しかしこの場合は，根号内は2つの実数の組の2乗和であるので必ず正の値を取るから，**応力テンソルの固有値は常に2つ存在する**ことが言える．
 ````{admonition} 演習：応力テンソルの固有値
-:class: 
+:class: dropdown
   2次方程式{eq}`eq:stress_eigen_eq`の解が{eq}`eq:stress_eigenvalue`であることを証明せよ．
 ````
 
@@ -400,7 +400,7 @@
 がこの問題の固有ベクトルだ．長さが $|\hat{\boldsymbol{n}}_{1}|=|\hat{\boldsymbol{n}}_{2}|=1$ に規格化されているので，かならず角度変数を用いて{eq}`eq:eigenvector`のように書くことができるのだ．
 
 ````{admonition} 演習：固有ベクトルの角度変数表示
-:class: 
+:class: dropdown
   ベクトル $\hat{\boldsymbol{n}}=(\hat{n}_1,\hat{n}_2)^T$ の長さが1である（ $|\hat{\boldsymbol{n}}|=1$ ）であるとする．このとき，
   ```{math}
 :label: 
@@ -438,7 +438,7 @@
 と書ける．
 
 ````{admonition} 数学メモ：内積と角度
-:class: tip,
+:class: tip, dropdown
   2つのベクトル $\boldsymbol{a}$ ,  $\boldsymbol{b}$ の内積は，2次元の場合
   ```{math}
 :label: 
@@ -559,12 +559,12 @@
 と表される．
 
 ````{admonition} 数学メモ：対角行列
-:class: tip,
+:class: tip, dropdown
 行列 $\boldsymbol{A}$ が対角成分 $A_{ii}$ だけ値を持ち，非対角成分は ${A}_{ij} = 0$   $(i\neq j)$ であるとき，この行列は**対角行列**であると言う．一般の行列を何らかの線形変換によって対角行列を求めることを，行列を**対角化する**とも言う．
 ````
 
 ````{admonition} 演習：固有値の対角行列を用いた表現
-:class: 
+:class: dropdown
   {eq}`eq:eigen_orthogonal`式の行列 $\boldsymbol{R}$ と{eq}`eq:eigen_totyu`式の法線ベクトルの角度変数を用いた表現をそれぞれ代入することで，両式が等価であることを示せ．
 ````
 
@@ -611,7 +611,7 @@
 この関係を用いると，{eq}`eq:diag_stress`は**応力テンソルを回転した座標系で表したもの**という意味をもつことが分かってくる．以下，そのことを示していこう．
 
 ````{admonition} 演習：回転行列の逆行列
-:class: 
+:class: dropdown
    $2\times 2$ の回転行列の逆行列 $\boldsymbol{R}^{-1}(\theta)$ をその成分から直接計算し， $\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)$ を示せ．
 ````
 
@@ -663,7 +663,7 @@
 ```
 の関係を用いた．
 ````{admonition} 演習：回転と逆回転の積
-:class: 
+:class: dropdown
   {eq}`eq:R-Rinv-I`式は， $\theta$ 回転して $-\theta$ 回転したら元（なにもしない状態）に戻るということを意味している．直感的には明らかであろうが，2次元の回転行列の成分から，積 $\boldsymbol{R} ^{-1} \boldsymbol{R}$ を計算し，それが確かに単位行列になることを計算によって確かめよ．
 ````
 ところで，回転後の座標系においてもコーシーの関係式は成り立っているはずだ．
@@ -714,7 +714,7 @@
 のように回転によって対角化される．その時の回転行列が応力テンソルの固有ベクトルで作られることも同じである．
 
 ````{admonition} 数学メモ：実対称行列の固有値問題
-:class: tip,
+:class: tip, dropdown
   ここでは応力テンソルに対して，その固有値が実数でかならず2つ（2次元の場合）あり，かつ固有ベクトル同士が直交する，ということを示してきた．しかし，実はその証明に使った条件はたった一つ，**応力テンソルが対称テンソル**であるということだけであった．実はより一般に，実対称行列（成分が実数の対称行列）は，その大きさと同じだけの個数の実数の固有値を持ち，それらの固有値に対応する固有ベクトルは，必ず互いに直交するということが知られている．これは2次元だけでなく，3次元以上でも成立する．3次元の場合には3つの固有ベクトルがあり，それらがすべて互いに直交するのだ．また，同じ対角化手法が，対称テンソルであるひずみテンソルと応力テンソルの他，地震学のモーメントテンソルにも適用できる．
 ````
 
@@ -833,7 +833,7 @@
 ```
 である．
 ````{admonition} 演習：固有ベクトルの推定
-:class: 
+:class: dropdown
   負の固有値 $\lambda=- \varepsilon_{12}$ に対する固有ベクトルが{eq}`eq:eigenvalue2`であることを証明せよ．
 ````
 
@@ -869,8 +869,6 @@
 
 ひずみによる変形場の回転の例．
 ```
-
-
 
 ## モールの応力円
 
@@ -1017,7 +1015,6 @@ T_v^{(\hat{ \boldsymbol{n} })}  $と剪断応力$ T_w^{(\hat{ \boldsymbol{n} })}
 
 ### モールの円とその意味
 
-
 ```{margin}
 ここでは地震学で用いられる慣習によって圧縮正の（普段とは逆の）符号を用いている．書籍によっても定義はバラバラなので，他書と比較する際は注意すること．
 ```
@@ -1067,7 +1064,7 @@ T_v^{(\hat{ \boldsymbol{n} })}  $と剪断応力$ T_w^{(\hat{ \boldsymbol{n} })}
 
 
 ````{admonition} 数学メモ：円の方程式
-:class: tip,
+:class: tip, dropdown
    $x_1$ -- $x_2$ 平面で，半径 $r$ ，中心 $(a,b)$ を持つ円の方程式は以下のように表される．
   ```{math}
 :label: 
