@@ -6,6 +6,7 @@
 本節では，まず一般的な変位から**どのように物体の変形を表すか（ひずみの定義）** について学んだのち，ひずみを表す**ひずみテンソル**という量やその意味について学ぶ．
 
 ## 変位と変形
+
 弾性体内の任意の点 $\boldsymbol{x}$ が，変形などによって動いた量を**変位**と呼び， $\boldsymbol{u}(\boldsymbol{x})$ で表す．
 各点における変位は向き（動いた方向）と大きさ（動いた大きさ）を持っているのでベクトルだ．
 しかも，変位は弾性体内の位置 $\boldsymbol{x}$ （これも位置を表すベクトルだ）によって異なることがあるため，位置 $\boldsymbol{x}$ の関数でもある．
@@ -675,6 +676,8 @@
 ```
 は**体積ひずみ**と呼ばれ，単位体積あたりの体積の変化量を表している．
 一方向の法線ひずみ成分（ $\partial u_i / \partial x_i$ ）は座標軸に沿った方向の伸び縮みを表しているので，各方向への法線ひずみによって， $x_1, x_2, x_3$ 方向の長さがそれぞれ $(1+\varepsilon_{11}), (1+\varepsilon_{22}), (1+\varepsilon_{33})$ 倍になったとしよう．そのときの体積の変化量は
+```{math}
+:label: 
 \begin{multline}
   (1+\varepsilon_{11})(1+\varepsilon_{22})(1+\varepsilon_{33}) \\
   = 1 + \varepsilon_{11} + \varepsilon_{22} + \varepsilon_{33} +   \varepsilon_{11} \varepsilon_{22} + \varepsilon_{22} \varepsilon_{33} + \varepsilon_{33} \varepsilon_{11} + \varepsilon_{11} \varepsilon_{22} \varepsilon_{33}
@@ -682,6 +685,7 @@
   \simeq 1 + \varepsilon_{11} + \varepsilon_{22} + \varepsilon_{33}
   = 1 + \theta
 \end{multline}
+```
 である．ただし，ひずみは微小量であることから，微小量なひずみ同士の積はさらに小さく無視できることを用いた．
 このことから，変形が微小なときには体積ひずみが変形による体積変化量を表していることが確認できる．
 
