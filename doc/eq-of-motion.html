@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>弾性体の運動方程式 &#8212; 弾性体力学入門</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="構成関係式" href="constitutive.html" />
+    <link rel="prev" title="主応力・主ひずみと座標回転" href="principal.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">弾性体力学入門</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   弾性体力学入門
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="strain.html">
+   ひずみと変形
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stress.html">
+   応力
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="principal.html">
+   主応力・主ひずみと座標回転
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   弾性体の運動方程式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="constitutive.html">
+   構成関係式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="summary.html">
+   まとめ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="greek.html">
+   ギリシャ文字の一覧
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/eq-of-motion.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   微小立体の運動方程式
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   運動方程式
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     平衡方程式
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>弾性体の運動方程式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>弾性体に働く力を応力テンソルで記述することができたので，運動方程式を立てることができるようになった．</p>
+<div class="section" id="id2">
+<h2>微小立体の運動方程式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>1つの（あるいは複数の）点について運動方程式が立てられた質点の場合とは異なり，弾性体では弾性体内のあらゆる点が運動をする．そこでまず，弾性体の一部分（場所 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> ）から，体積 <span class="math notranslate nohighlight">\(dV = dx_1\times dx_2 \times dx_3\)</span> の直方体を切り出してきて，それについて運動方程式をたてることにしよう．
+この部分の元の位置からの変形（<strong>変位</strong>）を，位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> と時間 <span class="math notranslate nohighlight">\(t\)</span> に依存するベクトル <span class="math notranslate nohighlight">\(\boldsymbol{u}(\boldsymbol{x},t)\)</span> と書くことにすれば，運動方程式の左辺は質量と加速度の積として，</p>
+<div class="math notranslate nohighlight" id="equation-eq-of-motion-0">
+<span class="eqno">(131)<a class="headerlink" href="#equation-eq-of-motion-0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \left[ \rho \left(\boldsymbol{x}\right) dx_1dx_2 dx_3 \right] \times \frac{ \partial^2 \boldsymbol{u}(\boldsymbol{x},t) }{ \partial t^2 }
+\end{align}\]</div>
+<p>と表せる．ここで <span class="math notranslate nohighlight">\(\rho\)</span> は弾性体の質量密度，つまり単位体積あたりの重さだ．単位体積あたりの重さに体積を乗ずることによって，直方体 <span class="math notranslate nohighlight">\(dV\)</span> 全体の重さが求まる．
+変位の時間に関する2階微分が加速度を表しているが，変位ベクトルは場の量であって，位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> にも依存するので，常微分ではなく偏微分記号が用いられている．</p>
+<p>運動方程式の右辺には，その物体にかかる力をすべて記述する必要がある．
+弾性体にかかる力には，2通りのものがあるのだった．一つが実体力 <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{x}, t)\)</span> で，これは単に体積あたりの力だ．もう一つは面力だが，面力は今考えている直方体 <span class="math notranslate nohighlight">\(dx_1 dx_2 dx_3 \)</span> の表面（6つの長方形）すべてに働くので，それらを重ね合わせる必要がある．</p>
+<div class="figure align-center" id="fig-rippou">
+<a class="reference internal image-reference" href="_images/x2-stress.png"><img alt="_images/x2-stress.png" src="_images/x2-stress.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">弾性体内の微小体積要素に働く <span class="math notranslate nohighlight">\(x_2\)</span> 方向の応力テンソル成分．</span><a class="headerlink" href="#fig-rippou" title="Permalink to this image">¶</a></p>
+</div>
+<p>図 <a class="reference internal" href="#fig-rippou"><span class="std std-numref">20</span></a>にあらためて立方体 <span class="math notranslate nohighlight">\(dx_1dx_2dx_3\)</span> にかかる応力を示した．
+特に <span class="math notranslate nohighlight">\(x_2\)</span> 方向に法線を持つ面（ <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面）にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力を詳しく見ていくことにしよう．</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>応力テンソルは位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}=(x_1,x_2,x_3)^T\)</span> の関数だが，見通しを良くするため <span class="math notranslate nohighlight">\(x_2\)</span> 以外の引数を省略した．</p>
+</div>
+<p>このような面は， <span class="math notranslate nohighlight">\(x_2\)</span> と <span class="math notranslate nohighlight">\(x_2+dx_2\)</span> の2つがある．ひとつめの位置 <span class="math notranslate nohighlight">\(x_2\)</span> （図左側）における面は，法線ベクトルが負の方向を向いているから，そこにかかる応力ベクトルは，</p>
+<div class="math notranslate nohighlight" id="equation-eq-of-motion-1">
+<span class="eqno">(132)<a class="headerlink" href="#equation-eq-of-motion-1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  T_2^{(-\hat{\boldsymbol{n}}_2)}(x_2) = - \sigma_{22}(x_2)
+\end{align}\]</div>
+<p>である．
+もうひとつの面（右側）にかかる力は，法線は <span class="math notranslate nohighlight">\(+x_2\)</span> 方向だが場所が <span class="math notranslate nohighlight">\(dx_2\)</span> だけずれていて，</p>
+<div class="math notranslate nohighlight" id="equation-eq-of-motion-2">
+<span class="eqno">(133)<a class="headerlink" href="#equation-eq-of-motion-2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  T^{(\hat{\boldsymbol{n}}_2)}_2(x_2+dx_2) = + \sigma_{22}(x_2+dx_2)
+\end{align}\]</div>
+<p>のトラクションがかかっている．トラクションは面積あたりの力であったので，この面の面積をトラクションに乗じて，かつ両方のトラクションの効果を足し合わせることにより， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力は</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="math notranslate nohighlight">
+\[ 
+\sigma_{22}(x_2+dx_2)\simeq \sigma_{22}(x_2) + \frac{\partial \sigma_{22}}{\partial x_2} dx_2
+ \]</div>
+</div>
+<div class="math notranslate nohighlight" id="equation-eq-of-motion-3">
+<span class="eqno">(134)<a class="headerlink" href="#equation-eq-of-motion-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{multline}
+    \left(  T^{(\hat{\boldsymbol{n}}_2)}_2(x_2+dx_2) +   T_2^{(-\hat{\boldsymbol{n}}_2)}(x_2) \right) dx_1 dx_3 = \left[ \sigma_{22}(x_2+dx_2) - \sigma_{22}(x_2) \right] dx_1 dx_3 \\
+    \simeq
+    \left( \left[
+        \sigma_{22}(x_2)  + 
+        \frac{ \partial \sigma_{22} }{\partial x_2} dx_2
+      \right] -  \sigma_{22}(x_2) \right) dx_1 dx_3 = \frac{  \partial \sigma_{22} }{\partial x_2} dx_1 dx_2 dx_3
+\end{multline}\end{split}\]</div>
+<p>と表される．ただし， <span class="math notranslate nohighlight">\(dx_2\)</span> が十分小さいという条件のもとで1次のテイラー展開を行った．</p>
+<p><span class="math notranslate nohighlight">\(x_2\)</span> 方向にかかる力は，まだこれだけではない．さらに， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面（ <span class="math notranslate nohighlight">\(x_3\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{23}\)</span> と <span class="math notranslate nohighlight">\(x_2\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面（ <span class="math notranslate nohighlight">\(x_1\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{21}\)</span> とがある．全く同じように計算すると，それぞれ</p>
+<div class="math notranslate nohighlight" id="equation-eq-of-motion-4">
+<span class="eqno">(135)<a class="headerlink" href="#equation-eq-of-motion-4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \frac{  \partial \sigma_{23} }{\partial x_3} dx_1 dx_2 dx_3, \quad
+  \frac{  \partial \sigma_{21} }{\partial x_1} dx_1 dx_2 dx_3
+\end{align}\]</div>
+<p>である．すべてをまとめると， <span class="math notranslate nohighlight">\(x_2\)</span> 方向の運動方程式は</p>
+<div class="math notranslate nohighlight" id="equation-eq-of-motion-5">
+<span class="eqno">(136)<a class="headerlink" href="#equation-eq-of-motion-5" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{multline}
+  \rho \left(\boldsymbol{x}\right)  \frac{ \partial^2 u_2(\boldsymbol{x},t) }{ \partial t^2 } dx_1 dx_2 dx_3
+  \\
+  =
+  \left[
+  \frac{  \partial \sigma_{21} (\boldsymbol{x},t) }{\partial x_1} +   \frac{  \partial \sigma_{22}(\boldsymbol{x},t)  }{\partial x_2} +   \frac{  \partial \sigma_{23}(\boldsymbol{x},t)  }{\partial x_3} 
+  +     f_2(\boldsymbol{x},t)
+  \right] dx_1 dx_2 dx_3
+\end{multline}\end{split}\]</div>
+<p>と表される．</p>
+</div>
+<div class="section" id="id3">
+<h2>運動方程式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>これまでは微小体積要素が満たす運動方程式を考えてきたが，その運動方程式の両辺を直方体の体積 <span class="math notranslate nohighlight">\(dx_1 dx_2 dx_3\)</span> で規格化することで，体積要素の大きさに依存しない，<strong>単位体積当たりの運動方程式</strong>が得られる． <span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_3\)</span> 方向についても全く同様に運動方程式を導ける．すべてを書き下すと，</p>
+<div class="math notranslate nohighlight" id="equation-eq-equation-of-motion">
+<span class="eqno">(137)<a class="headerlink" href="#equation-eq-equation-of-motion" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+    &amp;\rho \left(\boldsymbol{x}\right)  \frac{ \partial^2 u_1(\boldsymbol{x},t) }{ \partial t^2 } 
+  =
+  \frac{  \partial \sigma_{11} (\boldsymbol{x},t) }{\partial x_1} +   \frac{  \partial \sigma_{12}(\boldsymbol{x},t)  }{\partial x_2} +   \frac{  \partial \sigma_{13}(\boldsymbol{x},t)  }{\partial x_3}  + 
+  f_1(\boldsymbol{x},t) 
+  \\
+  &amp;\rho \left(\boldsymbol{x}\right)  \frac{ \partial^2 u_2(\boldsymbol{x},t) }{ \partial t^2 } 
+  =
+  \frac{  \partial \sigma_{21} (\boldsymbol{x},t) }{\partial x_1} +   \frac{  \partial \sigma_{22}(\boldsymbol{x},t)  }{\partial x_2} +   \frac{  \partial \sigma_{23}(\boldsymbol{x},t)  }{\partial x_3}  + 
+  f_2(\boldsymbol{x},t) 
+  \\
+  &amp;\rho \left(\boldsymbol{x}\right)  \frac{ \partial^2 u_3(\boldsymbol{x},t) }{ \partial t^2 } 
+  =
+  \frac{  \partial \sigma_{31} (\boldsymbol{x},t) }{\partial x_1} +   \frac{  \partial \sigma_{32}(\boldsymbol{x},t)  }{\partial x_2} +   \frac{  \partial \sigma_{33}(\boldsymbol{x},t)  }{\partial x_3}  + 
+  f_3(\boldsymbol{x},t)   
+\end{split}
+\end{align}\end{split}\]</div>
+<p>で，全部をまとめて成分で表すと，</p>
+<div class="math notranslate nohighlight" id="equation-eq-equation-of-motion2">
+<span class="eqno">(138)<a class="headerlink" href="#equation-eq-equation-of-motion2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \rho \left(\boldsymbol{x}\right)  \frac{ \partial^2 u_i(\boldsymbol{x},t) }{ \partial t^2 } 
+  =
+  \sum_{j=1}^3 \frac{  \partial \sigma_{ij} (\boldsymbol{x},t) }{\partial x_j} +  f_i(\boldsymbol{x},t) 
+\end{align}\]</div>
+<p>のように簡略に表すこともできる．
+<a class="reference internal" href="#equation-eq-equation-of-motion">(137)</a>あるいは<a class="reference internal" href="#equation-eq-equation-of-motion2">(138)</a>が，一般的な弾性体の運動を記述する運動方程式である．</p>
+<p>弾性体の運動方程式は単位体積あたり方程式任意の点の変形を表し，そこにかかる力は実体力と応力の空間微分であることがわかった．応力は変形によってひずんだ弾性体がもとに戻ろうとする内力だが，それらが全て釣り合っていたら，それ以上変形（運動）は起こらない．運動が起こるのは，応力のバランスが崩れた（応力テンソル成分の空間微分がゼロでなくなった）ときなのだ．</p>
+<div class="section" id="id4">
+<h3>平衡方程式<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>弾性体力学（特に構造物への応用）においては，弾性体が力学的に釣り合った状態というのも重要だ．質点系の力学と同じく，力が釣り合った状態にあれば，弾性体は運動をしませんが，運動が起こらないから応力テンソルがゼロになっているとは限らない．運動方程式から加速度項をゼロにした<strong>平衡方程式</strong></p>
+<div class="math notranslate nohighlight" id="equation-eq-of-motion-6">
+<span class="eqno">(139)<a class="headerlink" href="#equation-eq-of-motion-6" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+    &amp; \frac{  \partial \sigma_{11} (\boldsymbol{x},t) }{\partial x_1} +   \frac{  \partial \sigma_{12}(\boldsymbol{x},t)  }{\partial x_2} +   \frac{  \partial \sigma_{13}(\boldsymbol{x},t)  }{\partial x_3}  + 
+    f_1(\boldsymbol{x},t)
+    =0
+    \\
+    &amp; \frac{  \partial \sigma_{21} (\boldsymbol{x},t) }{\partial x_1} +   \frac{  \partial \sigma_{22}(\boldsymbol{x},t)  }{\partial x_2} +   \frac{  \partial \sigma_{23}(\boldsymbol{x},t)  }{\partial x_3}  + 
+    f_2(\boldsymbol{x},t)
+    =0
+    \\
+    &amp; \frac{  \partial \sigma_{31} (\boldsymbol{x},t) }{\partial x_1} +   \frac{  \partial \sigma_{32}(\boldsymbol{x},t)  }{\partial x_2} +   \frac{  \partial \sigma_{33}(\boldsymbol{x},t)  }{\partial x_3}  + 
+    f_3(\boldsymbol{x},t)
+    =0    
+  \end{split}
+\end{align}\end{split}\]</div>
+<p>が成立しており，これを満たすように応力と体積力が空間分布することになる．</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="principal.html" title="previous page">主応力・主ひずみと座標回転</a>
+    <a class='right-next' id="next-link" href="constitutive.html" title="next page">構成関係式</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2021 Takuto Maeda. All Rights Reserved.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1191 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>主応力・主ひずみと座標回転 &#8212; 弾性体力学入門</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="弾性体の運動方程式" href="eq-of-motion.html" />
+    <link rel="prev" title="応力" href="stress.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">弾性体力学入門</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   弾性体力学入門
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="strain.html">
+   ひずみと変形
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stress.html">
+   応力
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   主応力・主ひずみと座標回転
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eq-of-motion.html">
+   弾性体の運動方程式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="constitutive.html">
+   構成関係式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="summary.html">
+   まとめ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="greek.html">
+   ギリシャ文字の一覧
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/principal.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   ひずみ・応力の固有値問題
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   応力テンソルの固有値
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   固有ベクトルの特徴
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   ベクトルとテンソルの回転
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   主ひずみ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     主ひずみとテンソル回転の例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   モールの応力円
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     2次元面内におけるトラクションとその回転
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     モールの円とその意味
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>主応力・主ひずみと座標回転<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>ひずみ・応力の固有値問題<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>これまでに導入されたひずみテンソルは，弾性体内の2点間の相対位置ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{d}\)</span> を与えると，その間の（回転を除いた）変形 <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> が得られるもの</p>
+<div class="math notranslate nohighlight" id="equation-principal-0">
+<span class="eqno">(55)<a class="headerlink" href="#equation-principal-0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{u} = \boldsymbol{\varepsilon} \boldsymbol{d} \quad \mathsf{あるいは} \quad  u_i = \sum_{j=1}^3 \varepsilon_{ij} d_j
+\end{align}\]</div>
+<p>で，応力テンソルは面の法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> を与えると，その面にかかるトラクション <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}\)</span> が得られるもの</p>
+<div class="math notranslate nohighlight" id="equation-eq-cauchy-2">
+<span class="eqno">(56)<a class="headerlink" href="#equation-eq-cauchy-2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{T}^{(\hat{\boldsymbol{n}})} = \boldsymbol{\sigma} \hat{\boldsymbol{n}} \quad \mathsf{あるいは} \quad  T_i^{(\hat{\boldsymbol{n}})} = \sum_{j=1}^3 \sigma_{ij} \hat{n}_j
+\end{align}\]</div>
+<p>であった．この関係は，いずれもあるベクトル（ <span class="math notranslate nohighlight">\(\boldsymbol{d}\)</span> ,  <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> ）を別のベクトル（ <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}\)</span> ）に変換（写像）するもの，とやや抽象的に捉えることができる．また，この変換は，<strong>線形</strong>であるという顕著な特徴を持つ．</p>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：線形性</p>
+<p>ある関数 <span class="math notranslate nohighlight">\(f(x)\)</span> が<strong>線形</strong>であるとは，変数 <span class="math notranslate nohighlight">\(a\)</span> ,  <span class="math notranslate nohighlight">\(b\)</span> と定数 <span class="math notranslate nohighlight">\(k\)</span> に対して以下の2つの条件を満たすことを言う．</p>
+<div class="math notranslate nohighlight" id="equation-eq-linearity-1">
+<span class="eqno">(57)<a class="headerlink" href="#equation-eq-linearity-1" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+    &amp;f(a+b) = f(a) + f(b)
+    \\
+    &amp;f(ka) = k f(a)      
+  \end{split}
+\end{align}\end{split}\]</div>
+<p>たとえば， <span class="math notranslate nohighlight">\(f(x)=3x\)</span> は線形だが， <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span> は線形ではない．</p>
+</div>
+<div class="admonition">
+<p class="admonition-title">演習：線形性の確認</p>
+<p>以下の関数は線形だろうか？定義を満たすかどうかを確かめて判定せよ．</p>
+<p>(i)  <span class="math notranslate nohighlight">\(f(x) = 3 x + 4\)</span></p>
+<p>(ii)  <span class="math notranslate nohighlight">\(f(x) = e^x\)</span></p>
+<p>(iii)  <span class="math notranslate nohighlight">\(f(x) = x^2 + 3x  + 1\)</span></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：線形変換</p>
+<p>ベクトルをベクトルに変換する関数 <span class="math notranslate nohighlight">\(\boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x})\)</span> が，線形性を満たす，すなわち</p>
+<div class="math notranslate nohighlight" id="equation-eq-linearity-2">
+<span class="eqno">(58)<a class="headerlink" href="#equation-eq-linearity-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\begin{split}
+  &amp;\boldsymbol{f}(\boldsymbol{a}+\boldsymbol{b})=\boldsymbol{f}(\boldsymbol{a})+\boldsymbol{f}(\boldsymbol{b})\\
+  &amp;\boldsymbol{f}(k \boldsymbol{a}) = k \boldsymbol{f}(\boldsymbol{a})  
+\end{split}
+\end{align}\end{split}\]</div>
+<p>であるとき，この <span class="math notranslate nohighlight">\(\boldsymbol{f}\)</span> のことをベクトルの線形変換という．ベクトルの線形変換は2階のテンソル <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> を用いて，必ず</p>
+<div class="math notranslate nohighlight" id="equation-principal-1">
+<span class="eqno">(59)<a class="headerlink" href="#equation-principal-1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{A}\boldsymbol{x}
+\end{align}\]</div>
+<p>と書くことができる．</p>
+</div>
+<div class="admonition">
+<p class="admonition-title">演習：線形変換とテンソル</p>
+<p>(i) もし関数 <span class="math notranslate nohighlight">\(\boldsymbol{f}\)</span> が  <span class="math notranslate nohighlight">\( \boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x})  = \boldsymbol{A}\boldsymbol{x}\)</span>  と書けるとき，その右辺が線形性<a class="reference internal" href="#equation-eq-linearity-2">(58)</a>を満たすことを示せ．</p>
+<p>(ii) 任意のベクトル  <span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1, x_2, x_3)\)</span> は，各軸方向の単位ベクトル（法線ベクトルに等しい）を用いて， <span class="math notranslate nohighlight">\(\boldsymbol{x} = x_1 \hat{\boldsymbol{n}}_1 + x_2 \hat{\boldsymbol{n}}_2  + x_3 \hat{\boldsymbol{n}}_3\)</span> と表すことができる．法線ベクトルの定義<a class="reference internal" href="stress.html#equation-eq-normalvector-definition">(45)</a>からこのことを確認せよ．</p>
+<p>(iii) 前問で得られた関係式を線形性の定義に代入することにより， <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{x})=x_1 \boldsymbol{f}(\hat{\boldsymbol{n}}_1 ) + x_2 \boldsymbol{f}(\hat{\boldsymbol{n}}_2 ) + x_3 \boldsymbol{f}(\hat{\boldsymbol{n}}_3 ) \)</span> であることを示せ．</p>
+<p>(iv) 関数値 <span class="math notranslate nohighlight">\(\boldsymbol{y}=\boldsymbol{f}(\hat{\boldsymbol{n}}_j )\)</span> の成分を，テンソル成分を用いて <span class="math notranslate nohighlight">\(y_i = f_i(\hat{\boldsymbol{n}}_j ) \equiv A_{ij}\)</span> と置く．この置き換えにより，任意の線形変換 <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{x})\)</span> がテンソル <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> を用いて <span class="math notranslate nohighlight">\( \boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{A}\boldsymbol{x}\)</span> と書けることを証明せよ．</p>
+</div>
+<p>以下では，これら2つの線形変換のうち応力テンソルを例にとり，かつ <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面内の2次元問題を考えることにしよう．2次元面内では，<a class="reference internal" href="#equation-eq-cauchy-2">(56)</a>は</p>
+<div class="math notranslate nohighlight" id="equation-eq-linear-normal-traction">
+<span class="eqno">(60)<a class="headerlink" href="#equation-eq-linear-normal-traction" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+    T_1^{(\hat{\boldsymbol{n}})} \\
+    T_2^{(\hat{\boldsymbol{n}})} \\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \sigma_{11} &amp; \sigma_{12}\\\sigma_{12} &amp; \sigma_{22}
+  \end{pmatrix}
+  \begin{pmatrix}
+    \hat{n}_1\\\hat{n}_2
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>と書ける．</p>
+<p>すでに学んだように，トラクションベクトルは単位面積あたりの面力であり，弾性体ではその方向は面に垂直（法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> に平行）とは限らない．もしトラクションベクトルが法線ベクトルに平行であるならば，関係<a class="reference internal" href="#equation-eq-linear-normal-traction">(60)</a>はもっとずっと簡単に</p>
+<div class="math notranslate nohighlight" id="equation-eq-linear-normal-traction-special">
+<span class="eqno">(61)<a class="headerlink" href="#equation-eq-linear-normal-traction-special" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+    T_1^{(\hat{\boldsymbol{n}})} \\
+    T_2^{(\hat{\boldsymbol{n}})} \\
+  \end{pmatrix}
+  =
+  \lambda 
+  \begin{pmatrix}
+    \hat{n}_1\\\hat{n}_2
+  \end{pmatrix}  
+\end{align}\end{split}\]</div>
+<p>と書けるはずだ．ここで <span class="math notranslate nohighlight">\(\lambda\)</span> は成分をもつ応力テンソルではなく，ただのスカラー量だ（慣例により <span class="math notranslate nohighlight">\(\lambda\)</span> を使っているが，ラメの定数とはなんの関係もない．）．この関係<a class="reference internal" href="#equation-eq-linear-normal-traction-special">(61)</a>は，たとえば粘性のない水中では成立している．水中では圧力 <span class="math notranslate nohighlight">\(p\)</span> と法線ベクトルはつねに平行で， <span class="math notranslate nohighlight">\(\lambda = -p\)</span> である．固体中では一般には剪断応力成分（この場合は <span class="math notranslate nohighlight">\(\sigma_{12}\)</span> ）が存在するため，<a class="reference internal" href="#equation-eq-linear-normal-traction-special">(61)</a>は一般には成立しない…のだが，実は，固体中でも<a class="reference internal" href="#equation-eq-linear-normal-traction-special">(61)</a>が成立する特別な方向 <span class="math notranslate nohighlight">\(\boldsymbol{\hat{n}}\)</span> が必ず存在する．そのような特別な方向では，<a class="reference internal" href="#equation-eq-linear-normal-traction">(60)</a>と<a class="reference internal" href="#equation-eq-linear-normal-traction-special">(61)</a>から</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigen-stress">
+<span class="eqno">(62)<a class="headerlink" href="#equation-eq-eigen-stress" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+    \sigma_{11} &amp; \sigma_{12}\\\sigma_{12} &amp; \sigma_{22}
+  \end{pmatrix}
+  \begin{pmatrix}
+    \hat{n}_1\\\hat{n}_2
+  \end{pmatrix}
+  = 
+  \lambda 
+  \begin{pmatrix}
+    \hat{n}_1\\\hat{n}_2
+  \end{pmatrix}  
+\end{align}\end{split}\]</div>
+<p>が成立しているはずだ．
+この関係<a class="reference internal" href="#equation-eq-linear-normal-traction-special">(61)</a>は，数学的にはテンソル <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}\)</span> の<strong>固有値問題</strong>に相当する．以下では，この問題を解きつつ，それがどういう物理的意味を持つのかを詳しく調べていくことにしよう．</p>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：固有値・固有ベクトル</p>
+<p>行列（あるいは2階のテンソル） <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> とベクトル <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> が，スカラー量 <span class="math notranslate nohighlight">\(\lambda\)</span> に対して</p>
+<div class="math notranslate nohighlight" id="equation-principal-2">
+<span class="eqno">(63)<a class="headerlink" href="#equation-principal-2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{A}\boldsymbol{x} = \lambda \boldsymbol{x}
+\end{align}\]</div>
+<p>なる関係を満たすとき， <span class="math notranslate nohighlight">\(\lambda\)</span> を<strong>固有値</strong>， <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> を<strong>固有ベクトル</strong>という．この関係式から，それを満たす固有値と固有ベクトルを推定する問題のことを，<strong>固有値問題</strong>という．</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>応力テンソルの固有値<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>それでは，<a class="reference internal" href="#equation-eq-eigen-stress">(62)</a>を解いてみよう．右辺を左辺に移項すると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenproblem-stress">
+<span class="eqno">(64)<a class="headerlink" href="#equation-eq-eigenproblem-stress" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+    \sigma_{11} -\lambda &amp; \sigma_{12}\\\sigma_{12} &amp; \sigma_{22} -\lambda
+  \end{pmatrix}
+  \begin{pmatrix}
+    \hat{n}_1\\\hat{n}_2
+  \end{pmatrix}
+  = 
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>が得られる．あるいは，行列とベクトルの積を展開して</p>
+<div class="math notranslate nohighlight" id="equation-principal-3">
+<span class="eqno">(65)<a class="headerlink" href="#equation-principal-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+    &amp;\left(\sigma_{11} -\lambda\right)\hat{n}_1 + \sigma_{12} \hat{n}_2 = 0 \\
+    &amp; \sigma_{12} \hat{n}_1 + \left(\sigma_{22} -\lambda\right)\hat{n}_2 = 0      
+  \end{split}
+\end{align}\end{split}\]</div>
+<p>と書いてもよいだろう．これを <span class="math notranslate nohighlight">\(\hat{n}_1\)</span> と <span class="math notranslate nohighlight">\(\hat{n}_2\)</span> に関する連立方程式としてみると，その連立方程式には<strong>自明な解</strong>（trivial solution）として， <span class="math notranslate nohighlight">\(\hat{n}_1=\hat{n}_2=0\)</span> がある．代入してみれば，これが解として成立しているのは明らかだ．</p>
+<p>だが，その自明な解に物理的な意味があるだろうか？ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> もともとの意味は，面の法線ベクトルであった．法線ベクトルは長さが1のベクトルで， <span class="math notranslate nohighlight">\(x_1\)</span> 軸からの角度を <span class="math notranslate nohighlight">\(\theta\)</span> として</p>
+<div class="math notranslate nohighlight" id="equation-eq-normal-base-theta">
+<span class="eqno">(66)<a class="headerlink" href="#equation-eq-normal-base-theta" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \hat{\boldsymbol{n}} = \begin{pmatrix}\hat{n}_1 \\\hat{n}_2 \end{pmatrix} = 
+    \begin{pmatrix}
+      \cos\theta \\ \sin \theta 
+    \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>と書けるはずだ．しかし，この表現と <span class="math notranslate nohighlight">\(\hat{n}_1=\hat{n}_2=0\)</span> を同時に満たす <span class="math notranslate nohighlight">\(\theta\)</span> は存在しない．そんな法線ベクトルは存在できないのだ．したがって，自明解は我々の求める物理的に意味のある解ではないのだ．それでは，他に<strong>自明ではない</strong>解は存在しないのだろうか？</p>
+<p>実は，連立方程式の係数が「ある条件」を満たせば，それ以外の解を持ちえる．
+具体的かつ簡単な例を考えよう．連立方程式</p>
+<div class="math notranslate nohighlight" id="equation-principal-4">
+<span class="eqno">(67)<a class="headerlink" href="#equation-principal-4" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+    1 &amp; 2 \\ 1 &amp; - 2
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\ y
+  \end{pmatrix}
+  = 
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>は， <span class="math notranslate nohighlight">\(x=y=0\)</span> しか解を持たない．では，次はどうだろうか？</p>
+<div class="math notranslate nohighlight" id="equation-principal-5">
+<span class="eqno">(68)<a class="headerlink" href="#equation-principal-5" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+    1 &amp; 2 \\ 2 &amp; 4
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\ y
+  \end{pmatrix}
+  = 
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>これも同じ形式を持つ方程式だから <span class="math notranslate nohighlight">\(x=y=0\)</span> かというと，それは<strong>解の一部</strong>に過ぎない．
+この方程式を展開してみると</p>
+<div class="math notranslate nohighlight" id="equation-principal-6">
+<span class="eqno">(69)<a class="headerlink" href="#equation-principal-6" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}\begin{split}
+  x + 2y = 0 \\
+  2x + 4 y = 0
+\end{split}  
+\end{align}\end{split}\]</div>
+<p>であるが，その2式目の両辺を2で割ると，1式目とまったく同じだ．
+ということは，これは連立方程式のふりをしているが，実は一つの方程式</p>
+<div class="math notranslate nohighlight" id="equation-principal-7">
+<span class="eqno">(70)<a class="headerlink" href="#equation-principal-7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  x + 2 y = 0
+\end{align}\]</div>
+<p>が2回書かれているだけなのだ．そこから導かれるのは</p>
+<div class="math notranslate nohighlight" id="equation-principal-8">
+<span class="eqno">(71)<a class="headerlink" href="#equation-principal-8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  x = - 2 y 
+\end{align}\]</div>
+<p>という<strong>関係性</strong>だけであり，唯一解は存在しない．もちろん <span class="math notranslate nohighlight">\(x=y=0\)</span> はこの関係性を満たしいるので，解のひとつではある．だが， <span class="math notranslate nohighlight">\(x=1, y=-2\)</span> でも， <span class="math notranslate nohighlight">\(x=2, y=-4\)</span> でも同様に同じ方程式を満たしているのだ．このような解を<strong>非自明な解</strong>と呼ぶ．連立方程式が唯一解を持つかどうかは，係数行列の<strong>行列式</strong>から判別できる．</p>
+<div class="tip-inverse-matrix admonition">
+<p class="admonition-title">数学メモ：逆行列と連立方程式</p>
+<p>行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> を係数にもつ連立方程式</p>
+<div class="math notranslate nohighlight" id="equation-eq-linear-matrix">
+<span class="eqno">(72)<a class="headerlink" href="#equation-eq-linear-matrix" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\boldsymbol{A} \boldsymbol{x} = \boldsymbol{b}
+\end{align}\]</div>
+<p>が唯一の解を持つとき，行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> は逆行列を持つ．このとき行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> が<strong>正則である</strong>という．逆行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}^{-1}\)</span> は</p>
+<div class="math notranslate nohighlight" id="equation-principal-9">
+<span class="eqno">(73)<a class="headerlink" href="#equation-principal-9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{A}^{-1} \boldsymbol{A} = \boldsymbol{A}  \boldsymbol{A}^{-1} = \boldsymbol{I}
+\end{align}\]</div>
+<p>を満たす行列（ただし <span class="math notranslate nohighlight">\(\boldsymbol{I}\)</span> は単位行列）で，このとき連立方程式の解は</p>
+<div class="math notranslate nohighlight" id="equation-eq-linear-matrix-sol">
+<span class="eqno">(74)<a class="headerlink" href="#equation-eq-linear-matrix-sol" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{x} = \boldsymbol{A}^{-1} \boldsymbol{b}
+\end{align}\]</div>
+<p>と書ける．また，行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> が逆行列を持つ条件は，その行列式 <span class="math notranslate nohighlight">\(\det(\boldsymbol{A})\)</span> がゼロではないことである．</p>
+<p>逆に， <span class="math notranslate nohighlight">\(\det(\boldsymbol{A})=0\)</span> のとき，その行列を係数としてもつ定数項がゼロの連立方程式 <span class="math notranslate nohighlight">\(\boldsymbol{A} \boldsymbol{x} = \boldsymbol{0}\)</span> は非自明な解を持つ．</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：行列式と逆行列</p>
+<p>行列式は2次元の行列</p>
+<div class="math notranslate nohighlight" id="equation-principal-10">
+<span class="eqno">(75)<a class="headerlink" href="#equation-principal-10" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{A} = \begin{pmatrix}
+    a &amp; b \\ c &amp; d
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>に対しては <span class="math notranslate nohighlight">\(\det(\boldsymbol{A}) = ad-bc\)</span> ，3次元の行列</p>
+<div class="math notranslate nohighlight" id="equation-principal-11">
+<span class="eqno">(76)<a class="headerlink" href="#equation-principal-11" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{A} = \begin{pmatrix}
+    a &amp; b &amp;c \\ d &amp; e &amp; f \\ 
+    g &amp; h &amp; i
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>に対しては， <span class="math notranslate nohighlight">\(\det(\boldsymbol{A}) =aei+bfg+cdh-ceg - afh-bdi\)</span> である．2次元の場合の逆行列は</p>
+<div class="math notranslate nohighlight" id="equation-principal-12">
+<span class="eqno">(77)<a class="headerlink" href="#equation-principal-12" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{A}^{-1} = \frac{1}{\det(\boldsymbol{A})} \begin{pmatrix}
+    d &amp; -b \\ -c &amp; a
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>と表される．</p>
+</div>
+<div class="admonition">
+<p class="admonition-title">演習：逆行列</p>
+<p>(i) <a class="reference internal" href="#equation-eq-linear-matrix">(72)</a>の両辺に左から <span class="math notranslate nohighlight">\(\boldsymbol{A}^{-1}\)</span> を掛けることによって，<a class="reference internal" href="#equation-eq-linear-matrix-sol">(74)</a>を証明せよ．</p>
+<p>(ii) 次の連立方程式が唯一解を持つかどうかを判別せよ．解をもつ場合には係数行列の逆行列と，連立方程式の解を求めよ．</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \begin{pmatrix}
+      3 &amp; 5 \\ 7 &amp; 9
+    \end{pmatrix}
+    \begin{pmatrix}
+      x \\ y 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1 \\ 2
+    \end{pmatrix}, 
+    \qquad
+    \begin{pmatrix}
+      13 &amp; -27 \\ -91 &amp; 189
+    \end{pmatrix}
+    \begin{pmatrix}
+      x \\ y 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0 \\ 0
+    \end{pmatrix}
+  \end{align*}\]</div>
+</div>
+<p>もし，固有値問題<a class="reference internal" href="#equation-eq-eigenproblem-stress">(64)</a>の係数行列の行列式がゼロであれば，この連立方程式が非自明な解をもつ，すなわち <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}=\boldsymbol{0}\)</span> 以外の物理的に意味を持つ解を持てるということになる．そのときに必要とされる条件は，</p>
+<div class="math notranslate nohighlight" id="equation-eq-stress-eigen-eq">
+<span class="eqno">(78)<a class="headerlink" href="#equation-eq-stress-eigen-eq" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \det\begin{pmatrix}
+    \sigma_{11} -\lambda &amp; \sigma_{12}\\\sigma_{12} &amp; \sigma_{22} -\lambda    
+  \end{pmatrix} = 
+  \left(\sigma_{11} -\lambda \right)  \left( \sigma_{22} -\lambda\right) - \sigma_{12}^2 = 0
+\end{align}\end{split}\]</div>
+<p>である．このような固有値問題の係数行列の行列式をゼロにする方程式のことを，<strong>固有方程式</strong>と呼ぶ．
+これは固有値 <span class="math notranslate nohighlight">\(\lambda\)</span> に関する2次方程式であるから，実数の解は最大で2つある．2次方程式の解の公式によると，それらは</p>
+<div class="math notranslate nohighlight" id="equation-principal-13">
+<span class="eqno">(79)<a class="headerlink" href="#equation-principal-13" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \lambda = \frac{1}{2} \left( 
+  \sigma_{11}+ \sigma_{22} \pm \sqrt{
+   (\sigma_{11}+\sigma_{22})^2
+   - 4 (\sigma_{11}\sigma_{22}- \sigma_{12}^2)
+  }
+  \right)
+\end{align}\]</div>
+<p>であり，さらに整理すると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-stress-eigenvalue">
+<span class="eqno">(80)<a class="headerlink" href="#equation-eq-stress-eigenvalue" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \lambda = \frac{\sigma_{11}+\sigma_{22}}{2} \pm \sqrt{
+  \left(\frac{\sigma_{11}-\sigma_{22}}{2}\right)^2 + \sigma_{12}^2
+  }
+\end{align}\]</div>
+<p>と表される．一般に，2次方程式の実数解の個数は根号内（判別式）の符号によって定まり，解が常に2つあるとは限らない．しかしこの場合は，根号内は2つの実数の組の2乗和であるので必ず正の値を取るから，<strong>応力テンソルの固有値は常に2つ存在する</strong>ことが言える．</p>
+<div class="admonition">
+<p class="admonition-title">演習：応力テンソルの固有値</p>
+<p>2次方程式<a class="reference internal" href="#equation-eq-stress-eigen-eq">(78)</a>の解が<a class="reference internal" href="#equation-eq-stress-eigenvalue">(80)</a>であることを証明せよ．</p>
+</div>
+<p>ひとたび固有値が求まれば，その固有値をもとの固有値問題に代入し，その方程式を満たす固有ベクトルを求めることができる．ただし，方程式は<strong>非自明</strong>であり唯一の解を持たないので，その方程式を満たす固有ベクトルが一つ求まると，その定数倍もまた固有ベクトルになることに注意が必要である．
+今回の場合は，固有ベクトルが<strong>法線ベクトル</strong>であるという物理的な制約条件があるので，長さが1になるような固有ベクトルを代表に選ぶことにしよう．さらに，そのベクトルは（0でなければ）角度 <span class="math notranslate nohighlight">\(\theta\)</span> を用いて<a class="reference internal" href="#equation-eq-normal-base-theta">(66)</a>のように書けるはずだ．したがって，固有値問題は<a class="reference internal" href="#equation-eq-stress-eigenvalue">(80)</a>の2つの解をそれぞれ <span class="math notranslate nohighlight">\(\lambda_1\)</span> ,  <span class="math notranslate nohighlight">\(\lambda_2\)</span> として，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigen-eq0">
+<span class="eqno">(81)<a class="headerlink" href="#equation-eq-eigen-eq0" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+\begin{pmatrix} \sigma_{11} &amp; \sigma_{12} \\ \sigma_{12} &amp; \sigma_{22} \end{pmatrix} 
+\begin{pmatrix} \cos \theta_1 \\ \sin \theta_1 \end{pmatrix}
+  =
+\lambda_1
+\begin{pmatrix} \cos \theta_1 \\ \sin \theta_1 \end{pmatrix}
+\\      
+\begin{pmatrix} \sigma_{11} &amp; \sigma_{12} \\ \sigma_{12} &amp; \sigma_{22} \end{pmatrix} 
+\begin{pmatrix} \cos \theta_2 \\ \sin \theta_2 \end{pmatrix}
+=
+\lambda_2
+\begin{pmatrix} \cos \theta_2 \\ \sin \theta_2 \end{pmatrix}
+    \end{split}
+\end{align}\end{split}\]</div>
+<p>と，角度 <span class="math notranslate nohighlight">\(\theta_1\)</span> ,  <span class="math notranslate nohighlight">\(\theta_2\)</span> を用いて表すことができる．ここで，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenvector">
+<span class="eqno">(82)<a class="headerlink" href="#equation-eq-eigenvector" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\hat{\boldsymbol{n}}_{1} \equiv \begin{pmatrix} \cos \theta_1 \\ \sin \theta_1 \end{pmatrix} ,
+\hat{\boldsymbol{n}}_{2} \equiv \begin{pmatrix} \cos \theta_2 \\ \sin \theta_2 \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>がこの問題の固有ベクトルだ．長さが <span class="math notranslate nohighlight">\(|\hat{\boldsymbol{n}}_{1}|=|\hat{\boldsymbol{n}}_{2}|=1\)</span> に規格化されているので，かならず角度変数を用いて<a class="reference internal" href="#equation-eq-eigenvector">(82)</a>のように書くことができるのだ．</p>
+<div class="admonition">
+<p class="admonition-title">演習：固有ベクトルの角度変数表示</p>
+<p>ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}=(\hat{n}_1,\hat{n}_2)^T\)</span> の長さが1である（ <span class="math notranslate nohighlight">\(|\hat{\boldsymbol{n}}|=1\)</span> ）であるとする．このとき，</p>
+<div class="math notranslate nohighlight" id="equation-principal-14">
+<span class="eqno">(83)<a class="headerlink" href="#equation-principal-14" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \tan \theta =  \hat{n}_2/\hat{n}_1 
+\end{align}\]</div>
+<p>を満たす角度 <span class="math notranslate nohighlight">\(\theta\)</span> を用いて</p>
+<div class="math notranslate nohighlight" id="equation-principal-15">
+<span class="eqno">(84)<a class="headerlink" href="#equation-principal-15" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \hat{n}_1 = \cos \theta, \quad \hat{n}_2 = \sin \theta
+\end{align}\]</div>
+<p>と表せることを図示によって示せ．</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>固有ベクトルの特徴<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>固有値・固有ベクトルの満たす関係式を成分で表現すると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigeneq">
+<span class="eqno">(85)<a class="headerlink" href="#equation-eq-eigeneq" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \sum_{j=1}^2 \sigma_{ij} \hat{n}_{1j} = \lambda_1 \hat{n}_{1i}, \quad \sum_{j=1}^2 \sigma_{ij} \hat{n}_{2j} = \lambda_2 \hat{n}_{2i}
+\end{align}\]</div>
+<p>である．天下りな操作だが，<a class="reference internal" href="#equation-eq-eigeneq">(85)</a>の第1式と <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}_2\)</span> との内積を取ってみると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenvector-innerproduct">
+<span class="eqno">(86)<a class="headerlink" href="#equation-eq-eigenvector-innerproduct" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \sum_{i=1}^2 \sum_{j=1}^2 \sigma_{ij}  \hat{n}_{1j}  \hat{n}_{2i} = \lambda_1 \sum_{i=1}^2 \hat{n}_{1i}\hat{n}_{2i}
+  = \lambda_1  \left( \hat{\boldsymbol{n}}_{1} \cdot \hat{\boldsymbol{n}}_{2} \right)
+\end{align}\]</div>
+<p>と書ける．</p>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：内積と角度</p>
+<p>2つのベクトル <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> の内積は，2次元の場合</p>
+<div class="math notranslate nohighlight" id="equation-principal-16">
+<span class="eqno">(87)<a class="headerlink" href="#equation-principal-16" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{a} \cdot \boldsymbol{b} = a_1 b_1 + a_2 b_2  = \sum_{i=1}^2 a_i b_i
+\end{align}\]</div>
+<p>で定義される．内積は，2つのベクトルのなす角を <span class="math notranslate nohighlight">\(\phi\)</span> として</p>
+<div class="math notranslate nohighlight" id="equation-principal-17">
+<span class="eqno">(88)<a class="headerlink" href="#equation-principal-17" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{a}\cdot \boldsymbol{b} = \sum_i a_i b_i = \left| \boldsymbol{a} \right| \left| \boldsymbol{b} \right| \cos \phi
+\end{align}\]</div>
+<p>という性質を持っている．
+もしベクトルの長さが <span class="math notranslate nohighlight">\(\left| \boldsymbol{a} \right|=\left| \boldsymbol{b} \right|=1\)</span> であれば，内積は <span class="math notranslate nohighlight">\(\cos \phi\)</span> そのものとなる．</p>
+</div>
+<p>同じように，<a class="reference internal" href="#equation-eq-eigeneq">(85)</a>の第2式と <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}_1\)</span> との内積を取ると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenvector-innerproduct2">
+<span class="eqno">(89)<a class="headerlink" href="#equation-eq-eigenvector-innerproduct2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \sum_{i=1}^2 \sum_{j=1}^2 \sigma_{ij}  \hat{n}_{2j}  \hat{n}_{1i} = \lambda_2 \sum_{i=1}^2 \hat{n}_{2i}\hat{n}_{1i}
+  = \lambda_2  \left( \hat{\boldsymbol{n}}_{1} \cdot \hat{\boldsymbol{n}}_{2} \right)
+\end{align}\]</div>
+<p>だ．この式の左辺で総和記号の添字 <span class="math notranslate nohighlight">\(i\)</span> と <span class="math notranslate nohighlight">\(j\)</span> を入れ替え，かつ応力テンソルが対称テンソル（ <span class="math notranslate nohighlight">\(\sigma_{ij} = \sigma_{ji}\)</span> ）であるということを利用すると，</p>
+<div class="math notranslate nohighlight" id="equation-principal-18">
+<span class="eqno">(90)<a class="headerlink" href="#equation-principal-18" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \sum_{i=1}^2 \sum_{j=1}^2 \sigma_{ij}  \hat{n}_{2j}  \hat{n}_{1i} 
+  =
+  \sum_{j=1}^2 \sum_{i=1}^2 \sigma_{ji}  \hat{n}_{2i}  \hat{n}_{1j}  
+  =
+  \sum_{i=1}^2 \sum_{j=1}^2 \sigma_{ij}  \hat{n}_{2i}  \hat{n}_{1j}  
+\end{align}\]</div>
+<p>が得られる．
+この式の右辺は，<a class="reference internal" href="#equation-eq-eigenvector-innerproduct">(86)</a>の左辺に完全に等しい．したがって，<a class="reference internal" href="#equation-eq-eigenvector-innerproduct">(86)</a>と<a class="reference internal" href="#equation-eq-eigenvector-innerproduct2">(89)</a>は等価な式であり，その右辺同士もまた等しいことがわかる：</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenvector-requirement">
+<span class="eqno">(91)<a class="headerlink" href="#equation-eq-eigenvector-requirement" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \lambda_1  \left( \hat{\boldsymbol{n}}_{1} \cdot \hat{\boldsymbol{n}}_{2} \right)
+  =
+  \lambda_2  \left( \hat{\boldsymbol{n}}_{1} \cdot \hat{\boldsymbol{n}}_{2} \right)
+\end{align}\]</div>
+<p>しかし， <span class="math notranslate nohighlight">\(\lambda_1\)</span> と <span class="math notranslate nohighlight">\(\lambda_2\)</span> は固有方程式である2次方程式<a class="reference internal" href="#equation-eq-eigeneq">(85)</a>の互いに異なる解であり，判別式（二次方程式の解の公式の根号内）が正であったため，重解もありえない．
+したがって， <span class="math notranslate nohighlight">\(\lambda_1 \neq \lambda_2\)</span> であり，かつ<a class="reference internal" href="#equation-eq-eigenvector-requirement">(91)</a>が成立するためには，</p>
+<div class="math notranslate nohighlight" id="equation-principal-19">
+<span class="eqno">(92)<a class="headerlink" href="#equation-principal-19" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \hat{\boldsymbol{n}}_{1} \cdot \hat{\boldsymbol{n}}_{2} = 0
+\end{align}\]</div>
+<p>でなければならないことがわかった．
+長さ <span class="math notranslate nohighlight">\(1\)</span> のベクトル同士の内積は，その2つのベクトルのなす角の <span class="math notranslate nohighlight">\(\cos\)</span> に等しいのだから，応力テンソルの固有ベクトルは，（どんな応力テンソルに対しても）<strong>かならず互いに直交</strong>しており，互いに独立ではないのだ．</p>
+<p>さて，2つの固有ベクトルが直交しているということは，</p>
+<div class="math notranslate nohighlight" id="equation-principal-20">
+<span class="eqno">(93)<a class="headerlink" href="#equation-principal-20" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \theta_2 = \theta_1 \pm 90^\circ
+\end{align}\]</div>
+<p>であるということだ．符号はどちらでも良いのだが，ここでは <span class="math notranslate nohighlight">\(+\)</span> を採用しよう．
+<span class="math notranslate nohighlight">\(\theta_2 = \theta_1\)</span> を <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}_2\)</span> の定義<a class="reference internal" href="#equation-eq-eigenvector">(82)</a>に代入すると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-n2-theta1">
+<span class="eqno">(94)<a class="headerlink" href="#equation-eq-n2-theta1" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \hat{\boldsymbol{n}}_2 = 
+\begin{pmatrix} \cos \theta_2 \\ \sin \theta_2 \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \cos \left( \theta_1 + 90 ^\circ \right)\\ \sin\left(\theta_1 + 90 ^\circ\right)
+  \end{pmatrix}
+  = \begin{pmatrix}
+  -\sin  \theta_1  \\ \cos \theta_1   \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>と書ける．</p>
+<p>さて，ここで<a class="reference internal" href="#equation-eq-eigen-eq0">(81)</a>の2本の方程式をまとめて扱うため，2つの法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}_1\)</span> と <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}_2\)</span> を横に並べた行列 <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> というものを考えよう．</p>
+<div class="math notranslate nohighlight" id="equation-eq-rotation-matrix">
+<span class="eqno">(95)<a class="headerlink" href="#equation-eq-rotation-matrix" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{R} \equiv \left[ \hat{\boldsymbol{n}}_1, \hat{\boldsymbol{n}}_2 \right]
+  =\left[  \begin{pmatrix} \cos \theta_1 \\ \sin \theta_1 \end{pmatrix} ,  \begin{pmatrix} \cos \theta_2 \\ \sin \theta_2 \end{pmatrix} \right]
+    =
+    \begin{pmatrix}
+      \cos \theta_1 &amp; -\sin \theta_1 \\
+      \sin \theta_1 &amp; \cos \theta_1
+    \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>ここで最後の等式では<a class="reference internal" href="#equation-eq-n2-theta1">(94)</a>を用いた．
+このようにベクトルを並べた行列を用いると，<a class="reference internal" href="#equation-eq-eigen-eq0">(81)</a>は</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigen-totyu">
+<span class="eqno">(96)<a class="headerlink" href="#equation-eq-eigen-totyu" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\boldsymbol{\sigma}  \left[ \hat{\boldsymbol{n}}_1, \hat{\boldsymbol{n}}_2 \right]
+  =  \left[ \lambda_1 \hat{\boldsymbol{n}}_1, \lambda_2\hat{\boldsymbol{n}}_2 \right]
+\end{align}\]</div>
+<p>のように書ける．
+これに<a class="reference internal" href="#equation-eq-rotation-matrix">(95)</a>を用いると，固有値を対角成分に持つ対角行列を用いて，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigen-orthogonal">
+<span class="eqno">(97)<a class="headerlink" href="#equation-eq-eigen-orthogonal" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{\sigma} 
+  \boldsymbol{R} = 
+  \boldsymbol{R}
+  \begin{pmatrix}
+    \lambda_1 &amp; 0 \\ 0 &amp; \lambda_2
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>と表される．</p>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：対角行列</p>
+<p>行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> が対角成分 <span class="math notranslate nohighlight">\(A_{ii}\)</span> だけ値を持ち，非対角成分は <span class="math notranslate nohighlight">\({A}_{ij} = 0\)</span>   <span class="math notranslate nohighlight">\((i\neq j)\)</span> であるとき，この行列は<strong>対角行列</strong>であると言う．一般の行列を何らかの線形変換によって対角行列を求めることを，行列を<strong>対角化する</strong>とも言う．</p>
+</div>
+<div class="admonition">
+<p class="admonition-title">演習：固有値の対角行列を用いた表現</p>
+<p><a class="reference internal" href="#equation-eq-eigen-orthogonal">(97)</a>式の行列 <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> と<a class="reference internal" href="#equation-eq-eigen-totyu">(96)</a>式の法線ベクトルの角度変数を用いた表現をそれぞれ代入することで，両式が等価であることを示せ．</p>
+</div>
+<p>ここで，行列 <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> は <span class="math notranslate nohighlight">\(\det(\boldsymbol{R}) = 1\)</span> であり，その逆行列は</p>
+<div class="math notranslate nohighlight" id="equation-principal-21">
+<span class="eqno">(98)<a class="headerlink" href="#equation-principal-21" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{R}^{-1} = \boldsymbol{R}^T = 
+  \begin{pmatrix}
+    \cos \theta_1 &amp; \sin \theta_1 \\
+    -\sin \theta_1 &amp; \cos \theta_1
+  \end{pmatrix}  
+\end{align}\end{split}\]</div>
+<p>であるので， <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> は直交行列である．これを用いると，応力テンソルは固有値を対角成分にもつ対角行列を用いて，</p>
+<div class="math notranslate nohighlight" id="equation-eq-diag-stress">
+<span class="eqno">(99)<a class="headerlink" href="#equation-eq-diag-stress" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{R}^{-1} \boldsymbol{\sigma} \boldsymbol{R} =
+  \begin{pmatrix}
+    \lambda_1 &amp; 0 \\ 0 &amp; \lambda_2
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>と対角化される．</p>
+</div>
+<div class="section" id="id5">
+<h2>ベクトルとテンソルの回転<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>実は，行列 <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> は<strong>回転行列</strong>に一致している．以下では，回転行列を角度を引数として <span class="math notranslate nohighlight">\(\boldsymbol{R}(\theta)\)</span> と書く．角度 <span class="math notranslate nohighlight">\(\theta\)</span> を引数にもつ回転行列にベクトル <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> を作用させる</p>
+<div class="math notranslate nohighlight" id="equation-principal-22">
+<span class="eqno">(100)<a class="headerlink" href="#equation-principal-22" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{v} = \boldsymbol{R}(\theta) \boldsymbol{u}
+\end{align}\]</div>
+<p>と，それによって得られるベクトル <span class="math notranslate nohighlight">\(\boldsymbol{v} \)</span> は， <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> を角度 <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転したもの（図<a class="reference internal" href="#fig-rotation"><span class="std std-numref">15</span></a>(a)）になるのだった．その逆行列が</p>
+<div class="math notranslate nohighlight" id="equation-principal-23">
+<span class="eqno">(101)<a class="headerlink" href="#equation-principal-23" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\boldsymbol{u} = \boldsymbol{R}^{-1}(\theta) \boldsymbol{v}
+\end{align}\]</div>
+<p>と書けることから，これは角度を <span class="math notranslate nohighlight">\(-\theta\)</span> だけ回転したものになる．したがって， <span class="math notranslate nohighlight">\(\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)\)</span> が成り立つ． <span class="math notranslate nohighlight">\(\boldsymbol{R}(-\theta)\)</span> は，ベクトルではなく<strong>座標系を <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転させた</strong>，と見ることもできる（図<a class="reference internal" href="#fig-rotation"><span class="std std-numref">15</span></a>b）．</p>
+<p>この関係を用いると，<a class="reference internal" href="#equation-eq-diag-stress">(99)</a>は<strong>応力テンソルを回転した座標系で表したもの</strong>という意味をもつことが分かってくる．以下，そのことを示していこう．</p>
+<div class="admonition">
+<p class="admonition-title">演習：回転行列の逆行列</p>
+<p><span class="math notranslate nohighlight">\(2\times 2\)</span> の回転行列の逆行列 <span class="math notranslate nohighlight">\(\boldsymbol{R}^{-1}(\theta)\)</span> をその成分から直接計算し， <span class="math notranslate nohighlight">\(\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)\)</span> を示せ．</p>
+</div>
+<div class="figure align-center" id="fig-rotation">
+<a class="reference internal image-reference" href="_images/rotation.png"><img alt="_images/rotation.png" src="_images/rotation.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">座標の回転と座標系の回転．(a)では，ある位置ベクトルを回転行列によって <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転している．同じ操作は，ベクトルの位置を固定したまま，(b)のように座標系を反対方向に <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転させた <span class="math notranslate nohighlight">\(x_1'\)</span> – <span class="math notranslate nohighlight">\(x_2'\)</span> 座標系で元の点の位置を表現することもできる．この場合，(c)のように <span class="math notranslate nohighlight">\(x_1'\)</span> – <span class="math notranslate nohighlight">\(x_2'\)</span> を紙面水平鉛直に沿うように描画しなおすと，(a)において回転されたベクトルの位置に一致している．</span><a class="headerlink" href="#fig-rotation" title="Permalink to this image">¶</a></p>
+</div>
+<p>まず，応力テンソルのコーシーの関係式に戻ろう：</p>
+<div class="math notranslate nohighlight" id="equation-principal-24">
+<span class="eqno">(102)<a class="headerlink" href="#equation-principal-24" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{\sigma} \hat{\boldsymbol{n}} = \boldsymbol{T}^{(\hat{\boldsymbol{n}})}
+\end{align}\]</div>
+<p>これに対し， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> から反時計回りに <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転された座標系 <span class="math notranslate nohighlight">\(x'_1\)</span> – <span class="math notranslate nohighlight">\(x'_2\)</span> を考える．法線ベクトルとトラクションベクトルをこの回転後の座標系で表すと，回転行列を用いて</p>
+<div class="math notranslate nohighlight" id="equation-principal-25">
+<span class="eqno">(103)<a class="headerlink" href="#equation-principal-25" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \hat{\boldsymbol{n}}'=  \boldsymbol{R}^{-1}(\theta) \hat{\boldsymbol{n}}, \quad
+  \boldsymbol{T}'^{(\hat{\boldsymbol{n}}')} =  \boldsymbol{R}^{-1}(\theta) \boldsymbol{T}^{(\hat{\boldsymbol{n}})}
+\end{align}\]</div>
+<p>と表さる．これをコーシーの関係式に代入すると，</p>
+<div class="math notranslate nohighlight" id="equation-principal-26">
+<span class="eqno">(104)<a class="headerlink" href="#equation-principal-26" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{\sigma} \boldsymbol{R} \hat{\boldsymbol{n}}' = \boldsymbol{R} \boldsymbol{T}'^{(\hat{\boldsymbol{n}}')}
+\end{align}\]</div>
+<p>であるから，左から回転行列の逆行列を作用させて，</p>
+<div class="math notranslate nohighlight" id="equation-eq-rotated-stress1">
+<span class="eqno">(105)<a class="headerlink" href="#equation-eq-rotated-stress1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \left( 
+  \boldsymbol{R} ^{-1} \boldsymbol{\sigma} \boldsymbol{R} \right) \hat{\boldsymbol{n}}' = \boldsymbol{R} ^{-1} \boldsymbol{R} \boldsymbol{T}'^{(\hat{\boldsymbol{n}}')} =  \boldsymbol{T}'^{(\hat{\boldsymbol{n}}')}
+\end{align}\]</div>
+<p>が得られる．ここで</p>
+<div class="math notranslate nohighlight" id="equation-eq-r-rinv-i">
+<span class="eqno">(106)<a class="headerlink" href="#equation-eq-r-rinv-i" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{R} ^{-1} \boldsymbol{R} = \boldsymbol{I}
+\end{align}\]</div>
+<p>の関係を用いた．</p>
+<div class="admonition">
+<p class="admonition-title">演習：回転と逆回転の積</p>
+<p><a class="reference internal" href="#equation-eq-r-rinv-i">(106)</a>式は， <span class="math notranslate nohighlight">\(\theta\)</span> 回転して <span class="math notranslate nohighlight">\(-\theta\)</span> 回転したら元（なにもしない状態）に戻るということを意味している．直感的には明らかであろうが，2次元の回転行列の成分から，積 <span class="math notranslate nohighlight">\(\boldsymbol{R} ^{-1} \boldsymbol{R}\)</span> を計算し，それが確かに単位行列になることを計算によって確かめよ．</p>
+</div>
+<p>ところで，回転後の座標系においてもコーシーの関係式は成り立っているはずだ．
+そうであるならば，回転後の座標系における応力テンソルを <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}'\)</span> と書くと，</p>
+<div class="math notranslate nohighlight" id="equation-eq-rotated-stress2">
+<span class="eqno">(107)<a class="headerlink" href="#equation-eq-rotated-stress2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{\sigma}' \hat{\boldsymbol{n}}' = \boldsymbol{T}'^{(\hat{\boldsymbol{n}'})}
+\end{align}\]</div>
+<p>が成立している．<a class="reference internal" href="#equation-eq-rotated-stress1">(105)</a>と<a class="reference internal" href="#equation-eq-rotated-stress2">(107)</a>とを比べると，テンソルは座標系の回転によって</p>
+<div class="math notranslate nohighlight" id="equation-eq-tensor-rotation">
+<span class="eqno">(108)<a class="headerlink" href="#equation-eq-tensor-rotation" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \boldsymbol{\sigma}'= \boldsymbol{R} ^{-1} \boldsymbol{\sigma} \boldsymbol{R} 
+\end{align}\]</div>
+<p>という変換をうけるということがわかった．</p>
+<p>この関係<a class="reference internal" href="#equation-eq-tensor-rotation">(108)</a>を踏まえ，あらためて<a class="reference internal" href="#equation-eq-diag-stress">(99)</a>と<a class="reference internal" href="#equation-eq-tensor-rotation">(108)</a>とを比べると，左辺はまったく同じである．
+つまり，<a class="reference internal" href="#equation-eq-diag-stress">(99)</a>は応力テンソルを角度 <span class="math notranslate nohighlight">\(\theta_1\)</span> だけ回転したものであり，その結果が固有値 <span class="math notranslate nohighlight">\(\lambda_1\)</span> と <span class="math notranslate nohighlight">\(\lambda_2\)</span> を用いた対角行列になっている．ということは， <span class="math notranslate nohighlight">\(\lambda_1\)</span> と <span class="math notranslate nohighlight">\(\lambda_2\)</span> は回転された座標系における応力テンソルの成分そのものなのだ．このようにして対角化された応力テンソルの対角成分 <span class="math notranslate nohighlight">\(\sigma_1 \equiv \lambda_1\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_2 = \lambda_2\)</span> を<strong>主応力</strong>といい，回転した座標系の軸方向を<strong>主方向</strong>，主方向に沿った座標軸を<strong>主軸</strong>という．</p>
+<p>長い議論だったので，結果をあらためて整理すると，</p>
+<ul class="simple">
+<li><p>応力テンソルは，適当な角度 <span class="math notranslate nohighlight">\(\theta\)</span> で回転すると，剪断成分をもたない対角テンソルの形に書くことができる．</p></li>
+<li><p>応力テンソルを対角化するための回転行列は，応力テンソルの固有ベクトルを並べる事によって作ることができる．</p></li>
+<li><p>対角化された応力テンソルの対角成分である主応力の値は，応力テンソルの固有値である．</p></li>
+<li><p>上記を満たすような回転角度が必ず存在することが，数学的に保証されている．</p></li>
+</ul>
+<p>ということになる．</p>
+<p>これは3次元空間においても全く同じで，任意の応力テンソルは</p>
+<div class="math notranslate nohighlight" id="equation-principal-27">
+<span class="eqno">(109)<a class="headerlink" href="#equation-principal-27" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{R}^{-1} \begin{pmatrix}
+    \sigma_{11} &amp; \sigma_{12} &amp; \sigma_{13} \\
+    \sigma_{12} &amp; \sigma_{22} &amp; \sigma_{23} \\
+    \sigma_{13} &amp; \sigma_{23} &amp; \sigma_{33} \\
+  \end{pmatrix}
+  \boldsymbol{R}
+ = 
+ \begin{pmatrix}
+   \sigma_1 &amp; 0 &amp; 0 \\ 0 &amp; \sigma_2 &amp; 0 \\ 0 &amp; 0 &amp; \sigma_3
+ \end{pmatrix} 
+\end{align}\end{split}\]</div>
+<p>のように回転によって対角化される．その時の回転行列が応力テンソルの固有ベクトルで作られることも同じである．</p>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：実対称行列の固有値問題</p>
+<p>ここでは応力テンソルに対して，その固有値が実数でかならず2つ（2次元の場合）あり，かつ固有ベクトル同士が直交する，ということを示してきた．しかし，実はその証明に使った条件はたった一つ，<strong>応力テンソルが対称テンソル</strong>であるということだけであった．実はより一般に，実対称行列（成分が実数の対称行列）は，その大きさと同じだけの個数の実数の固有値を持ち，それらの固有値に対応する固有ベクトルは，必ず互いに直交するということが知られている．これは2次元だけでなく，3次元以上でも成立する．3次元の場合には3つの固有ベクトルがあり，それらがすべて互いに直交するのだ．また，同じ対角化手法が，対称テンソルであるひずみテンソルと応力テンソルの他，地震学のモーメントテンソルにも適用できる．</p>
+</div>
+<p>応力テンソルの対角成分（法線応力）は，軸方向の引張や圧縮のトラクションを意味する成分であった．本節で導いたことは，剪断が働いているように見える場合であっても，適当な方向に座標軸をとりなおすことによって，圧縮と膨張の力だけでそれを表現することができる，ということだ．</p>
+</div>
+<div class="section" id="id6">
+<h2>主ひずみ<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>これまでは応力テンソルを例にしてきたが，固有値と固有ベクトルによって対角化されるというのは，ひずみテンソルについても全く同じように成立する．同じように大きさを1に規格化した固有ベクトルから回転行列を作成し，それによってひずみテンソルを回転すると，固有値を対角成分にもつ対角テンソルが得られる：</p>
+<div class="math notranslate nohighlight" id="equation-principal-28">
+<span class="eqno">(110)<a class="headerlink" href="#equation-principal-28" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{R}^{-1} \begin{pmatrix}
+    \varepsilon_{11} &amp; \varepsilon_{12} &amp; \varepsilon_{13} \\
+    \varepsilon_{12} &amp; \varepsilon_{22} &amp; \varepsilon_{23} \\
+    \varepsilon_{13} &amp; \varepsilon_{23} &amp; \varepsilon_{33} \\
+  \end{pmatrix}
+  \boldsymbol{R}
+  = 
+  \begin{pmatrix}
+    \varepsilon_1 &amp; 0 &amp; 0 \\ 0 &amp; \varepsilon_2 &amp; 0 \\ 0 &amp; 0 &amp; \varepsilon_3
+  \end{pmatrix} 
+\end{align}\end{split}\]</div>
+<p>このときの <span class="math notranslate nohighlight">\(\varepsilon_1\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_2\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_3\)</span> を<strong>主ひずみ</strong>という．</p>
+<div class="section" id="id7">
+<h3>主ひずみとテンソル回転の例<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>ひずみテンソルの対角化の具体例として，2次元 <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面内において，</p>
+<div class="math notranslate nohighlight" id="equation-eq-straion-rotation-1">
+<span class="eqno">(111)<a class="headerlink" href="#equation-eq-straion-rotation-1" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{\varepsilon} = \begin{pmatrix}
+    0 &amp; \varepsilon_{12}\\ \varepsilon_{12} &amp; 0
+  \end{pmatrix}
+  = 
+  \begin{pmatrix}
+    0 &amp; c \\ c&amp; 0
+  \end{pmatrix}   
+\end{align}\end{split}\]</div>
+<p>を考えよう．ただしここでは <span class="math notranslate nohighlight">\(\varepsilon_{12}=c&gt;0\)</span> であるとする．
+このひずみテンソルによってもたらされる変形場は図<a class="reference internal" href="strain.html#fig-strain-field"><span class="std std-numref">7</span></a>(d)に示されている．</p>
+<p>ひずみテンソルの固有値を <span class="math notranslate nohighlight">\(\lambda\)</span> ，固有ベクトルを <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> とすると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigen-example-1">
+<span class="eqno">(112)<a class="headerlink" href="#equation-eq-eigen-example-1" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+    0 &amp;c \\ c &amp; 0
+  \end{pmatrix}\boldsymbol{v} = \lambda \boldsymbol{v}
+  \Leftrightarrow
+  \begin{pmatrix}
+    -\lambda &amp; c \\ c &amp; -\lambda
+  \end{pmatrix}\boldsymbol{v} = \boldsymbol{0}
+\end{align}\end{split}\]</div>
+<p>であり，これが非自明な解を持つためには，</p>
+<div class="math notranslate nohighlight" id="equation-principal-29">
+<span class="eqno">(113)<a class="headerlink" href="#equation-principal-29" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \det \begin{pmatrix}
+  -\lambda &amp; c\\c &amp; -\lambda
+\end{pmatrix} = \lambda^2 -c^2 = 0
+\end{align}\end{split}\]</div>
+<p>でなくてはならない．この解は <span class="math notranslate nohighlight">\(\lambda=\pm c\)</span> である．</p>
+<p>次に固有ベクトルを求めよう．<a class="reference internal" href="#equation-eq-eigen-example-1">(112)</a>に固有値のうち正の値のほうを代入すると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigen-example-2">
+<span class="eqno">(114)<a class="headerlink" href="#equation-eq-eigen-example-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{pmatrix}
+      -c &amp; c \\ c&amp;  -c
+  \end{pmatrix} 
+  \begin{pmatrix}
+    v_{11} \\ v_{12}
+  \end{pmatrix} = \boldsymbol{0}
+\end{align}\end{split}\]</div>
+<p>であり，展開して整理すると，どちらも</p>
+<div class="math notranslate nohighlight" id="equation-principal-30">
+<span class="eqno">(115)<a class="headerlink" href="#equation-principal-30" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  v_{11} = v_{12}
+\end{align}\]</div>
+<p>という関係に帰着する．この条件をみたし，かつ長さが <span class="math notranslate nohighlight">\(1\)</span> のベクトルは</p>
+<div class="math notranslate nohighlight" id="equation-principal-31">
+<span class="eqno">(116)<a class="headerlink" href="#equation-principal-31" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{v}_1 = \begin{pmatrix}
+     1/\sqrt{2} \\ 1/\sqrt{2}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \cos(\pi/4) \\ \sin(\pi/4)
+ \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>だ．同様に，もう一つの固有値に対する固有ベクトルは，</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenvalue2">
+<span class="eqno">(117)<a class="headerlink" href="#equation-eq-eigenvalue2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{v}_2 = \begin{pmatrix}
+    - 1/\sqrt{2} \\ 1/\sqrt{2}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \cos(3\pi/4) \\ \sin(3\pi/4)
+ \end{pmatrix}
+ =  
+ \begin{pmatrix}
+  -\sin(\pi/4) \\ \cos(\pi/4)
+\end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>である．</p>
+<div class="admonition">
+<p class="admonition-title">演習：固有ベクトルの推定</p>
+<p>負の固有値 <span class="math notranslate nohighlight">\(\lambda=- \varepsilon_{12}\)</span> に対する固有ベクトルが<a class="reference internal" href="#equation-eq-eigenvalue2">(117)</a>であることを証明せよ．</p>
+</div>
+<p>これらを並べて回転行列を作ると，</p>
+<div class="math notranslate nohighlight" id="equation-principal-32">
+<span class="eqno">(118)<a class="headerlink" href="#equation-principal-32" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{R} = \begin{pmatrix}
+    \cos(45^\circ) &amp; - \sin(45^\circ) \\ \sin (45^\circ) &amp; \cos (45^\circ)
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>が得られる．この行列は <span class="math notranslate nohighlight">\(\pi/4\)</span>  rad <span class="math notranslate nohighlight">\(=45^\circ\)</span> 回転を表す行列だ．これによって，ひずみテンソルは</p>
+<div class="math notranslate nohighlight" id="equation-eq-straion-rotation-2">
+<span class="eqno">(119)<a class="headerlink" href="#equation-eq-straion-rotation-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{\varepsilon}' = \boldsymbol{R}^{-1}\boldsymbol{\varepsilon} \boldsymbol{R} = 
+  \begin{pmatrix}
+    c &amp; 0 \\
+    0 &amp; -c
+  \end{pmatrix}
+\end{align}\end{split}\]</div>
+<p>と対角化された．</p>
+<p>図<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref">16</span></a>は，(a)に<a class="reference internal" href="#equation-eq-straion-rotation-1">(111)</a> のひずみによる変形場を，(b)に回転後の<a class="reference internal" href="#equation-eq-straion-rotation-2">(119)</a> による変形場をそれぞれ示す．図<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref">16</span></a>(a)では <span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_2\)</span> 軸の方向には座標軸に直交した変形が得られているが，図<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref">16</span></a>(b)では，たしかに主方向である <span class="math notranslate nohighlight">\(x_1'\)</span> と <span class="math notranslate nohighlight">\(x_2'\)</span> 方向には<strong>軸方向にだけ</strong>変形しているということがわかるだろう．また，注意深く図<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref">16</span></a>(a)と(b)を比べると，(a)に対して(b)のベクトル場は45度時計回りに回転していることも確認できるだろう．</p>
+<div class="figure align-center" id="fig-strain-rotation">
+<a class="reference internal image-reference" href="_images/strain_rotation.png"><img alt="_images/strain_rotation.png" src="_images/strain_rotation.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">ひずみによる変形場の回転の例．</span><a class="headerlink" href="#fig-strain-rotation" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>モールの応力円<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>2次元面内におけるトラクションとその回転<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>面ではなくて線だろう，と思うかもしれないが，2次元の問題ではこの線がは <span class="math notranslate nohighlight">\(z\)</span> 方向（紙面の手前と奥行き方向）に無限に続いていると仮定している．であるから，これはあくまでも <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 断面を切る面なのだ．</p>
+</div>
+<p><span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内における2次元の変形を考えよう．図<a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref">17</span></a>のように，法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> を持つ面を考え，そこに働くトラクションを調べることにしよう．我々はもうコーシーの関係式を知っているのだから，面の法線ベクトルを求め，それを応力テンソルに作用させれば，どんな面に対してもトラクションベクトルを求めることができる．
+ただし実用上は，ある角度 <span class="math notranslate nohighlight">\(\theta\)</span> が与えられたときに，その角度の面にかかるトラクションの，面に対する法線方向や接線方向のトラクションを調べるということがよくある．本節では，図示によって法線・接線方向のトラクションを調べることができる，モール（Mohr）の円という強力な方法を紹介する．</p>
+<div class="figure align-center" id="fig-mohr-layout">
+<a class="reference internal image-reference" href="_images/Mohr_Layout.png"><img alt="_images/Mohr_Layout.png" src="_images/Mohr_Layout.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">2次元 <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内における応力場とその内部に考える面（点線）にはたらくトラクション <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}\)</span> ．四角形周辺の矢印がこの場に働く応力テンソル成分とその方向を，四角形中の２つの座標軸は <span class="math notranslate nohighlight">\(12\)</span> 直交座標系と，面と面に直交する方向からなる <span class="math notranslate nohighlight">\(vw\)</span> 座標系．</span><a class="headerlink" href="#fig-mohr-layout" title="Permalink to this image">¶</a></p>
+</div>
+<p><span class="math notranslate nohighlight">\(x_3\)</span> 方向を無視した2次元空間での応力テンソルは</p>
+<div class="math notranslate nohighlight" id="equation-principal-33">
+<span class="eqno">(120)<a class="headerlink" href="#equation-principal-33" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{\sigma} = \left(
+  \begin{matrix}
+    \sigma_{11} &amp; \sigma_{12} \\
+    \sigma_{12} &amp; \sigma_{22}\\
+  \end{matrix}
+  \right)
+\end{align}\end{split}\]</div>
+<p>である．法線ベクトルは， <span class="math notranslate nohighlight">\(x_1\)</span> 軸と面のなす角を <span class="math notranslate nohighlight">\(\theta\)</span> とすれば</p>
+<div class="math notranslate nohighlight" id="equation-principal-34">
+<span class="eqno">(121)<a class="headerlink" href="#equation-principal-34" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{matrix}
+  \hat{ \boldsymbol{n} } = \left( \cos \theta, \sin \theta \right)^T
+\end{matrix}  
+\end{align}\]</div>
+<p>と表される．したがって，この面に働くトラクションは，コーシーの関係式から</p>
+<div class="math notranslate nohighlight" id="equation-principal-35">
+<span class="eqno">(122)<a class="headerlink" href="#equation-principal-35" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \boldsymbol{T}^{(\hat{ \boldsymbol{n} })} =
+  \left(
+  \begin{matrix}
+    T_1^{(\hat{ \boldsymbol{n} })} \\
+    T_2^{(\hat{ \boldsymbol{n} })} \\
+  \end{matrix}
+  \right)
+  =
+  \boldsymbol{\sigma} \hat{ \boldsymbol{n} }
+  =
+   \left(
+  \begin{matrix}
+    \sigma_{11} &amp; \sigma_{12} \\
+    \sigma_{12} &amp; \sigma_{22}\\
+  \end{matrix}
+  \right)
+    \left(
+  \begin{matrix}
+    \cos \theta \\
+    \sin \theta \\
+  \end{matrix}
+  \right)
+\end{align}\end{split}\]</div>
+<p>で得ることができる．</p>
+<p>この計算で得られたのは，トラクションの <span class="math notranslate nohighlight">\(x_1\)</span> 方向と <span class="math notranslate nohighlight">\(x_2\)</span> 方向の成分 <span class="math notranslate nohighlight">\( T_1^{(\hat{ \boldsymbol{n} })}\)</span> ,  <span class="math notranslate nohighlight">\( T_2^{(\hat{ \boldsymbol{n}})}\)</span> である．
+では，今考えている法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> の面の法線方向に働く応力（法線応力）や接線方向に働く応力（剪断応力）はどうだろうか？．
+それは，トラクションベクトルの図<a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref">17</span></a>中の <span class="math notranslate nohighlight">\(v\)</span> – <span class="math notranslate nohighlight">\(w\)</span> 座標軸方向の値を求めることに相当する． <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 座標系とくらべて <span class="math notranslate nohighlight">\(v\)</span> – <span class="math notranslate nohighlight">\(w\)</span> 座標系は <span class="math notranslate nohighlight">\(+\theta\)</span> だけ回転しているのだから， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 座標系で表したベクトルを <span class="math notranslate nohighlight">\(v\)</span> – <span class="math notranslate nohighlight">\(w\)</span> 座標系でみると，あたかも <span class="math notranslate nohighlight">\(-\theta\)</span> だけ反対方向に回転したかのように見えるはずだ．つまり， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 座標系で求まったトラクションベクトルを <span class="math notranslate nohighlight">\(-\theta\)</span> だけ回転することにより，法線応力と剪断応力が求まるのだ．それぞれの値を <span class="math notranslate nohighlight">\(T_v^{(\hat{ \boldsymbol{n} })}\)</span> ,  <span class="math notranslate nohighlight">\(T_w^{(\hat{ \boldsymbol{n} })}\)</span> とすると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-rot-traction1">
+<span class="eqno">(123)<a class="headerlink" href="#equation-eq-rot-traction1" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{multline}
+  \begin{pmatrix}
+    T_v^{(\hat{ \boldsymbol{n} })} \\
+    T_w^{(\hat{ \boldsymbol{n} })} \\
+  \end{pmatrix}
+  =
+  \boldsymbol{R}\left( -\theta \right)
+  \begin{pmatrix}
+    T_1^{(\hat{ \boldsymbol{n} })} \\
+    T_2^{(\hat{ \boldsymbol{n} })} \\
+  \end{pmatrix}  
+  \\
+  =
+  \begin{pmatrix}
+    \cos \theta &amp; \sin \theta \\
+    -\sin \theta &amp; \cos \theta \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    T_1^{(\hat{ \boldsymbol{n} })} \\
+    T_2^{(\hat{ \boldsymbol{n} })} \\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \cos \theta &amp; \sin \theta \\
+    - \sin \theta &amp; \cos \theta \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \sigma_{11} &amp; \sigma_{12} \\
+    \sigma_{12} &amp; \sigma_{22}\\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \cos \theta \\
+    \sin \theta \\
+  \end{pmatrix}
+\end{multline}\end{split}\]</div>
+<p>である．
+行列の積を展開して具体的に計算してみると，</p>
+<div class="math notranslate nohighlight" id="equation-principal-36">
+<span class="eqno">(124)<a class="headerlink" href="#equation-principal-36" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+  &amp;T_v^{(\hat{ \boldsymbol{n} })} = \sigma_{11} \cos^2 \theta + \sigma_{22} \sin^2 \theta + 2\sigma_{12} \cos \theta \sin \theta \\
+  &amp;T_w^{(\hat{ \boldsymbol{n} })} = -\sigma_{11} \sin \theta \cos \theta +  \sigma_{22} \sin \theta \cos \theta +  \sigma_{12} \left(  \cos^2 \theta  - \sin^2 \theta  \right)
+\end{split}
+\end{align}\end{split}\]</div>
+<p>であり，三角関数の半角公式</p>
+<div class="math notranslate nohighlight" id="equation-principal-37">
+<span class="eqno">(125)<a class="headerlink" href="#equation-principal-37" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \cos^2 \theta  = \frac{ 1 + \cos 2 \theta }{2}, \quad
+  \sin^2 \theta  = \frac{ 1 - \cos 2 \theta }{2}
+\end{align}\]</div>
+<p>を利用して整理すると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-rot-traction2">
+<span class="eqno">(126)<a class="headerlink" href="#equation-eq-rot-traction2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+    &amp;T_v^{(\hat{ \boldsymbol{n} })} = \frac{ \sigma_{11} + \sigma_{22} }{2} +
+    \frac{ \sigma_{11} - \sigma_{22} }{2} \cos 2 \theta +  \sigma_{12} \sin 2\theta \\
+    &amp;T_w^{(\hat{ \boldsymbol{n} })} = -\frac{ \sigma_{11} - \sigma_{22} }{2} \sin 2\theta + \sigma_{12} \cos 2\theta
+\end{split}
+\end{align}\end{split}\]</div>
+<p>が得られる．式<a class="reference internal" href="#equation-eq-rot-traction2">(126)</a>は，外部からかかっている応力 <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}\)</span> と面（を表す法線）の角度 <span class="math notranslate nohighlight">\(\theta\)</span> がわかれば法線応力<span class="math notranslate nohighlight">\(
+T_v^{(\hat{ \boldsymbol{n} })}  \)</span>と剪断応力<span class="math notranslate nohighlight">\( T_w^{(\hat{ \boldsymbol{n} })}\)</span>がわかる，ということを表している．</p>
+</div>
+<div class="section" id="id10">
+<h3>モールの円とその意味<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>ここでは地震学で用いられる慣習によって圧縮正の（普段とは逆の）符号を用いている．書籍によっても定義はバラバラなので，他書と比較する際は注意すること．</p>
+</div>
+<p>式<a class="reference internal" href="#equation-eq-rot-traction2">(126)</a>だけでも十分有用なのだが，もうすこし簡略化された状況を考えよう．まず，圧縮を正とする法線応力 <span class="math notranslate nohighlight">\(\sigma_1\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_2\)</span> （ <span class="math notranslate nohighlight">\(\sigma_1&gt;\sigma_2\)</span> ）を導入し，</p>
+<div class="math notranslate nohighlight" id="equation-eq-mohr-notation1">
+<span class="eqno">(127)<a class="headerlink" href="#equation-eq-mohr-notation1" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+    \sigma_1 = -\sigma_{11}
+    \\
+    \sigma_2 = -\sigma_{22}
+    \\
+    \sigma_{12} = 0
+  \end{split}
+\end{align}\end{split}\]</div>
+<p>であると仮定する（図<a class="reference internal" href="#fig-mohr-layout-simplified"><span class="std std-numref">18</span></a>）．外部からかかる剪断応力 <span class="math notranslate nohighlight">\(\sigma_{12}\)</span> がゼロというのは強い仮定に思うかもしれないが，どんな場合でも適切に座標系を回転することで<a class="reference internal" href="#equation-eq-mohr-notation1">(127)</a>を満たすようにできることができるのだった．そのような場合，ここで導入した <span class="math notranslate nohighlight">\(\sigma_1\)</span> と <span class="math notranslate nohighlight">\(\sigma_2\)</span> は主応力に相当する．また，面に対する法線方向の応力を圧縮を正として <span class="math notranslate nohighlight">\(N=-T_v^{(\hat{ \boldsymbol{n}})}\)</span> , 剪断方向の応力をそのまま <span class="math notranslate nohighlight">\(S=T_w^{(\hat{ \boldsymbol{n} })}\)</span> としよう．
+これらの関係を<a class="reference internal" href="#equation-eq-rot-traction2">(126)</a>式に代入すると，</p>
+<div class="math notranslate nohighlight" id="equation-principal-38">
+<span class="eqno">(128)<a class="headerlink" href="#equation-principal-38" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\begin{split}
+  &amp; N = \frac{\sigma_1 + \sigma_2}{2} + \frac{\sigma_1 - \sigma_2}{2} \cos 2 \theta  \\
+  &amp; S = \frac{\sigma_1 - \sigma_2}{2} \sin 2 \theta 
+\end{split}
+\end{align}\end{split}\]</div>
+<p>より，</p>
+<div class="math notranslate nohighlight" id="equation-eq-mohr-circle">
+<span class="eqno">(129)<a class="headerlink" href="#equation-eq-mohr-circle" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \left( N - \frac{ \sigma_1 + \sigma_2} {2} \right)^2 + S^2
+  =
+  \left( \frac{ \sigma_1 - \sigma_2} {2} \right)^2
+\end{align}\]</div>
+<p>が得られる．この式は <span class="math notranslate nohighlight">\(N\)</span> – <span class="math notranslate nohighlight">\(S\)</span> 軸上の円を表していることから，<strong>モールの円</strong>と呼ばれる．</p>
+<div class="figure align-center" id="fig-mohr-layout-simplified">
+<a class="reference internal image-reference" href="_images/Mohr_Layout_Simplified.png"><img alt="_images/Mohr_Layout_Simplified.png" src="_images/Mohr_Layout_Simplified.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">図<a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref">17</span></a>からいくつかの仮定のもと（詳しくは本文）に単純化したレイアウト．</span><a class="headerlink" href="#fig-mohr-layout-simplified" title="Permalink to this image">¶</a></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：円の方程式</p>
+<p><span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面で，半径 <span class="math notranslate nohighlight">\(r\)</span> ，中心 <span class="math notranslate nohighlight">\((a,b)\)</span> を持つ円の方程式は以下のように表される．</p>
+<div class="math notranslate nohighlight" id="equation-principal-39">
+<span class="eqno">(130)<a class="headerlink" href="#equation-principal-39" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \left(x-a\right)^2 + \left( y-b \right)^2 = r^2
+\end{align}\]</div>
+</div>
+<p>これは，与えられた外部からの応力 <span class="math notranslate nohighlight">\(\sigma_1\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_2\)</span> に対して，任意の角度 <span class="math notranslate nohighlight">\(\theta\)</span> の面にかかる法線応力 <span class="math notranslate nohighlight">\(N\)</span> と剪断応力 <span class="math notranslate nohighlight">\(S\)</span> の組が，グラフの円上のどこかに来る，ということを意味している（図<a class="reference internal" href="#fig-mohr-circle"><span class="std std-numref">19</span></a>）．しかも，円上の位置は <span class="math notranslate nohighlight">\(N\)</span> 軸から反時計回りに角度 <span class="math notranslate nohighlight">\(2\theta\)</span> の位置である，ということもわかる．モールの円を作図することで，内部にかかっている応力を図解で求めることができるのだ．</p>
+<div class="figure align-center" id="fig-mohr-circle">
+<a class="reference internal image-reference" href="_images/Mohr_Circle.png"><img alt="_images/Mohr_Circle.png" src="_images/Mohr_Circle.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">モールの円．円の <span class="math notranslate nohighlight">\(N\)</span> 軸から角度 <span class="math notranslate nohighlight">\(2 \theta\)</span> 反時計回りの点の位置が，その面にかかる法線応力と剪断応力を表している．</span><a class="headerlink" href="#fig-mohr-circle" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="stress.html" title="previous page">応力</a>
+    <a class='right-next' id="next-link" href="eq-of-motion.html" title="next page">弾性体の運動方程式</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2021 Takuto Maeda. All Rights Reserved.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

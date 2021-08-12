@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>構成関係式 &#8212; 弾性体力学入門</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="まとめ" href="summary.html" />
+    <link rel="prev" title="弾性体の運動方程式" href="eq-of-motion.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">弾性体力学入門</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   弾性体力学入門
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="strain.html">
+   ひずみと変形
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stress.html">
+   応力
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="principal.html">
+   主応力・主ひずみと座標回転
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eq-of-motion.html">
+   弾性体の運動方程式
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   構成関係式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="summary.html">
+   まとめ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="greek.html">
+   ギリシャ文字の一覧
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/constitutive.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   構成関係式の導入
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     フォークト記法
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   弾性体を表現する様々なパラメタとその関係
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e">
+     ヤング率
+     <span class="math notranslate nohighlight">
+      \(E\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#g">
+     剛性率
+     <span class="math notranslate nohighlight">
+      \(G\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nu">
+     ポアソン比
+     <span class="math notranslate nohighlight">
+      \(\nu\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#k">
+     体積弾性率
+     <span class="math notranslate nohighlight">
+      \(K\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>構成関係式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>構成関係式の導入<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>運動方程式は，応力テンソル（の空間微分）がわかれば記述できる．つまり，かかっている力（応力テンソルの空間微分）がわかれば，物体の変形が記述できるということだ．では，応力はどうやって求めるのだろうか？物体が変形すると，それによってあらたに内力である応力がかかる．
+このとき，応力 <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span> とひずみ <span class="math notranslate nohighlight">\(\varepsilon_{ij}\)</span> の間をつなぐのが <strong>構成関係式（あるいは構成関係式）</strong> だ．構成関係式は，バネにつながれた質点におけるフックの法則（ <span class="math notranslate nohighlight">\(F = -k x\)</span> ）に相当するものであり，<strong>物体がひずんだときにどれだけの応力がかかるか</strong> を表現する．構成関係式は実験によって定まるような関係式であって，理論的に導出される類のものではない．だが，<strong>ひずみが十分に小さい場合</strong> には，質点におけるバネと同じように，応力がひずみの線形関数でよく表されるということが知られていいる．このような媒質を <strong>線形弾性体</strong> という．以下では，媒質が線形弾性体でよく近似できることを仮定する．</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>すでに述べたように実は独立成分はそれぞれ6つしかなく，9つというのはあくまでも数式表現の形式的な数のことだ．</p>
+</div>
+<p>ひずみも応力も最大9個の独立成分を持ち，応力がひずみの線形関数であるということは，たとえば応力 <span class="math notranslate nohighlight">\(\sigma_{11}\)</span> は，</p>
+<div class="math notranslate nohighlight" id="equation-constitutive-0">
+<span class="eqno">(140)<a class="headerlink" href="#equation-constitutive-0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \sigma_{11} = a_1 \varepsilon_{11} + a_2 \varepsilon_{12} + \cdots a_9 \varepsilon_{33}
+\end{align}\]</div>
+<p>のように，ひずみテンソル9つの線形な重ね合わせで書ける，ということである．</p>
+<p>ということは，すべての応力とひずみの組み合わせには，なんと <span class="math notranslate nohighlight">\(9\times 9=81\)</span> 個の係数が必要だ．形式的に書くと，構成関係式は</p>
+<div class="math notranslate nohighlight" id="equation-eq-constitutive-eq-general">
+<span class="eqno">(141)<a class="headerlink" href="#equation-eq-constitutive-eq-general" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \sigma_{ij} = \sum_{k=1}^3 \sum_{l=1}^3 C_{ijkl} \varepsilon_{kl}
+\end{align}\]</div>
+<p>と表される．</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>これまでのテンソルは行列とまったく同じ扱いをしてきたが，これは添字が4つもあるので行列とは明らかに異なる．応力テンソルやひずみテンソルといった2階のテンソル（添字2つのテンソル）は，ベクトル（添字1つ）をベクトルに移す線形写像であったが，弾性係数テンソルは添字4つの4階のテンソルであり，2階のテンソルを2階のテンソルに写像する関係を与えるものである．添字が多くなって複雑だが，式<a class="reference internal" href="#equation-eq-constitutive-eq-general">(141)</a>は行列とベクトルの積（あるいは2階のテンソルによるベクトルの線形写像）の式を拡張した形になっている．</p>
+</div>
+<p>ここで <span class="math notranslate nohighlight">\(C_{ijkl}\)</span> は<strong>弾性係数テンソル</strong>と呼ばれるパラメタ
+で， <span class="math notranslate nohighlight">\(i, j, k, l\)</span> それぞれが <span class="math notranslate nohighlight">\(1, 2, 3\)</span> の値をとり得るので，その個数は確かに <span class="math notranslate nohighlight">\(3^4=81\)</span> 個ある．
+81個もパラメタがあるのかとうんざりするかもしれないが，心配無用である．すでに調べたひずみテンソルと応力テンソルの対称性に加えて，**弾性体の特徴が方向に依存しない（等方性）**という仮定をすることによって，81個のうち独立なパラメタはなんと2個まで減らせるということが知られているのだ．その導出はこの入門文書の範囲を超えるので，ここではその結果を正しいものと受け入れてもらう．
+その構成関係式は，</p>
+<div class="math notranslate nohighlight" id="equation-eq-constitutive-lame">
+<span class="eqno">(142)<a class="headerlink" href="#equation-eq-constitutive-lame" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \sigma_{ij} = \lambda \delta_{ij} \sum_{k=1}^3 \varepsilon_{kk} + 2 \mu \varepsilon_{ij}
+\end{align}\]</div>
+<p>と表される．このような弾性体を<strong>線形等方弾性体</strong>と呼ぶ．</p>
+<div class="tip admonition">
+<p class="admonition-title">数学メモ：クロネッカーのデルタ</p>
+<p><a class="reference internal" href="#equation-eq-constitutive-lame">(142)</a>式に現れる <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> はクロネッカー（Kronecker）のデルタと呼ばれ，</p>
+<div class="math notranslate nohighlight" id="equation-constitutive-1">
+<span class="eqno">(143)<a class="headerlink" href="#equation-constitutive-1" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \delta_{ij} = \begin{cases}
+    1 &amp; i = j \\
+    0 &amp; i \neq j
+  \end{cases}
+\end{align}\end{split}\]</div>
+<p>と定義される量だ．
+この項があることによって， <span class="math notranslate nohighlight">\(i=j\)</span> と <span class="math notranslate nohighlight">\(i\neq j\)</span> を場合分けせず一本の式にまとめて書くことができる．もしクロネッカーのデルタを使わずに<a class="reference internal" href="#equation-eq-constitutive-lame">(142)</a>を表現しようとすると，
+\begin{align*}
+\sigma_{ij} =
+\begin{cases}
+\lambda \displaystyle \sum_{k=1}^3 \varepsilon_{kk} + 2 \mu \varepsilon_{ii} &amp; (i=j) \
+2 \mu \varepsilon_{ij} &amp; (i \neq j )\
+\end{cases}
+\end{align*}<br />
+となる．</p>
+</div>
+<p>このときの弾性係数テンソルは，</p>
+<div class="math notranslate nohighlight" id="equation-eq-cijkl">
+<span class="eqno">(144)<a class="headerlink" href="#equation-eq-cijkl" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  C_{ijkl} = \lambda \delta_{ij} \delta_{kl} + \mu (\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})
+\end{align}\]</div>
+<p>と表すことができることが知られている．</p>
+<div class="admonition">
+<p class="admonition-title">演習：線形等方弾性体の構成関係式</p>
+<p><a class="reference internal" href="#equation-eq-cijkl">(144)</a>を<a class="reference internal" href="#equation-eq-constitutive-eq-general">(141)</a>に代入して <span class="math notranslate nohighlight">\(j,l\)</span> について和を取り，クロネッカーのデルタの定義を用いることで，線形等方弾性体の構成関係式<a class="reference internal" href="#equation-eq-constitutive-lame">(142)</a>が得られることを確認せよ．</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>日本語で「定数」と呼ばれる習慣があるが，実際には値が一定であるという意味の「定数」ではない．これらのパラメタは弾性体の特徴を表すもので，弾性体の性質によって（一定ではない）異なる値を取りうる．</p>
+</div>
+<p>この構成関係式に現れたパラメタ <span class="math notranslate nohighlight">\(\lambda\)</span> と <span class="math notranslate nohighlight">\(\mu\)</span> を<strong>ラメ（Lam’e）の定数</strong>と呼ぶ．
+ちょっと分量が多いが，構成関係式を全成分書き下してみよう．</p>
+<div class="math notranslate nohighlight" id="equation-eq-constitutive-equation">
+<span class="eqno">(145)<a class="headerlink" href="#equation-eq-constitutive-equation" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \begin{split}
+  &amp; \sigma_{11} = \lambda ( \varepsilon_{11} + \varepsilon_{22} + \varepsilon_{33})  + 2 \mu \varepsilon_{11}
+    = \lambda \left( \frac{\partial u_1} {\partial x_1} + \frac{\partial u_2} {\partial x_2} + \frac{\partial u_3} {\partial x_3} \right)
+    + 2 \mu  \frac{\partial u_1} {\partial x_1} 
+  \\
+  &amp; \sigma_{22} = \lambda ( \varepsilon_{11} + \varepsilon_{22} + \varepsilon_{33})  + 2 \mu \varepsilon_{22}
+    = \lambda \left( \frac{\partial u_1} {\partial x_1} + \frac{\partial u_2} {\partial x_2} + \frac{\partial u_3} {\partial x_3} \right)
+    + 2 \mu  \frac{\partial u_2} {\partial x_2} 
+  \\
+  &amp; \sigma_{33} = \lambda ( \varepsilon_{11} + \varepsilon_{22} + \varepsilon_{33})  + 2 \mu \varepsilon_{33}
+    = \lambda \left( \frac{\partial u_1} {\partial x_1} + \frac{\partial u_2} {\partial x_2} + \frac{\partial u_3} {\partial x_3} \right)
+    + 2 \mu  \frac{\partial u_3} {\partial x_3} 
+  \\
+  &amp; \sigma_{23} = 2\mu \varepsilon_{23} =
+    \mu \left( \frac{ \partial u_2 }{ \partial x_3 } + \frac{\partial u_3 }{ \partial x_2} \right) \\
+  &amp; \sigma_{13} = 2\mu \varepsilon_{13} =
+    \mu \left( \frac{ \partial u_3 }{ \partial x_1 } + \frac{\partial u_1 }{ \partial x_3} \right) \\
+  &amp; \sigma_{12} = 2\mu \varepsilon_{12} =
+    \mu \left( \frac{ \partial u_1 }{ \partial x_2 } + \frac{\partial u_2 }{ \partial x_1} \right)     
+  \end{split}
+\end{align}\end{split}\]</div>
+<p>ひずみテンソルの定義を通じて，応力が歪と，あるいは変位と関係づけられた．</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>ここでの「原理的には」というのは，歪テンソルの9つの成分に対して， <span class="math notranslate nohighlight">\(\sigma_{ij}=\cdots\)</span> という方程式が9本できるので，未知数の数と方程式の本数が等しいため連立方程式が解を持ちうる，ということを意図している．</p>
+</div>
+<p>この方程式は，ひずみテンソル成分と弾性係数がわかれば応力テンソルの各成分が求まる，ということを意味しているが，これをひずみテンソル成分についての連立方程式としてみて，ひずみテンソルについて（原理的には）解くこともできる．一般に</p>
+<div class="math notranslate nohighlight" id="equation-constitutive-2">
+<span class="eqno">(146)<a class="headerlink" href="#equation-constitutive-2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \varepsilon_{ij} = \sum_{k,l=1}^3 D_{ijkl} \sigma_{kl}
+\end{align}\]</div>
+<p>のような形で構成関係式を表したときに，係数 <span class="math notranslate nohighlight">\(D_{ijkl}\)</span> のことを<strong>弾性コンプライアンス</strong>テンソルと呼ぶ．線形等方弾性体の場合には，</p>
+<div class="math notranslate nohighlight" id="equation-eq-complience-isotropic">
+<span class="eqno">(147)<a class="headerlink" href="#equation-eq-complience-isotropic" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \varepsilon_{ij} = - \frac{\lambda}{2 \mu(3\lambda +2 \mu)} \sigma_{kk}\delta_{ij} + \frac{1}{2\mu} \sigma_{ij}
+\end{align}\]</div>
+<p>である．</p>
+<div class="admonition">
+<p class="admonition-title">演習：弾性コンプライアンス</p>
+<p>線形等方弾性体の構成関係式<a class="reference internal" href="#equation-eq-constitutive-lame">(142)</a>を <span class="math notranslate nohighlight">\(\varepsilon_{ij}\)</span> について解いて<a class="reference internal" href="#equation-eq-complience-isotropic">(147)</a>を証明せよ．6元の連立方程式であるが，以下のステップで計算することにより比較的簡単に解くことができる．</p>
+<p>(i)  <span class="math notranslate nohighlight">\(i\neq j\)</span> の場合について <span class="math notranslate nohighlight">\(\varepsilon_{ij} = (1/2 \mu) \sigma_{ij}\)</span> を満たすことを示せ．</p>
+<p>(ii) <a class="reference internal" href="#equation-eq-constitutive-lame">(142)</a>から <span class="math notranslate nohighlight">\(\sigma_{11}+\sigma_{22}+\sigma_{33}\)</span> を計算し，それを <span class="math notranslate nohighlight">\(\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}\)</span> を用いて示せ．</p>
+<p>(iii) (ii)の結果をあらためて <span class="math notranslate nohighlight">\(i=j\)</span> の場合の<a class="reference internal" href="#equation-eq-constitutive-lame">(142)</a>に代入し整理することで， <span class="math notranslate nohighlight">\(\varepsilon_{ii}\)</span> を応力テンソルだけを用いて表現し，(i)の結果とあわせて<a class="reference internal" href="#equation-eq-complience-isotropic">(147)</a>を証明せよ．</p>
+</div>
+<p>ともあれ，これで変形があったとき（変位 <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> が与えられたとき）に，どのような応力がかかるかがわかるようになった．そしてどのような応力がかかるのかがわかれば，運動方程式によって，どのような変形が起こるのかもわかるのだ．</p>
+<div class="section" id="id3">
+<h3>フォークト記法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>構成関係式は，ある種の行列形式で書き下すこともできる：</p>
+<div class="math notranslate nohighlight" id="equation-eq-constitutive-equation-voigt">
+<span class="eqno">(148)<a class="headerlink" href="#equation-eq-constitutive-equation-voigt" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+  \left(
+  \begin{matrix}
+    \sigma_{11}\\
+    \sigma_{22}\\
+    \sigma_{33}\\
+    \sigma_{23}\\
+    \sigma_{13}\\
+    \sigma_{12}\\
+  \end{matrix}
+  \right)
+  =
+  \left(
+  \begin{matrix}
+    \lambda + 2\mu &amp; \lambda &amp; \lambda &amp; 0 &amp; 0&amp; 0 \\
+    \lambda  &amp; \lambda+ 2\mu &amp; \lambda &amp; 0 &amp; 0&amp; 0 \\
+    \lambda  &amp; \lambda &amp; \lambda + 2\mu &amp; 0 &amp; 0&amp; 0 \\
+    0 &amp; 0 &amp;0 &amp; \mu &amp; 0 &amp; 0\\
+    0 &amp; 0 &amp;0 &amp; 0 &amp; \mu &amp; 0 \\
+    0 &amp; 0 &amp;0 &amp; 0 &amp; 0 &amp; \mu \\
+  \end{matrix}
+  \right)
+  \left(
+  \begin{matrix}
+    \varepsilon_{11}\\
+    \varepsilon_{22}\\
+    \varepsilon_{33}\\
+    2\varepsilon_{23}\\
+    2\varepsilon_{13}\\
+    2\varepsilon_{12}\\
+  \end{matrix}
+  \right).
+\end{align}\end{split}\]</div>
+<p>このように， <span class="math notranslate nohighlight">\(11\)</span> ,  <span class="math notranslate nohighlight">\(22\)</span> ,  <span class="math notranslate nohighlight">\(33\)</span> ,  <span class="math notranslate nohighlight">\(23\)</span> ,  <span class="math notranslate nohighlight">\(13\)</span> ,  <span class="math notranslate nohighlight">\(12\)</span> 成分の順番に応力・ひずみテンソルを並べて，あたかも擬似的な6次元ベクトルのように表すと，構成関係を簡単に表現することができる．このような表記法は<strong>フォークト（Voigt）記法</strong>と呼ばれる．剪断ひずみのベクトル化表現に係数2がつくのは慣習に基づくものだ．ただし，分野によっては， <span class="math notranslate nohighlight">\(\varepsilon_{23}, \varepsilon_{13}, \varepsilon_{12}\)</span> ではなく係数行列の <span class="math notranslate nohighlight">\(\mu\)</span> に係数2を掛ける定義のしかたもある．
+．</p>
+<div class="admonition">
+<p class="admonition-title">演習：フォークト記法の確認</p>
+<p>フォークト記法に基づく構成関係式<a class="reference internal" href="#equation-eq-constitutive-equation-voigt">(148)</a>を展開して，もとの構成関係式<a class="reference internal" href="#equation-eq-constitutive-equation">(145)</a>に一致することを確認せよ．</p>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>弾性体を表現する様々なパラメタとその関係<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>分野によって，弾性体を表現するパラメタにはいろいろなものが用いられる．主要なものに，<strong>ヤング（Young）率</strong> <span class="math notranslate nohighlight">\(E\)</span> , <strong>剛性率</strong> <span class="math notranslate nohighlight">\(G\)</span> ，<strong>ポアソン（Poisson）比</strong> <span class="math notranslate nohighlight">\(\nu\)</span> ，<strong>体積弾性率</strong> <span class="math notranslate nohighlight">\(K\)</span> がある．</p>
+<p>任意の2つのパラメタで残りのパラメタを表現することができるので，どのような組み合わせを選んでもよいのだが，パラメタによっては，それ自身に物理的な意味付けがあることがあり，弾性体力学を応用する分野によって好まれるパラメタが異なる．理学分野の地震学では，理論的な導出がやりやすいという理由で，ラメの定数 <span class="math notranslate nohighlight">\(\lambda\)</span> と <span class="math notranslate nohighlight">\(\mu\)</span> が広く用いられる．一方，ラメの定数のうち <span class="math notranslate nohighlight">\(\lambda\)</span> のように，物理的な意味が与えられないパラメタもある．</p>
+<p>本節では，それらの弾性係数とラメの定数との関係をまとめておく．</p>
+<div class="section" id="e">
+<h3>ヤング率  <span class="math notranslate nohighlight">\(E\)</span><a class="headerlink" href="#e" title="Permalink to this headline">¶</a></h3>
+<p>ヤング率は，<strong>一方向の引張もしくは圧縮に対するひずみと応力の間の比例定数</strong>だ．図<a class="reference internal" href="#fig-young"><span class="std std-numref">21</span></a>のように，棒状の弾性体に棒の長さ方向（この場合は <span class="math notranslate nohighlight">\(x_3\)</span> 方向）に法線応力 <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> をかけると，それによって変形が起こる．そのときの <span class="math notranslate nohighlight">\(x_3\)</span> 方向の法線ひずみ <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> は</p>
+<div class="math notranslate nohighlight" id="equation-eq-young-strain">
+<span class="eqno">(149)<a class="headerlink" href="#equation-eq-young-strain" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \varepsilon_{33} = \frac{ \delta L }{ L}
+\end{align}\]</div>
+<p>と書けるだろう．ヤング率はこの法線応力と法線ひずみの比として，</p>
+<div class="math notranslate nohighlight" id="equation-eq-young">
+<span class="eqno">(150)<a class="headerlink" href="#equation-eq-young" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  E \equiv \frac{\sigma_{33}}{\varepsilon_{33}}
+\end{align}\]</div>
+<p>で定義される．</p>
+<div class="figure align-center" id="fig-young">
+<a class="reference internal image-reference" href="_images/Young.png"><img alt="_images/Young.png" src="_images/Young.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">ヤング率の模式図．(a)変形前とそこにかける応力．(b)変形後と変形により発生したひずみ．</span><a class="headerlink" href="#fig-young" title="Permalink to this image">¶</a></p>
+</div>
+<p>つまり，ヤング率は「弾性体を引っ張ったときどれだけ伸びやすいか」という指標であり，質点系の力学におけるバネ定数とほとんど同じものである．ヤング率は応力（SI単位系でN/m <span class="math notranslate nohighlight">\(^2\)</span> =Pa）と無次元のひずみの比であるので，応力と同じ次元（力/面積）を持つ．</p>
+<p>ヤング率は，ラメの定数と以下の式で相互変換できることが知られている．</p>
+<div class="math notranslate nohighlight" id="equation-eq-young-lame">
+<span class="eqno">(151)<a class="headerlink" href="#equation-eq-young-lame" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  E = \frac{ 3 \lambda + 2 \mu }{ \lambda + \mu} \mu
+\end{align}\]</div>
+</div>
+<div class="section" id="g">
+<h3>剛性率  <span class="math notranslate nohighlight">\(G\)</span><a class="headerlink" href="#g" title="Permalink to this headline">¶</a></h3>
+<p>剛性率はラメの定数 <span class="math notranslate nohighlight">\(\mu\)</span> の別名である． <span class="math notranslate nohighlight">\(G=\mu\)</span> ．剛性率は圧力（あるいは応力）と同じ次元を持つ．構成関係式のうち剪断応力と剪断ひずみの関係 <span class="math notranslate nohighlight">\(\sigma_{ij}=2\mu \varepsilon_{ij}=2 G\varepsilon_{ij} \)</span> （ <span class="math notranslate nohighlight">\(i\neq j\)</span> ）から <span class="math notranslate nohighlight">\(\varepsilon_{ij}=\sigma_{ij}/(2G)\)</span> であることに注目すると，媒質に剪断応力（物体をねじるような応力）がかかったときに，剛性率が大きいほど剪断ひずみが小さいと言える．つまり，剛性率は「物体のねじれにくさの指標」なのだ．</p>
+</div>
+<div class="section" id="nu">
+<h3>ポアソン比  <span class="math notranslate nohighlight">\(\nu\)</span><a class="headerlink" href="#nu" title="Permalink to this headline">¶</a></h3>
+<p>図<a class="reference internal" href="#fig-poisson"><span class="std std-numref">22</span></a>のように，有限の大きさの物体に法線応力 <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> をかけると，物体がその方向に伸びるだけでなく，それに直交する方向にも変形が起こる．ポアソン比は，物体に一方向の応力 <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> を与えたとき，その方向に対するひずみ <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> と，それに直交する方向のひずみ <span class="math notranslate nohighlight">\(\varepsilon_{11}\)</span> もしくは <span class="math notranslate nohighlight">\(\varepsilon_{22}\)</span> の比として定義される．</p>
+<div class="math notranslate nohighlight" id="equation-eq-poisson">
+<span class="eqno">(152)<a class="headerlink" href="#equation-eq-poisson" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \nu \equiv - \frac{ \varepsilon_{11} }{\varepsilon_{33} } = - \frac{ \varepsilon_{22} }{\varepsilon_{33} } 
+\end{align}\]</div>
+<p>ポアソン比は無次元のひずみの比であるので，無次元量である．符号がマイナスであるのは定義による．
+物体を一方向に引っ張って引き伸ばしたとき，ほとんどの物質はそれに直交する方向には縮むため，一般には <span class="math notranslate nohighlight">\(\nu&gt;0\)</span> であると思って構わない．とはいえ，あらゆる物体に対して <span class="math notranslate nohighlight">\(\nu&gt;0\)</span> であることが保証されているわけではない．ポアソン比が負（つまりある方向に引っ張ると他の方向にも膨らむ）の物質もごくまれに存在するし，人工的にも合成されているようだ．</p>
+<div class="figure align-center" id="fig-poisson">
+<a class="reference internal image-reference" href="_images/Poisson.png"><img alt="_images/Poisson.png" src="_images/Poisson.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">ポアソン比の模式図．(a)変形前とそこにかける応力．(b)変形後の様子．</span><a class="headerlink" href="#fig-poisson" title="Permalink to this image">¶</a></p>
+</div>
+<p>ポアソン比はラメの定数を用いると，</p>
+<div class="math notranslate nohighlight" id="equation-eq-poisson-lame">
+<span class="eqno">(153)<a class="headerlink" href="#equation-eq-poisson-lame" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \nu = \frac{ \lambda } { 2 \left( \lambda + \mu \right) }
+\end{align}\]</div>
+<p>と表されることが知られている．</p>
+</div>
+<div class="section" id="k">
+<h3>体積弾性率  <span class="math notranslate nohighlight">\(K\)</span><a class="headerlink" href="#k" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>一般には体積弾性率は圧力にたいしてどれだけ体積が縮むか，として定義されるが，符号が逆の応力に対してどれだけ膨らむか，としても全く同じことである．</p>
+</div>
+<p>体積弾性率は，等方的な応力 <span class="math notranslate nohighlight">\(\sigma_{11}=\sigma_{22}=\sigma_{33}\)</span> （図<a class="reference internal" href="#fig-bulk"><span class="std std-numref">23</span></a>）に対して，物体がどれだけ体積変化するかを表す指標である．体積変化は <span class="math notranslate nohighlight">\(\theta=\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}\)</span> で表すことができたので，体積弾性率はそれと応力の比</p>
+<div class="math notranslate nohighlight" id="equation-constitutive-3">
+<span class="eqno">(154)<a class="headerlink" href="#equation-constitutive-3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  K = \frac{\sigma_{11}}{\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}}
+\end{align}\]</div>
+<p>で定義される．体積弾性率は応力やラメの定数と同じ次元を持つ．</p>
+<div class="figure align-center" id="fig-bulk">
+<a class="reference internal image-reference" href="_images/Bulk.png"><img alt="_images/Bulk.png" src="_images/Bulk.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">体積弾性率の模式図．(a)変形前．(b)変形後．</span><a class="headerlink" href="#fig-bulk" title="Permalink to this image">¶</a></p>
+</div>
+<p>体積弾性率とラメの定数との換算式は，</p>
+<div class="math notranslate nohighlight" id="equation-eq-bulk-lame">
+<span class="eqno">(155)<a class="headerlink" href="#equation-eq-bulk-lame" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  K = \frac{ 3 \lambda + 2 \mu}{3}
+\end{align}\]</div>
+<p>である．</p>
+<div class="admonition">
+<p class="admonition-title">演習：弾性係数の相互変換</p>
+<p>構成関係式<a class="reference internal" href="#equation-eq-constitutive-equation">(145)</a>に以下の条件をそれぞれ代入することで，ヤング率・ポアソン比・体積弾性率のラメの定数による表現<a class="reference internal" href="#equation-eq-young-lame">(151)</a>, <a class="reference internal" href="#equation-eq-poisson-lame">(153)</a>, <a class="reference internal" href="#equation-eq-bulk-lame">(155)</a>を導出せよ，</p>
+<p>(1)  <span class="math notranslate nohighlight">\(\sigma_{11}=\sigma_{22}=0\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{33}&gt;0\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{ij}=0\)</span>   <span class="math notranslate nohighlight">\((i\neq j)\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_{ij}=0\)</span>   <span class="math notranslate nohighlight">\((i \neq j)\)</span> のとき， <span class="math notranslate nohighlight">\(E=\sigma_{33}/\varepsilon_{33}\)</span></p>
+<p>(2)  <span class="math notranslate nohighlight">\(\varepsilon_{22} = \varepsilon_{11}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{11}=\sigma_{22}=0\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{ij} = 0\)</span>   <span class="math notranslate nohighlight">\((i\neq j)\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_{ij} = 0\)</span>   <span class="math notranslate nohighlight">\((i \neq j)\)</span> のとき， <span class="math notranslate nohighlight">\(\nu = -\varepsilon_{11}/\varepsilon_{33}\)</span></p>
+<p>(3)  <span class="math notranslate nohighlight">\(\sigma_{11} = \sigma_{22} = \sigma_{33}\)</span> ,   <span class="math notranslate nohighlight">\(\sigma_{ij} = 0\)</span>   <span class="math notranslate nohighlight">\((i\neq j)\)</span> ,  <span class="math notranslate nohighlight">\(\varepsilon_{ij} = 0\)</span>   <span class="math notranslate nohighlight">\((i \neq j)\)</span> のとき， <span class="math notranslate nohighlight">\(K=\sigma_{11}/(\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33})\)</span></p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="eq-of-motion.html" title="previous page">弾性体の運動方程式</a>
+    <a class='right-next' id="next-link" href="summary.html" title="next page">まとめ</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2021 Takuto Maeda. All Rights Reserved.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
