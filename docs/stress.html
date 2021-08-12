@@ -248,7 +248,7 @@
 地球上にあるかぎり，弾性体のあらゆる点には <span class="math notranslate nohighlight">\(g\)</span> だけの重力加速度がかかっているため，微小体積 <span class="math notranslate nohighlight">\(dV\)</span> にはその場の質量密度 <span class="math notranslate nohighlight">\(\rho\)</span> を用いて <span class="math notranslate nohighlight">\(\rho \times g \times dV\)</span> だけの実体力がかかる．</p>
 <p>もう一つは， <strong>面力（surface force）</strong> とよばれる力だ．
 弾性体は，たとえ全体としては静止していても，物体の <strong>内部</strong> にはさまざまな力がかかり，それが総体として釣り合っている．
-たとえば，図<a class="reference internal" href="#fig-internal-force"><span class="std std-numref">8</span></a>のように，一本の棒を左右に張力 <span class="math notranslate nohighlight">\(T\)</span> で引っ張ることを考えよう．
+たとえば，<a class="reference internal" href="#fig-internal-force"><span class="std std-numref"> Fig. 8</span></a>のように，一本の棒を左右に張力 <span class="math notranslate nohighlight">\(T\)</span> で引っ張ることを考えよう．
 この棒は静止して（壊れることなく）釣り合っているものとする．
 では，その棒を <strong>仮想的に</strong> どこかで真っ二つに切り離してみたらどうだろうか？
 もし，その仮想的な断面にまったく力がかかっていなかったら，棒は2つに別れて左右に飛んでいってしまうだろう．
@@ -260,7 +260,7 @@
 </div>
 <p>内力である面力は，どのように仮想的な面をとるかによってその力の向きや大きさが変わってくる．
 先の例では，内力は仮想切断面に垂直に働いていた．
-では，先の棒を仮想的に2つにわけるときに，図<a class="reference internal" href="#fig-internal-force2"><span class="std std-numref">9</span></a>のように仮想面を斜めに切ったらどうだろうか？
+では，先の棒を仮想的に2つにわけるときに，<a class="reference internal" href="#fig-internal-force2"><span class="std std-numref"> Fig. 9</span></a>のように仮想面を斜めに切ったらどうだろうか？
 外力は同じだから，面には全体として左右に引っ張り合うような力が働くが，それは面に対して斜めに働いている．
 言い換えれば，この内力は面に垂直な成分と，面を横滑りさせるような成分とに分解できるだろう．
 このように，内力とは <strong>物体に仮想的な面を考えたときに面にかかる力</strong> であり，かつ <strong>同じ場所でも面のとり方によって異なる</strong> のだ．</p>
@@ -272,11 +272,15 @@
 <p class="sidebar-title"></p>
 <p>この図はいかにも弾性体ひとかたまりを取ってきた表面のように見えるかもしれないが，そうではなく，弾性体の内部一部をくり抜いた物体の表面だと思ってほしい．</p>
 </div>
-<p>いま，図<a class="reference internal" href="#fig-katamari"><span class="std std-numref">10</span></a>のように，弾性体のある領域の面の一部分の微小な面積要素 <span class="math notranslate nohighlight">\(dS\)</span> を取ってきて，そこに働く力全体を <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> としよう．
+<p>いま，<a class="reference internal" href="#fig-katamari"><span class="std std-numref"> Fig. 10</span></a>のように，弾性体のある領域の面の一部分の微小な面積要素 <span class="math notranslate nohighlight">\(dS\)</span> を取ってきて，そこに働く力全体を <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> としよう．
 これまでの議論と同じように，この力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> は，面の向きによって変わる．では，その「面の向き」はどう表現するのが良いだろうか？実は，面の向きは面の外側を正とする面の法線ベクトル（大きさ1で方向だけを表すベクトル） <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> によって特徴づけることができる．</p>
+<div class="figure align-center" id="fig-katamari">
+<a class="reference internal image-reference" href="_images/SurfaceForce.png"><img alt="_images/SurfaceForce.png" src="_images/SurfaceForce.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">弾性体の塊（体積 <span class="math notranslate nohighlight">\(V\)</span> ）と，その面要素 <span class="math notranslate nohighlight">\(dS\)</span> に働く力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> の模式図． <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> は要素 <span class="math notranslate nohighlight">\(dS\)</span> の法線ベクトルである．</span><a class="headerlink" href="#fig-katamari" title="Permalink to this image">¶</a></p>
+</div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>ベクトル <span class="math notranslate nohighlight">\(n\)</span> の上についている記号 <span class="math notranslate nohighlight">\(\hat{}\)</span> は <strong>ハット(hat)</strong> という．この講義では，ハット記号を長さが1で方向だけを表す単位ベクトルの印として使う．</p>
+<p>ベクトル <span class="math notranslate nohighlight">\(n\)</span> の上についている記号 <code class="docutils literal notranslate"><span class="pre">^</span></code> は <strong>ハット(hat)</strong> という．本書では，ハット記号を長さが1で方向だけを表す単位ベクトルの印として使う．</p>
 </div>
 <p>逆に，あるベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> に垂直な面，というのは一つに定まる．力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> は，面の向き <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> と面の面積 <span class="math notranslate nohighlight">\(dS\)</span> に依存する量である．
 だが，面力をモデル化するときに，有限のサイズ <span class="math notranslate nohighlight">\(dS\)</span> を扱うのは厄介だ． <span class="math notranslate nohighlight">\(dS\)</span> のサイズが変わると， <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> も変わってしまう．たとえば水圧を考えると，圧力 <span class="math notranslate nohighlight">\(\times\)</span> 面積がその面にかかる力なので，同じ水圧下でもある面かかっている力は面積に比例する．</p>
@@ -292,10 +296,6 @@
 <p>で定義する．</p>
 <p>これは要するに面積あたりの力なのだが， <span class="math notranslate nohighlight">\(dS\rightarrow 0\)</span> の極限をとることで，「十分に小さな面要素を取る」ということを意味している．この極限操作によって，面の複雑な凸凹は考えないで済む（凸凹のスケールよりも小さな面積 <span class="math notranslate nohighlight">\(dS\)</span> を取れば，その面は平らな正方形で近似できる）のである．
 トラクションの単位は面積あたりの力なので，SI単位系であればN/m <span class="math notranslate nohighlight">\({}^2\)</span> だ．</p>
-<div class="figure align-center" id="fig-katamari">
-<a class="reference internal image-reference" href="_images/SurfaceForce.png"><img alt="_images/SurfaceForce.png" src="_images/SurfaceForce.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">弾性体の塊（体積 <span class="math notranslate nohighlight">\(V\)</span> ）と，その面要素 <span class="math notranslate nohighlight">\(dS\)</span> に働く力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> の模式図． <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> は要素 <span class="math notranslate nohighlight">\(dS\)</span> の法線ベクトルである．</span><a class="headerlink" href="#fig-katamari" title="Permalink to this image">¶</a></p>
-</div>
 <p>ところで，トラクションは向きも重要である．ここでは， トラクションを法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> の向きの反対側から正の側に向かう力を正と定義する．
 外向きに膨張する力を正に取るということだ．
 同じ弾性体力学を使っていても，分野によって定義が異なる場合があるので注意してほしい．
@@ -308,7 +308,7 @@
 <p>である．</p>
 <p>面力あるいはトラクションとしては， <strong>圧力</strong> がイメージしやすいだろう．圧力は「面」に垂直に働く力で，その単位は（力/面積）だ．圧力は面の外側から内側に向かう力なので，物質表面に働く圧力 <span class="math notranslate nohighlight">\(p\)</span> は，トラクションの符号としては <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})} = -p \hat{\boldsymbol{n}}\)</span> のようにマイナスが付く．</p>
 <p>粘性のない水（流体）の中であれば，圧力は面に垂直な方向しかとらないので単純なのだが，固体中の面力はもうすこし複雑である．
-面力の大きな特徴は， <strong>力が面積要素の向きに依存する</strong> ということだ．このことを，弾性体内部の小さな立方体を取り出すことによって考えよう（図 <a class="reference internal" href="#fig-bunkai"><span class="std std-numref">11</span></a>）．</p>
+面力の大きな特徴は， <strong>力が面積要素の向きに依存する</strong> ということだ．このことを，弾性体内部の小さな立方体を取り出すことによって考えよう（<a class="reference internal" href="#fig-bunkai"><span class="std std-numref"> Fig. 11</span></a>）．</p>
 <p><span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_2\)</span> ,  <span class="math notranslate nohighlight">\(x_3\)</span> それぞれの方向に法線を持つ面（ <span class="math notranslate nohighlight">\(x_2\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面,  <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面,  <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面）に対して，トラクション <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_1)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_2)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_3)}\)</span> がかかる．ただし，</p>
 <div class="math notranslate nohighlight" id="equation-eq-normalvector-definition">
 <span class="eqno">(45)<a class="headerlink" href="#equation-eq-normalvector-definition" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
@@ -358,8 +358,8 @@
 <p>教科書によっては，応力テンソルの <span class="math notranslate nohighlight">\(i\)</span> と <span class="math notranslate nohighlight">\(j\)</span> の順番が逆転していたり，1つ目と2つ目の添字の意味が逆転していたり，いろいろのようだ．だが，この直後で示す応力テンソルの対称性によって，それらは実は「どっちでもいい」ことになる．</p>
 </div>
 <p>これらのうち， <span class="math notranslate nohighlight">\(\sigma_{11}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{22}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> を <strong>法線応力（normal stress）</strong> ，残りの <span class="math notranslate nohighlight">\(\sigma_{23}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{13}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{12}\)</span> を <strong>剪断応力（shear stress）</strong> と呼んで区別することがある．これらの名前の付け方はひずみテンソルと同じで，法線応力は物体を膨張・圧縮させようとする力に，剪断応力はねじれの力にそれぞれ相当する．
-図<a class="reference internal" href="#fig-stress-12"><span class="std std-numref">12</span></a>に， <span class="math notranslate nohighlight">\(x_1\)</span> - <span class="math notranslate nohighlight">\(x_2\)</span> 面内の微小四角形の辺に働く応力テンソルの成分を示した．
-図<a class="reference internal" href="#fig-bunkai"><span class="std std-numref">11</span></a>では表現の都合上法線が座標軸正の方向を向いた面の応力（トラクション）しか表示していなかったが，実際には反対側の面にも（法線方向が反対なので）逆方向の力がかかる．
+<a class="reference internal" href="#fig-stress-12"><span class="std std-numref"> Fig. 12</span></a>に， <span class="math notranslate nohighlight">\(x_1\)</span> - <span class="math notranslate nohighlight">\(x_2\)</span> 面内の微小四角形の辺に働く応力テンソルの成分を示した．
+<a class="reference internal" href="#fig-bunkai"><span class="std std-numref"> Fig. 11</span></a>では表現の都合上法線が座標軸正の方向を向いた面の応力（トラクション）しか表示していなかったが，実際には反対側の面にも（法線方向が反対なので）逆方向の力がかかる．
 したがって，法線応力は全体として（符号がプラスの場合には）物質を膨張させる方向の張力であることがわかるだろう．</p>
 <div class="figure align-center" id="fig-stress-12">
 <a class="reference internal image-reference" href="_images/stress_12.png"><img alt="_images/stress_12.png" src="_images/stress_12.png" style="width: 60%;" /></a>
@@ -374,7 +374,7 @@
   \sigma_{ij} = \sigma_{ji}
 \end{align}\]</div>
 <p>この条件は，弾性体全体が回転しない（より厳密には，角運動量が保存する）という条件から導かれる．
-図<a class="reference internal" href="#fig-stress-symmetry"><span class="std std-numref">13</span></a>に <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内の微小正方形にかかる応力テンソルを示した．
+<a class="reference internal" href="#fig-stress-symmetry"><span class="std std-numref"> Fig. 13</span></a>に <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内の微小正方形にかかる応力テンソルを示した．
 媒質全体が回転しないためには，明らかに</p>
 <div class="math notranslate nohighlight" id="equation-stress-5">
 <span class="eqno">(49)<a class="headerlink" href="#equation-stress-5" title="Permalink to this equation">¶</a></span>\[\begin{align}
@@ -399,7 +399,7 @@
 <p>で求められるということだ．
 これは <strong>コーシー（Cauchy）の関係式</strong> と呼ばれている．コーシーの関係式は， <strong>応力テンソルの6つの独立な成分さえわかれば，弾性体内に働くあらゆる方向のトラクションを知ることができる</strong> ということを意味している．</p>
 <p>この関係式は，釣り合いの状態にある微小三角錐（あるいは2次元であれば三角形）のトラクションを考察することで導出できる．ここでは簡単のため，ふたたび2次元の <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面だけを考察しよう．</p>
-<p>まず，図<a class="reference internal" href="#fig-stress-equi"><span class="std std-numref">14</span></a>のように <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面における微小三角形に働く力を考える．
+<p>まず，<a class="reference internal" href="#fig-stress-equi"><span class="std std-numref"> Fig. 14</span></a>のように <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面における微小三角形に働く力を考える．
 三角形の2辺はそれぞれ <span class="math notranslate nohighlight">\(x_1\)</span> 軸と <span class="math notranslate nohighlight">\(x_2\)</span> 軸に平行でその長さを <span class="math notranslate nohighlight">\(dx_1\)</span> と <span class="math notranslate nohighlight">\(dx_2\)</span> ，もう一つの辺は長さ <span class="math notranslate nohighlight">\(d\ell\)</span> で，その辺（3次元なら面）の法線ベクトルを <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> ，そこに働くトラクションベクトルを <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}=(T_1, T_2)\)</span> とする．
 残りの2つの面に働くトラクションベクトルの成分は，定義により図のような応力テンソル成分で表現することができる．</p>
 <div class="figure align-center" id="fig-stress-equi">

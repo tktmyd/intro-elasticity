@@ -260,7 +260,7 @@
 <a class="reference internal image-reference" href="_images/x2-stress.png"><img alt="_images/x2-stress.png" src="_images/x2-stress.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">弾性体内の微小体積要素に働く <span class="math notranslate nohighlight">\(x_2\)</span> 方向の応力テンソル成分．</span><a class="headerlink" href="#fig-rippou" title="Permalink to this image">¶</a></p>
 </div>
-<p>図 <a class="reference internal" href="#fig-rippou"><span class="std std-numref">20</span></a>にあらためて立方体 <span class="math notranslate nohighlight">\(dx_1dx_2dx_3\)</span> にかかる応力を示した．
+<p><a class="reference internal" href="#fig-rippou"><span class="std std-numref"> Fig. 20</span></a>にあらためて立方体 <span class="math notranslate nohighlight">\(dx_1dx_2dx_3\)</span> にかかる応力を示した．
 特に <span class="math notranslate nohighlight">\(x_2\)</span> 方向に法線を持つ面（ <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面）にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力を詳しく見ていくことにしよう．</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -278,13 +278,6 @@
   T^{(\hat{\boldsymbol{n}}_2)}_2(x_2+dx_2) = + \sigma_{22}(x_2+dx_2)
 \end{align}\]</div>
 <p>のトラクションがかかっている．トラクションは面積あたりの力であったので，この面の面積をトラクションに乗じて，かつ両方のトラクションの効果を足し合わせることにより， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力は</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="math notranslate nohighlight">
-\[ 
-\sigma_{22}(x_2+dx_2)\simeq \sigma_{22}(x_2) + \frac{\partial \sigma_{22}}{\partial x_2} dx_2
- \]</div>
-</div>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-3">
 <span class="eqno">(134)<a class="headerlink" href="#equation-eq-of-motion-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{multline}
     \left(  T^{(\hat{\boldsymbol{n}}_2)}_2(x_2+dx_2) +   T_2^{(-\hat{\boldsymbol{n}}_2)}(x_2) \right) dx_1 dx_3 = \left[ \sigma_{22}(x_2+dx_2) - \sigma_{22}(x_2) \right] dx_1 dx_3 \\
@@ -294,7 +287,7 @@
         \frac{ \partial \sigma_{22} }{\partial x_2} dx_2
       \right] -  \sigma_{22}(x_2) \right) dx_1 dx_3 = \frac{  \partial \sigma_{22} }{\partial x_2} dx_1 dx_2 dx_3
 \end{multline}\end{split}\]</div>
-<p>と表される．ただし， <span class="math notranslate nohighlight">\(dx_2\)</span> が十分小さいという条件のもとで1次のテイラー展開を行った．</p>
+<p>と表される．ただし， <span class="math notranslate nohighlight">\(dx_2\)</span> が十分小さいという条件のもとで1次のテイラー展開（<span class="math notranslate nohighlight">\(\sigma_{22}(x_2+dx_2)\simeq \sigma_{22}(x_2) + (\partial \sigma_{22} / \partial x_2 ) dx_2\)</span>）を行った．</p>
 <p><span class="math notranslate nohighlight">\(x_2\)</span> 方向にかかる力は，まだこれだけではない．さらに， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面（ <span class="math notranslate nohighlight">\(x_3\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{23}\)</span> と <span class="math notranslate nohighlight">\(x_2\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面（ <span class="math notranslate nohighlight">\(x_1\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{21}\)</span> とがある．全く同じように計算すると，それぞれ</p>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-4">
 <span class="eqno">(135)<a class="headerlink" href="#equation-eq-of-motion-4" title="Permalink to this equation">¶</a></span>\[\begin{align}

@@ -599,14 +599,14 @@
   \boldsymbol{v} = \boldsymbol{R}(\theta) \boldsymbol{u}
 \end{align}
 ```
-と，それによって得られるベクトル $\boldsymbol{v} $ は， $\boldsymbol{u}$ を角度 $\theta$ だけ回転したもの（図{numref}`{number} <fig_rotation>`(a)）になるのだった．その逆行列が
+と，それによって得られるベクトル $\boldsymbol{v} $ は， $\boldsymbol{u}$ を角度 $\theta$ だけ回転したもの（{numref}` Fig. {number} <fig_rotation>`a）になるのだった．その逆行列が
 ```{math}
 :label: 
 \begin{align}
 \boldsymbol{u} = \boldsymbol{R}^{-1}(\theta) \boldsymbol{v}
 \end{align}
 ```
-と書けることから，これは角度を $-\theta$ だけ回転したものになる．したがって， $\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)$ が成り立つ． $\boldsymbol{R}(-\theta)$ は，ベクトルではなく**座標系を $\theta$ だけ回転させた**，と見ることもできる（図{numref}`{number} <fig_rotation>`b）．
+と書けることから，これは角度を $-\theta$ だけ回転したものになる．したがって， $\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)$ が成り立つ． $\boldsymbol{R}(-\theta)$ は，ベクトルではなく**座標系を $\theta$ だけ回転させた**，と見ることもできる（{numref}` Fig. {number} <fig_rotation>`b）．
 
 この関係を用いると，{eq}`eq:diag_stress`は**応力テンソルを回転した座標系で表したもの**という意味をもつことが分かってくる．以下，そのことを示していこう．
 
@@ -756,7 +756,7 @@
 \end{align}
 ```
 を考えよう．ただしここでは $\varepsilon_{12}=c>0$ であるとする．
-このひずみテンソルによってもたらされる変形場は図{numref}`{number} <fig_strain_field>`(d)に示されている．
+このひずみテンソルによってもたらされる変形場は{numref}` Fig. {number} <fig_strain_field>`(d)に示されている．
 
 ひずみテンソルの固有値を $\lambda$ ，固有ベクトルを $\boldsymbol{v}$ とすると，
 ```{math}
@@ -859,7 +859,7 @@
 ```
 と対角化された．
 
-図{numref}`{number} <fig_strain_rotation>`は，(a)に{eq}`eq:straion_rotation_1` のひずみによる変形場を，(b)に回転後の{eq}`eq:straion_rotation_2` による変形場をそれぞれ示す．図{numref}`{number} <fig_strain_rotation>`(a)では $x_1$ ,  $x_2$ 軸の方向には座標軸に直交した変形が得られているが，図{numref}`{number} <fig_strain_rotation>`(b)では，たしかに主方向である $x_1'$ と $x_2'$ 方向には**軸方向にだけ**変形しているということがわかるだろう．また，注意深く図{numref}`{number} <fig_strain_rotation>`(a)と(b)を比べると，(a)に対して(b)のベクトル場は45度時計回りに回転していることも確認できるだろう．
+{numref}` Fig. {number} <fig_strain_rotation>`は，(a)に{eq}`eq:straion_rotation_1` のひずみによる変形場を，(b)に回転後の{eq}`eq:straion_rotation_2` による変形場をそれぞれ示す．{numref}` Fig. {number} <fig_strain_rotation>`aでは $x_1$ ,  $x_2$ 軸の方向には座標軸に直交した変形が得られているが，{numref}` Fig. {number} <fig_strain_rotation>`(b)では，たしかに主方向である $x_1'$ と $x_2'$ 方向には**軸方向にだけ**変形しているということがわかるだろう．また，注意深く{numref}` Fig. {number} <fig_strain_rotation>`aと{numref}` Fig. {number} <fig_strain_rotation>`bを比べると，(a)に対して(b)のベクトル場は45度時計回りに回転していることも確認できるだろう．
 
 
 ```{figure} ./fig/strain_rotation.png
@@ -877,7 +877,7 @@
 ```{margin}
 面ではなくて線だろう，と思うかもしれないが，2次元の問題ではこの線がは $z$ 方向（紙面の手前と奥行き方向）に無限に続いていると仮定している．であるから，これはあくまでも $x_1$ -- $x_2$ 断面を切る面なのだ．
 ```
- $x_1$ -- $x_2$ 平面内における2次元の変形を考えよう．図{numref}`{number} <fig_Mohr_Layout>`のように，法線ベクトル $\hat{\boldsymbol{n}}$ を持つ面を考え，そこに働くトラクションを調べることにしよう．我々はもうコーシーの関係式を知っているのだから，面の法線ベクトルを求め，それを応力テンソルに作用させれば，どんな面に対してもトラクションベクトルを求めることができる．
+ $x_1$ -- $x_2$ 平面内における2次元の変形を考えよう．{numref}` Fig. {number} <fig_Mohr_Layout>`のように，法線ベクトル $\hat{\boldsymbol{n}}$ を持つ面を考え，そこに働くトラクションを調べることにしよう．我々はもうコーシーの関係式を知っているのだから，面の法線ベクトルを求め，それを応力テンソルに作用させれば，どんな面に対してもトラクションベクトルを求めることができる．
 ただし実用上は，ある角度 $\theta$ が与えられたときに，その角度の面にかかるトラクションの，面に対する法線方向や接線方向のトラクションを調べるということがよくある．本節では，図示によって法線・接線方向のトラクションを調べることができる，モール（Mohr）の円という強力な方法を紹介する．
 
 ```{figure} ./fig/Mohr_Layout.png
@@ -941,7 +941,7 @@
 
 この計算で得られたのは，トラクションの $x_1$ 方向と $x_2$ 方向の成分 $ T_1^{(\hat{ \boldsymbol{n} })}$ ,  $ T_2^{(\hat{ \boldsymbol{n}})}$ である．
 では，今考えている法線ベクトル $\hat{\boldsymbol{n}}$ の面の法線方向に働く応力（法線応力）や接線方向に働く応力（剪断応力）はどうだろうか？．
-それは，トラクションベクトルの図{numref}`{number} <fig_Mohr_Layout>`中の $v$ -- $w$ 座標軸方向の値を求めることに相当する． $x_1$ -- $x_2$ 座標系とくらべて $v$ -- $w$ 座標系は $+\theta$ だけ回転しているのだから， $x_1$ -- $x_2$ 座標系で表したベクトルを $v$ -- $w$ 座標系でみると，あたかも $-\theta$ だけ反対方向に回転したかのように見えるはずだ．つまり， $x_1$ -- $x_2$ 座標系で求まったトラクションベクトルを $-\theta$ だけ回転することにより，法線応力と剪断応力が求まるのだ．それぞれの値を $T_v^{(\hat{ \boldsymbol{n} })}$ ,  $T_w^{(\hat{ \boldsymbol{n} })}$ とすると，
+それは，トラクションベクトルの{numref}` Fig. {number} <fig_Mohr_Layout>`中の $v$ -- $w$ 座標軸方向の値を求めることに相当する． $x_1$ -- $x_2$ 座標系とくらべて $v$ -- $w$ 座標系は $+\theta$ だけ回転しているのだから， $x_1$ -- $x_2$ 座標系で表したベクトルを $v$ -- $w$ 座標系でみると，あたかも $-\theta$ だけ反対方向に回転したかのように見えるはずだ．つまり， $x_1$ -- $x_2$ 座標系で求まったトラクションベクトルを $-\theta$ だけ回転することにより，法線応力と剪断応力が求まるのだ．それぞれの値を $T_v^{(\hat{ \boldsymbol{n} })}$ ,  $T_w^{(\hat{ \boldsymbol{n} })}$ とすると，
 ```{math}
 :label: eq:rot-traction1
 \begin{multline}
@@ -1031,7 +1031,7 @@ T_v^{(\hat{ \boldsymbol{n} })}  $と剪断応力$ T_w^{(\hat{ \boldsymbol{n} })}
   \end{split}
 \end{align}
 ```
-であると仮定する（図{numref}`{number} <fig_Mohr_Layout_Simplified>`）．外部からかかる剪断応力 $\sigma_{12}$ がゼロというのは強い仮定に思うかもしれないが，どんな場合でも適切に座標系を回転することで{eq}`eq:mohr-notation1`を満たすようにできることができるのだった．そのような場合，ここで導入した $\sigma_1$ と $\sigma_2$ は主応力に相当する．また，面に対する法線方向の応力を圧縮を正として $N=-T_v^{(\hat{ \boldsymbol{n}})}$ , 剪断方向の応力をそのまま $S=T_w^{(\hat{ \boldsymbol{n} })}$ としよう．
+であると仮定する（{numref}` Fig. {number} <fig_Mohr_Layout_Simplified>`）．外部からかかる剪断応力 $\sigma_{12}$ がゼロというのは強い仮定に思うかもしれないが，どんな場合でも適切に座標系を回転することで{eq}`eq:mohr-notation1`を満たすようにできることができるのだった．そのような場合，ここで導入した $\sigma_1$ と $\sigma_2$ は主応力に相当する．また，面に対する法線方向の応力を圧縮を正として $N=-T_v^{(\hat{ \boldsymbol{n}})}$ , 剪断方向の応力をそのまま $S=T_w^{(\hat{ \boldsymbol{n} })}$ としよう．
 これらの関係を{eq}`eq:rot-traction2`式に代入すると，
 ```{math}
 :label: 
@@ -1059,7 +1059,7 @@ T_v^{(\hat{ \boldsymbol{n} })}  $と剪断応力$ T_w^{(\hat{ \boldsymbol{n} })}
 :width: 80%
 :name: fig_Mohr_Layout_Simplified
 
-図{numref}`{number} <fig_Mohr_Layout>`からいくつかの仮定のもと（詳しくは本文）に単純化したレイアウト．
+{numref}` Fig. {number} <fig_Mohr_Layout>`からいくつかの仮定のもと（詳しくは本文）に単純化したレイアウト．
 ```
 
 
@@ -1074,7 +1074,7 @@ T_v^{(\hat{ \boldsymbol{n} })}  $と剪断応力$ T_w^{(\hat{ \boldsymbol{n} })}
 ```
 ````
 
-これは，与えられた外部からの応力 $\sigma_1$ ,  $\sigma_2$ に対して，任意の角度 $\theta$ の面にかかる法線応力 $N$ と剪断応力 $S$ の組が，グラフの円上のどこかに来る，ということを意味している（図{numref}`{number} <fig_Mohr-Circle>`）．しかも，円上の位置は $N$ 軸から反時計回りに角度 $2\theta$ の位置である，ということもわかる．モールの円を作図することで，内部にかかっている応力を図解で求めることができるのだ．
+これは，与えられた外部からの応力 $\sigma_1$ ,  $\sigma_2$ に対して，任意の角度 $\theta$ の面にかかる法線応力 $N$ と剪断応力 $S$ の組が，グラフの円上のどこかに来る，ということを意味している（{numref}` Fig. {number} <fig_Mohr-Circle>`）．しかも，円上の位置は $N$ 軸から反時計回りに角度 $2\theta$ の位置である，ということもわかる．モールの円を作図することで，内部にかかっている応力を図解で求めることができるのだ．
 
 
 ```{figure} ./fig/Mohr_Circle.png

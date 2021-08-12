@@ -446,7 +446,7 @@
 <p>本節では，それらの弾性係数とラメの定数との関係をまとめておく．</p>
 <div class="section" id="e">
 <h3>ヤング率  <span class="math notranslate nohighlight">\(E\)</span><a class="headerlink" href="#e" title="Permalink to this headline">¶</a></h3>
-<p>ヤング率は，<strong>一方向の引張もしくは圧縮に対するひずみと応力の間の比例定数</strong>だ．図<a class="reference internal" href="#fig-young"><span class="std std-numref">21</span></a>のように，棒状の弾性体に棒の長さ方向（この場合は <span class="math notranslate nohighlight">\(x_3\)</span> 方向）に法線応力 <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> をかけると，それによって変形が起こる．そのときの <span class="math notranslate nohighlight">\(x_3\)</span> 方向の法線ひずみ <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> は</p>
+<p>ヤング率は，<strong>一方向の引張もしくは圧縮に対するひずみと応力の間の比例定数</strong>だ．<a class="reference internal" href="#fig-young"><span class="std std-numref"> Fig. 21</span></a>のように，棒状の弾性体に棒の長さ方向（この場合は <span class="math notranslate nohighlight">\(x_3\)</span> 方向）に法線応力 <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> をかけると，それによって変形が起こる．そのときの <span class="math notranslate nohighlight">\(x_3\)</span> 方向の法線ひずみ <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> は</p>
 <div class="math notranslate nohighlight" id="equation-eq-young-strain">
 <span class="eqno">(149)<a class="headerlink" href="#equation-eq-young-strain" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \varepsilon_{33} = \frac{ \delta L }{ L}
@@ -474,7 +474,7 @@
 </div>
 <div class="section" id="nu">
 <h3>ポアソン比  <span class="math notranslate nohighlight">\(\nu\)</span><a class="headerlink" href="#nu" title="Permalink to this headline">¶</a></h3>
-<p>図<a class="reference internal" href="#fig-poisson"><span class="std std-numref">22</span></a>のように，有限の大きさの物体に法線応力 <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> をかけると，物体がその方向に伸びるだけでなく，それに直交する方向にも変形が起こる．ポアソン比は，物体に一方向の応力 <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> を与えたとき，その方向に対するひずみ <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> と，それに直交する方向のひずみ <span class="math notranslate nohighlight">\(\varepsilon_{11}\)</span> もしくは <span class="math notranslate nohighlight">\(\varepsilon_{22}\)</span> の比として定義される．</p>
+<p><a class="reference internal" href="#fig-poisson"><span class="std std-numref"> Fig. 22</span></a>のように，有限の大きさの物体に法線応力 <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> をかけると，物体がその方向に伸びるだけでなく，それに直交する方向にも変形が起こる．ポアソン比は，物体に一方向の応力 <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> を与えたとき，その方向に対するひずみ <span class="math notranslate nohighlight">\(\varepsilon_{33}\)</span> と，それに直交する方向のひずみ <span class="math notranslate nohighlight">\(\varepsilon_{11}\)</span> もしくは <span class="math notranslate nohighlight">\(\varepsilon_{22}\)</span> の比として定義される．</p>
 <div class="math notranslate nohighlight" id="equation-eq-poisson">
 <span class="eqno">(152)<a class="headerlink" href="#equation-eq-poisson" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \nu \equiv - \frac{ \varepsilon_{11} }{\varepsilon_{33} } = - \frac{ \varepsilon_{22} }{\varepsilon_{33} } 
@@ -498,7 +498,7 @@
 <p class="sidebar-title"></p>
 <p>一般には体積弾性率は圧力にたいしてどれだけ体積が縮むか，として定義されるが，符号が逆の応力に対してどれだけ膨らむか，としても全く同じことである．</p>
 </div>
-<p>体積弾性率は，等方的な応力 <span class="math notranslate nohighlight">\(\sigma_{11}=\sigma_{22}=\sigma_{33}\)</span> （図<a class="reference internal" href="#fig-bulk"><span class="std std-numref">23</span></a>）に対して，物体がどれだけ体積変化するかを表す指標である．体積変化は <span class="math notranslate nohighlight">\(\theta=\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}\)</span> で表すことができたので，体積弾性率はそれと応力の比</p>
+<p>体積弾性率は，等方的な応力 <span class="math notranslate nohighlight">\(\sigma_{11}=\sigma_{22}=\sigma_{33}\)</span> （<a class="reference internal" href="#fig-bulk"><span class="std std-numref"> Fig. 23</span></a>）に対して，物体がどれだけ体積変化するかを表す指標である．体積変化は <span class="math notranslate nohighlight">\(\theta=\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}\)</span> で表すことができたので，体積弾性率はそれと応力の比</p>
 <div class="math notranslate nohighlight" id="equation-constitutive-3">
 <span class="eqno">(154)<a class="headerlink" href="#equation-constitutive-3" title="Permalink to this equation">¶</a></span>\[\begin{align}
   K = \frac{\sigma_{11}}{\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}}
