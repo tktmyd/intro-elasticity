@@ -39,6 +39,7 @@ sphinx:
 
 parse:
   myst_enable_extensions:
-    - html_admonition
     - dollarmath
     - amsmath
+    - html_image
+    - colon_fence
