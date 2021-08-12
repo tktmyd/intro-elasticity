@@ -22,7 +22,7 @@
 ````{admonition} 座標系の表現
 :class: tip, dropdown
 
-これまでは三次元空間上の位置といえば図 {numref}`{number} <fig_xyz-123>`a のように $(x,y,z)$ の記号を用いて表すのが普通だっでしょうが，本書では，$(x,y,z)$のかわりに下付きの**添字**を使って， $\boldsymbol{x} = (x_1, x_2, x_3)$ と図 {numref}`{number} <fig_xyz-123>`bのように表します．
+これまでは三次元空間上の位置といえば{numref}` Fig. {number} <fig_xyz-123>`a のように $(x,y,z)$ の記号を用いて表すのが普通だっでしょうが，本書では，$(x,y,z)$のかわりに下付きの**添字**を使って， $\boldsymbol{x} = (x_1, x_2, x_3)$ と{numref}` Fig. {number} <fig_xyz-123>`bのように表します．
 
 このような記法を用いるのは，これから沢山の記号が出てくるのに，位置を表すだけのために3つもアルファベットを使っていては記号が足りないという（切実な！）理由のためです．
 また，番号の添字を変数 $i$ で表すと，たとえば $x_i$   $(i=1,\cdots 3)$ のような表し方ができ，計算の見通しが良くなるというメリットもあります．
@@ -46,10 +46,10 @@
 そこで，**ひずみ**という**真の変形のみを表す量**を，**物体の単位距離あたりの相対変位から回転成分を取り除いたもの**であるとして定義します．
 
 そのためにまず，隣接した点との相対変位を取ることで，平行移動の成分をキャンセルしてしまいましょう．
-図 {numref}`{number} <fig_deformation>` のように，物体中に微小な相対位置ベクトル $\boldsymbol{d}$ だけ離れた2点 $\boldsymbol{x_0}$ と $\boldsymbol{x}=\boldsymbol{x_0}+\boldsymbol{d}$ を考えます．それぞれの位置における変形量は $\boldsymbol{u}(\boldsymbol{x_0})$ と $\boldsymbol{u}(\boldsymbol{x})$ のように表すことができるでしょう．
+{numref}` Fig. {number} <fig_deformation>` のように，物体中に微小な相対位置ベクトル $\boldsymbol{d}$ だけ離れた2点 $\boldsymbol{x_0}$ と $\boldsymbol{x}=\boldsymbol{x_0}+\boldsymbol{d}$ を考えます．それぞれの位置における変形量は $\boldsymbol{u}(\boldsymbol{x_0})$ と $\boldsymbol{u}(\boldsymbol{x})$ のように表すことができるでしょう．
 もしこの2つの変形をあらわすベクトルが平行で同じ長さ，つまり $\boldsymbol{u}(\boldsymbol{x})=\boldsymbol{u}(\boldsymbol{x_0})$ であったならば，物体は平行移動しているだけで変形しません．
 逆に，もし物体が変形しているならばベクトル $\boldsymbol{u}(\boldsymbol{x_0})$ と $\boldsymbol{u}(\boldsymbol{x})$ には違いが生じていそうですね．
-そこで，図 {numref}`{number} <fig_deformation>` のように2つの**ベクトルの差**を取ることで，相対変位 $\boldsymbol{\delta u}(\boldsymbol{x})$ を抽出します：
+そこで，{numref}` Fig. {number} <fig_deformation>` のように2つの**ベクトルの差**を取ることで，相対変位 $\boldsymbol{\delta u}(\boldsymbol{x})$ を抽出します：
 ```{math}
 :label: eq:deformation_general
 \begin{align}
@@ -398,7 +398,7 @@
 
 さて，その変位勾配テンソルは，変位から平行移動成分を取り除いたものでした．
 しかし，このなかにもまだ真の変形ではない**回転**の効果が残っています．
-図{numref}`{number} <fig_deformation_J>`にある2つの物体（四角形）の移動・変形を模式的に示します．
+{numref}` Fig. {number} <fig_deformation_J>`にある2つの物体（四角形）の移動・変形を模式的に示します．
 (a)は物体があらゆる方向に膨張しているので確かに物体が変形していますが，(b)は単に物体が角度 $\theta$ だけ回転しているだけで，変形はしていません．
 にもかかわらず，四角形の頂点位置における変位を表すベクトル（矢印）は，互いに平行ではありません．
 したがって，前節の「近接2点間の変位の差を差し引く」という操作だけでは，回転成分は排除できないのです．
@@ -411,7 +411,7 @@
 行列 $\boldsymbol{J}$ で表現できる変形の例．(a)等方膨張，(b) 回転．いずれも実線で描かれた四角形が変形前の物体を，点線が変形後の物体を表す．矢印は変形前後四角形の頂点位置同士を結ぶ変位ベクトルである．
 ```
 
-やや天下りですが，図{numref}`{number} <fig_deformation_J>`に描かれたような変形と回転は，変位が微小であるという条件のもとで，
+やや天下りですが，{numref}` Fig. {number} <fig_deformation_J>`に描かれたような変形と回転は，変位が微小であるという条件のもとで，
 ```{math}
 :label: eq:deform_example
 \begin{align}
@@ -423,7 +423,7 @@
 
 ```{admonition} 演習問題：変位勾配テンソル
 :class: dropdown
-  図{numref}`{number} <fig_deformation_basis>`のように $x_1$--$x_2$ 平面に左下の原点 $\boldsymbol{x}_0=(0,0)$ から四角形の各頂点までの3つの相対位置ベクトル $\boldsymbol{d}_1=(0,1)^T$ ,  $\boldsymbol{d}_2=(1,0)^T$ ,  $\boldsymbol{d}_3=(1,1)^T$ を変位勾配テンソル（式{eq}`eq:deform_example` の $\boldsymbol{J}_{(a)}$ ,  $\boldsymbol{J}_{(b)}$ ）に作用させて，図{numref}`{number} <fig_deformation_J>`(a), (b)のような変形が現れることを確認しなさい．
+  {numref}` Fig. {number} <fig_deformation_basis>`のように $x_1$--$x_2$ 平面に左下の原点 $\boldsymbol{x}_0=(0,0)$ から四角形の各頂点までの3つの相対位置ベクトル $\boldsymbol{d}_1=(0,1)^T$ ,  $\boldsymbol{d}_2=(1,0)^T$ ,  $\boldsymbol{d}_3=(1,1)^T$ を変位勾配テンソル（式{eq}`eq:deform_example` の $\boldsymbol{J}_{(a)}$ ,  $\boldsymbol{J}_{(b)}$ ）に作用させて，{numref}` Fig. {number} <fig_deformation_J>`(a), (b)のような変形が現れることを確認しなさい．
 
   ただし，基準位置 $\boldsymbol{x}_0$ を原点に固定しているため，式{eq}`eq:deformation_matrix` において $\boldsymbol{u}(\boldsymbol{x}_0)=\boldsymbol{0}$ としています．
 ```
@@ -434,7 +434,7 @@
 :width: 60%
 :name: fig_deformation_basis
 
-図{numref}`{number} <fig_deformation_J>`の変形を確認するための単位四角形と左下点を原点とする3つの相対位置ベクトル $\boldsymbol{d}_i$   $(i=1,\cdots,3)$ の定義．
+{numref}` Fig. {number} <fig_deformation_J>`の変形を確認するための単位四角形と左下点を原点とする3つの相対位置ベクトル $\boldsymbol{d}_i$   $(i=1,\cdots,3)$ の定義．
 ```
 
 ````{admonition} 数学ノート：回転行列
@@ -669,10 +669,10 @@
 ```
 と表されます．
 つまり， $x_2$ 方向には一切変形が起きず， $x_1$ 方向に伸びていく（$ \partial u_1/\partial x_1 > 0$ なので変形量はプラスである．）のです．もしひずみ成分 $\varepsilon_{11}$ が一定であれば，距離 $d_1$ が大きいほど，伸びの量が大きくなります．
-この変形を模式的に表したのが図{numref}`{number} <fig_strain_example>`(a)です．
+この変形を模式的に表したのが{numref}` Fig. {number} <fig_strain_example>`(a)です．
 この図は，辺長 $L$ の正方形を，左端を固定して $x_1$ 方向に引張ったときの一様な変形を表しています．
 正方形は引張によって $x_1$ 方向に伸びますが，その伸びの変形量は左端の固定端ではゼロで， $x_1$ が大きくなるにつれてだんだん大きくなっていきます．
-このように，ひずみテンソルのうち対角成分（ $\varepsilon_{11}, \varepsilon_{22}, \varepsilon_{33}$ ）は，それぞれの方向への伸び縮みを表す指標であり，これを **法線ひずみ（あるいは垂直ひずみ; normal strain）** と呼びます．ひずみは，図{numref}`{number} <fig_strain_example>`(a)下部のグラフにあるように，**変形の距離あたりの傾き**（単位距離あたりの変形量）と解釈できます．
+このように，ひずみテンソルのうち対角成分（ $\varepsilon_{11}, \varepsilon_{22}, \varepsilon_{33}$ ）は，それぞれの方向への伸び縮みを表す指標であり，これを **法線ひずみ（あるいは垂直ひずみ; normal strain）** と呼びます．ひずみは，{numref}` Fig. {number} <fig_strain_example>`(a)下部のグラフにあるように，**変形の距離あたりの傾き**（単位距離あたりの変形量）と解釈できます．
 逆に，離れた2点においてそれぞれ変形量がわかれば，その間の平均的なひずみは，
 ```{math}
 :label:
@@ -710,8 +710,10 @@
 \end{align}
 ```
 は**体積ひずみ**と呼ばれ，単位体積あたりの体積の変化量を表しています．
-一方向の法線ひずみ成分（ $\partial u_i / \partial x_i$ ）は，座標軸方向の伸び縮みを表しているのでした．
-したがって，各方向への法線ひずみによって， $x_1, x_2, x_3$ 方向の長さはそれぞれ $(1+\varepsilon_{11}), (1+\varepsilon_{22}), (1+\varepsilon_{33})$ 倍になります．そのとき，体積の変化量は
+
+法線ひずみ成分（ $\partial u_i / \partial x_i$ ）は，座標軸方向の伸び縮みを表すのでした．
+したがって，各方向への法線ひずみによって， 各方向の長さはそれぞれ $(1+\varepsilon_{11}), (1+\varepsilon_{22}), (1+\varepsilon_{33})$ 倍になります．
+そのとき，体積の変化量は
 ```{math}
 :label: 
 \begin{multline}
@@ -743,12 +745,12 @@
   \boldsymbol{J}\boldsymbol{d} = \left( \begin{matrix} 0 \\ (\partial u_2/\partial x_1) d_1 \end{matrix} \right)
 \end{align}
 ```
-であり，その変形は図{numref}`{number} <fig_strain_example>`(b)のように表されます．
+であり，その変形は{numref}` Fig. {number} <fig_strain_example>`(b)のように表されます．
 $x_1$ が増大するにつれて $x_2$ の正方向に変形していくため，物体がねじれているのがわかるでしょう．
 このような変形は，**剪断**（せんだん）と呼ばれます．
 ここでも，変位の空間微分量（図下部のグラフ）が単位距離あたりの変形量になっています．
 
-ところで，図{numref}`{number} <fig_strain_example>`(b)の変形は，本当に純粋な変形だけを表しているでしょうか．
+ところで，{numref}` Fig. {number} <fig_strain_example>`(b)の変形は，本当に純粋な変形だけを表しているでしょうか．
 $x_1$ が大きくなるほど（グラフで右にいくほど） $x_2$ 方向の変形が大きくなる（グラフで上向きに変位する）．ということは，この物体は全体として左回りに回転してしまっているようです．
 
 実際，変位勾配テンソルのかわりにひずみテンソルを用いて回転成分を取り除いたひずみを計算すると，
@@ -760,10 +762,10 @@ $x_1$ が大きくなるほど（グラフで右にいくほど） $x_2$ 方向�
 \end{align}
 ```
 のように， $x_1$ 成分の変位も生じます．
-この変形前後の形を比較したのが図{numref}`{number} <fig_strain_example2>`(a)と図{numref}`{number} <fig_strain_example2>`(c)です．
-図{numref}`{number} <fig_strain_example>`(b)の変形をすこし右回りに回転することで，純粋な変形だけが抽出されました（図{numref}`{number} <fig_strain_example2>`(c)．
-しかしそうすると，もし図{numref}`{number} <fig_strain_example2>`(b)のような変形があったとしても，回転成分を取り去ると，図{numref}`{number} <fig_strain_example2>`(c)に一致してしまいます．
-図{numref}`{number} <fig_strain_example2>`(b)の変形は $\partial u_1/\partial x_2>0$ のときに生じますが，これは $\partial u_2 / \partial x_1>0$ の変形と，ひずみの上では区別できないのです．
+この変形前後の形を比較したのが{numref}` Fig. {number} <fig_strain_example2>`aと{numref}` Fig. {number} <fig_strain_example2>`cです．
+{numref}` Fig. {number} <fig_strain_example>`bの変形をすこし右回りに回転することで，純粋な変形だけが抽出されました（{numref}` Fig. {number} <fig_strain_example2>`c）．
+しかしそうすると，もし{numref}` Fig. {number} <fig_strain_example2>`bのような変形があったとしても，回転成分を取り去ると，{numref}` Fig. {number} <fig_strain_example2>`cに一致してしまいます．
+{numref}` Fig. {number} <fig_strain_example2>`bの変形は $\partial u_1/\partial x_2>0$ のときに生じますが，これは $\partial u_2 / \partial x_1>0$ の変形と，ひずみの上では区別できないのです．
 そのことはひずみテンソルの第 $12$ 成分の定義が
 ```{math}
 :label:
@@ -778,7 +780,7 @@ $x_1$ が大きくなるほど（グラフで右にいくほど） $x_2$ 方向�
 :width: 80%
 :name: fig_strain_example2
 
-図{numref}`{number} <fig_strain_example>`(b)で表される剪断変形に等価な3つのパターン．(c)だけが回転成分をもたない純粋な変形成分である．
+{numref}` Fig. {number} <fig_strain_example>`(b)で表される剪断変形に等価な3つのパターン．(c)だけが回転成分をもたない純粋な変形成分である．
 ```
 
 いずれにしても，ひずみテンソルの非対角成分は，剪断変形を表していることがわかりました．
@@ -786,7 +788,7 @@ $x_1$ が大きくなるほど（グラフで右にいくほど） $x_2$ 方向�
 定義により，ひずみテンソルの成分は，法線ひずみか剪断ひずみかのどちらかに分類されることになります．
 
 まとめると，どちらの例からもひずみテンソル $\varepsilon_{ij}$ は，$i$ 方向の座標軸からみた $j$ 方向への変形の単位距離あたりの大きさ（あるいは距離に対する傾き）です．
-ただし，ひずみテンソルは対称性 $\varepsilon_{ij}=\varepsilon_{ji}$ があるため， $i\neq j$ の場合は図{numref}`{number} <fig_strain_example2>`(b)のように勾配は半分になり，そのかわりに $j$ 方向の座標軸からみた $i$ 方向の変形にも同じひずみが現れるのです．
+ただし，ひずみテンソルは対称性 $\varepsilon_{ij}=\varepsilon_{ji}$ があるため， $i\neq j$ の場合は{numref}` Fig. {number} <fig_strain_example2>`(b)のように勾配は半分になり，そのかわりに $j$ 方向の座標軸からみた $i$ 方向の変形にも同じひずみが現れるのです．
 
 
 ```{admonition} 演習問題：ひずみテンソルと物体の変形
@@ -807,19 +809,19 @@ $x_1$ が大きくなるほど（グラフで右にいくほど） $x_2$ 方向�
         \end{matrix}
               \right)
   \end{align*}
-  このとき，単位辺長の正方形はどのように変形されるだろうか．図{numref}`{number} <fig_strain_example>`にならってそれぞれ図示しなさい．ただし $a$ ,  $b$ は十分に小さい正の数とします．
+  このとき，単位辺長の正方形はどのように変形されるだろうか．{numref}` Fig. {number} <fig_strain_example>`にならってそれぞれ図示しなさい．ただし $a$ ,  $b$ は十分に小さい正の数とします．
 ```
 
 ## ひずみテンソルによる変形場
 
-ここまでのまとめとして，ひずみテンソルが与えられた場において， $x_1$ -- $x_2$ 面内における任意の点がどう変形するかを図{numref}`{number} <fig_strain_field>`に示します．
+ここまでのまとめとして，ひずみテンソルが与えられた場において， $x_1$ -- $x_2$ 面内における任意の点がどう変形するかを{numref}` Fig. {number} <fig_strain_field>`に示します．
 
 ```{margin}
 もちろん， $\varepsilon_{ii}<0$ の場合には逆に縮む方向に変形を受けます．
 ```
-法線ひずみ $\varepsilon_{11}, \varepsilon_{22}$ はそれぞれ $x_1$ （図{numref}`{number} <fig_strain_field>`a）と $x_2$ （図{numref}`{number} <fig_strain_field>`b）方向に引き伸ばされるように変形を受けます．その両成分が等しい場合（図{numref}`{number} <fig_strain_field>`c）には，全体として媒質が膨張するように変形します．
+法線ひずみ $\varepsilon_{11}, \varepsilon_{22}$ はそれぞれ $x_1$ （{numref}` Fig. {number} <fig_strain_field>`a）と $x_2$ （{numref}` Fig. {number} <fig_strain_field>`b）方向に引き伸ばされるように変形を受けます．その両成分が等しい場合（{numref}` Fig. {number} <fig_strain_field>`c）には，全体として媒質が膨張するように変形します．
 
-一方，剪断ひずみ成分のみが存在する場合（図{numref}`{number} <fig_strain_field>`d）には，物体がねじれるように変形しています．この図をよく見ると，変形によって右上―左下方向には引き伸ばされ，右下―左上方向には圧縮されていますね．それらの変形が互いに打ち消しあうことによって，剪断ひずみによる変形では体積が変化しないのです．
+一方，剪断ひずみ成分のみが存在する場合（{numref}` Fig. {number} <fig_strain_field>`d）には，物体がねじれるように変形しています．この図をよく見ると，変形によって右上―左下方向には引き伸ばされ，右下―左上方向には圧縮されていますね．それらの変形が互いに打ち消しあうことによって，剪断ひずみによる変形では体積が変化しないのです．
 また，図の中心から左右（ $x_1$ ）方向を見ると，媒質が反時計回りに回転しているかのようですが，上下（ $x_2$ ）方向は時計回りに変位していて，媒質全体としては回転していないこともわかるでしょう．
 
 ```{figure} ./fig/strain_field.png
