@@ -3,3 +3,4 @@ src/_build/*
 .DS_Store
 node_modules
 work/*
+package*json

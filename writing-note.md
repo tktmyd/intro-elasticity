@@ -16,14 +16,15 @@
 - \\eqref\{(.*?)\}  -> {eq}`$1`
 - \$(.*?)\$ ->  $$$1$$    (前後スペース)
 
+
 ## 図
 
 挿入
 
-```{figure} ./fig/xyz-123.png
+```{figure} ./fig/xyz.png
 :align: center
 :width: 80%
-:name: fig:label
+:name: fig_
 
 座標系の表
 ```
@@ -31,3 +32,13 @@
 引用
 
 図 {numref}`{number} <fig:xyz-123>`a
+
+
+## textlint
+```
+$ npm init -y 
+$ npm install textlint 
+$ npm install textlint-plugin-latex2e 
+$ npm install textlint-rule-prh 
+$ npm install textlint-rule-preset-ja-technical-writing
+```
