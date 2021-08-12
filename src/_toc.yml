@@ -1,6 +1,7 @@
 - file: intro
 - file: strain
 - file: stress  
+- file: principal
 - file: eq-of-motion
 - file: constitutive
 - file: summary
