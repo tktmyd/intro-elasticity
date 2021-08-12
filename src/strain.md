@@ -13,12 +13,12 @@
 3次元空間では位置ベクトル $\boldsymbol{x}$ は3つの要素を持つから，変位ベクトルは3つの変数を持つ多変数関数でもある．
 
 ```{admonition} 数学メモ：場
-:class: tip, 
+:class: tip, dropdown
 位置によって値が定まる物理量のことを，**『場』** ということがある．いま扱っているのは変位の場なので，ひとまとめに変位場と呼ぶ．「場」はfieldの和訳語のひとつで，高校までの理科では別の訳語「界」が使われていた．たとえば電界と磁界は電場，磁場と同じ意味である．
 ```
 
 ````{admonition} 座標系の表現
-:class: tip, 
+:class: tip, dropdown
 
 これまでは三次元空間上の位置といえば図 {numref}`{number} <fig_xyz-123>`a のように $(x,y,z)$ の記号を用いて表すのが普通だっであろうが，本書では，$(x,y,z)$のかわりに下付きの**添字**を使って， $\boldsymbol{x} = (x_1, x_2, x_3)$ と図 {numref}`{number} <fig_xyz-123>`bのように表す．
 
@@ -66,7 +66,10 @@
 物体の変形を表すベクトル．実黒線矢印が変形を，点線矢印が相対位置ベクトルをそれぞれ表す．
 ```
 
-ところで，ここでは2点間の相対位置をベクトルで表しているので，そのベクトルの絶対値（ベクトルの長さ）を取れば，2点間の距離になる．もし2点間の距離 $d=|\boldsymbol{d}|$ が十分に小さいとすると，**テイラー展開**によって $\boldsymbol{u}(\boldsymbol{x})=\boldsymbol{u}(\boldsymbol{x_0}+\boldsymbol{d})$ を以下のように近似表現できる．
+```{margin}
+ここでは2点間の相対位置をベクトルで表しているので，そのベクトルの絶対値（ベクトルの長さ）を取れば，2点間の距離になる．
+```
+もし2点間の距離 $d=|\boldsymbol{d}|$ が十分に小さいとすると，**テイラー展開**によって $\boldsymbol{u}(\boldsymbol{x})=\boldsymbol{u}(\boldsymbol{x_0}+\boldsymbol{d})$ を以下のように近似表現できる．
 ```{math}
 :label: eq:u-taylor
 \begin{align}
@@ -88,24 +91,24 @@
 ```
 
 ```{admonition} 数学メモ：等号・不等号のいろいろ
-:class: tip, 
+:class: tip, dropdown
 
   {eq}`eq:u-taylor`式で用いられている記号  $\simeq$  は，**左辺と右辺が近似的に等しい**という意味だ．
   この場合は，右辺のテイラー展開を1次で打ち切っているため， $|d_i|$  ( $i=1,\cdots 3$ )が十分に小さいときに成立する近似式である．近似式が表れたときには，**どのような近似のもとで成立する式なのか**ということもとても重要だ．
   この記号は左辺から右辺への計算の過程で用いるため，通常は右辺が近似された（あるいは比例する）量であり，逆に左辺が近似された量であることはほとんどない．
   等号( $=$ )の場合はどちらが右辺でどちらが左辺であっても意味は同じであったが，近似計算のときには注意が必要である．
 
-  そのほかにも，本書ではいろいろな記号が用いられる．たとえば  $\equiv$  は，量の**定義**に用いる等号だ．本書で $A\equiv B$ とあったら，「 $A$ という量を $B$ で定義する」という意味になる．一方， $\propto$  は左辺が右辺に
+  そのほか， $\equiv$  は，量の**定義**に用いる等号だ．本書で $A\equiv B$ とあったら，「 $A$ という量を $B$ で定義する」という意味になる．一方， $\propto$  は左辺が右辺に
    **比例する** ことを表す．
 
-   $\ll$ と $\gg$ は不等号だが，それぞれ左辺より右辺が**十分に大きい**あるいは**十分に小さい**ということを意味する．「十分に」とは，値が一桁以上違う，あるいは微小量のべき乗の指数が異なる．たとえば， $1$ よりも十分に小さい量  $|a|\ll 1$  に対して， $|a| \gg |a|^2 \gg |a|^3 $  といった具合である．
+   $\ll$ と $\gg$ は不等号だが，それぞれ左辺より右辺が**十分に大きい**あるいは**十分に小さい**ということを意味する．「十分に」とは，値が一桁以上違う，あるいは微小量のべき乗の指数が異なるという意味だ．たとえば， $1$ よりも十分に小さい量  $|a|\ll 1$  に対して， $|a| \gg |a|^2 \gg |a|^3 $  といった具合である．
 
 ```
 
-```{admonition} 数学メモ：導関数（微分）の定義
-:class: tip, 
+````{admonition} 数学メモ：導関数（微分）の定義
+:class: tip, dropdown
   関数 $f(x)$ の微分（導関数）は，
-  ```{math}
+```{math}
 :label:
 \begin{align}
     \frac{df}{dx} = f'(x) = \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} 
@@ -134,10 +137,10 @@
   \end{align}
 ```
   のように書く．その意味するところは1変数関数の微分と同じで，わずかに変数 $x$ （あるいは $y$ ）が変化したときの関数 $f$ の変化率である．
-
+````
 
 ````{admonition} 数学メモ：1変数と多変数関数のテイラー展開
-:class: tip, 
+:class: tip, dropdown
   連続かつ無限回微分可能な関数 $f(x)$ に対し，微小量 $\delta x$ だけ離れた場所での値 $f(x+\delta x)$ は，1次の**テイラー展開**によって
   ```{math}
 :label:
@@ -210,7 +213,7 @@
 
 
 ````{admonition} 数学メモ：行列とベクトルの基礎
-:class: tip, 
+:class: tip, dropdown
 
   行列 $\boldsymbol{A}$ （成分 $A_{ij}$ ,  $1\le i \le 3$ ,  $1 \le j \le 3$ ）と縦ベクトル  $\boldsymbol{b}$ （成分 $b_i$ ,  $1\le i \le 3$ ）の積は
   ```{math}
@@ -247,7 +250,7 @@
     c_i = \sum_{k=1}^3 A_{ik} b_k
   \end{align}
 ```
-  とコンパクトに書くことができる．今後は成分による後者の表現もよく用いるので，慣れていってほしい．また，
+  とコンパクトに書くことができる．また，
   行列 $\boldsymbol{A}$ とベクトル $\boldsymbol{b}$ の積を計算することを，行列 $\boldsymbol{A}$ にベクトル $\boldsymbol{b}$ を**作用させる**ということがある．
   {eq}`eq:matrix-vector-mul` を $b_i$ についての連立方程式として見ると，これは形式的に
   ```{math}
@@ -317,7 +320,7 @@
 ````
 
 ````{admonition} 数学メモ：転置・対称・単位・直交行列
-:class: tip, 
+:class: tip, dropdown
   行列 $\boldsymbol{A}$ の成分を $A_{ij}$ とするとき，その行列の成分の $i$ と $j$ をひっくり返した行列を**転置行列**といい， $\boldsymbol{A}^T$ で表す． $2\times 2$ の行列で陽に書いてみると，
   ```{math}
 :label:
@@ -407,8 +410,8 @@
 のように表される．次の演習問題で確かめてみよう．
 
 ```{admonition} 演習問題：変位勾配テンソル
-:class: 
-  図{numref}`{number} <fig_deformation_basis>`のように $12$ 平面に左下の原点 $\boldsymbol{x}_0=(0,0)$ から四角形の各頂点までの3つの相対位置ベクトル $\boldsymbol{d}_1=(0,1)^T$ ,  $\boldsymbol{d}_2=(1,0)^T$ ,  $\boldsymbol{d}_3=(1,1)^T$ を変位勾配テンソル（式{eq}`eq:deform_example` の $\boldsymbol{J}_{(a)}$ ,  $\boldsymbol{J}_{(b)}$ ）に作用させて，図{numref}`{number} <fig_deformation_J>`(a), (b)のような変形が現れることを確認せよ．
+:class: dropdown
+  図{numref}`{number} <fig_deformation_basis>`のように $x_1$--$x_2$ 平面に左下の原点 $\boldsymbol{x}_0=(0,0)$ から四角形の各頂点までの3つの相対位置ベクトル $\boldsymbol{d}_1=(0,1)^T$ ,  $\boldsymbol{d}_2=(1,0)^T$ ,  $\boldsymbol{d}_3=(1,1)^T$ を変位勾配テンソル（式{eq}`eq:deform_example` の $\boldsymbol{J}_{(a)}$ ,  $\boldsymbol{J}_{(b)}$ ）に作用させて，図{numref}`{number} <fig_deformation_J>`(a), (b)のような変形が現れることを確認せよ．
   ただし，基準位置 $\boldsymbol{x}_0$ を原点に固定しているため，式{eq}`eq:deformation_matrix` において $\boldsymbol{u}(\boldsymbol{x}_0)=\boldsymbol{0}$ としている．
 ```
 
@@ -422,7 +425,7 @@
 ```
 
 ````{admonition} 数学ノート：回転行列
-:class: tip
+:class: tip, dropdown
   より一般には，2次元で回転を表す行列は，回転角を $\theta$ として
   ```{math}
 :label: eq:rotation_2d
@@ -435,13 +438,15 @@
 ````
 
 ````{admonition} 演習問題：微小回転近似
-:class: 
+:class: dropdown
+: 
   2次元の回転行列{eq}`eq:rotation_2d` において，回転角 $\theta$ の大きさが十分に小さいという条件（ $|\theta| \ll 1$ ）が満たされるときは， $\cos \theta \simeq 1$ ,  $\sin \theta \simeq \theta$ と近似できる．このとき，回転行列 $R$ は{eq}`eq:deform_example` の $\boldsymbol{J}_{(b)}$ に一致することを確かめよ．
 ````
 
 
 ````{admonition} 演習問題：回転行列
-:class: 
+:class: dropdown
+: 
    $\theta=\pi/4 $  に対する回転行列を以下のベクトルに作用させて，回転行列 $R$ が反時計回りの回転を意味していることを確認せよ．
   \begin{align*}
     \boldsymbol{v}_1 = \left(
@@ -465,7 +470,8 @@
 ````
 
 ````{admonition} 演習問題：ベクトルの回転
-:class: 
+:class: dropdown
+: 
   今，図のように $x_1$ -- $x_2$ 座標の原点を中心とする半径1の単位円上に，点 $\boldsymbol{r}_1$ と $\boldsymbol{r}_2$ がある．
   
   (i)  $\boldsymbol{r}_1$ と $\boldsymbol{r}_2$ の成分を，それぞれ角度 $\theta_1$ と $\theta_1+\theta_2$ に関した三角関数を用いて表せ．
@@ -583,12 +589,14 @@
 ひずみテンソルがわかっていれば，任意の微小距離間の相対位置ベクトル $\boldsymbol{d}$ をひずみテンソルに作用させることにより，変形が抽出できるのだ．
 
 ```{admonition} 演習問題：ひずみ・回転テンソルの定義と対称性
-:class: 
+:class: dropdown
+: 
   ひずみテンソルと回転テンソルの対称性{eq}`eq:strain_symmetry` と{eq}`eq:rotation_antisymmetry` を式{eq}`eq:strain_all` と{eq}`eq:rotation_all` から確認せよ．また，ひずみテンソルと回転テンソルの和が変位勾配テンソル $\boldsymbol{J}$ になることを，成分毎に確かめてみよう．
 ```
 
 ```{admonition} 演習問題：ひずみの計算
-:class: 
+:class: dropdown
+: 
    $x_1$ -- $x_2$ 空間の2次元の変位場が
   \begin{align*}
     \boldsymbol{u} = \left(
@@ -601,7 +609,8 @@
 ```
 
 ```{admonition} 演習問題：3次元中の2次元変位
-:class: 
+:class: dropdown
+: 
   前の演習問題で「2次元の変位場」という表現が出てきた．これは厳密には「変位の $x_3$ 成分がゼロ（ $u_3=0$ ）」かつ「変位量が $x_3$ 方向に変化しない」ということである．
 
   後者の条件は， $x_3$ 方向への微分がすべてゼロである（変化しないから）ことを意味している．そのため，2次元の変形（ $x_3$ 方向に変化しない媒質の変形）の歪テンソルや回転テンソルは，成分の範囲が $i,j=1,2$ だけの $2\times 2$ の行列形式で表される．
@@ -610,7 +619,8 @@
 ```
 
 ```{admonition} 演習問題：2次元空間のひずみ・回転テンソル
-:class: 
+:class: dropdown
+: 
    $x_1$ -- $x_2$ 面の2次元のひずみテンソルと回転テンソルの独立成分はそれぞれいくつあるか？
 ```
 
@@ -659,7 +669,8 @@
 ```
 
 ```{admonition} 演習問題：地殻変動によるひずみの概算
-:class: 
+:class: dropdown
+: 
    $x_1$ 軸上にあり，200 km 離れた2点A, Bを考える．地殻変動により，点Aが $x_1$ 軸上に沿って+1 m，点Bが+5 mそれぞれ移動したとき，この点AB間の平均的な法線ひずみ量を求めよ．分母と分子で単位が異なるので注意すること． $1$  km =  $10^3$  m による換算が必要である．
 ```
 
@@ -748,7 +759,8 @@
 
 
 ```{admonition} 演習問題：ひずみテンソルと物体の変形
-:class: 
+:class: dropdown
+: 
   2次元空間において，変形によって以下のようなひずみテンソルで表されるようなひずみが生じたとする．
   \begin{align*}
     \boldsymbol{\varepsilon}_1 = \left(
