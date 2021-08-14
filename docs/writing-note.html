@@ -94,6 +94,11 @@
    ひずみと変形
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="greek.html">
+   ギリシャ文字の一覧
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -170,6 +175,11 @@
    正規表現によるLaTeXコードからの変換
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   図
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -192,7 +202,18 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">\\begin\{MATHNOTE\}\{(.*?)\}</span></code> → ````{admonition} 数学メモ：$1\n:class: tip, dropdown`</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">\\subsection\{(.*?)\}</span></code> → <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">$1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">\\subsubsection\{(.*?)\}</span></code> → <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">$1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\\ref\{(.*?)\}</span></code> → <code class="xref std std-numref docutils literal notranslate"><span class="pre">(number}</span></code></p></li>
 </ul>
+</div>
+<div class="section" id="id2">
+<h2>図<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>挿入</p>
+<div class="figure align-center" id="fig-label">
+<a class="reference internal image-reference" href="fig/strain/xyz-123.png"><img alt="fig/strain/xyz-123.png" src="fig/strain/xyz-123.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">座標系の表</span><a class="headerlink" href="#fig-label" title="Permalink to this image">¶</a></p>
+</div>
+<p>引用</p>
+<p>図 <code class="xref std std-numref docutils literal notranslate"><span class="pre">{number}</span></code>a</p>
 </div>
 </div>
 

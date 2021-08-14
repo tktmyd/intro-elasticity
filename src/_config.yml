@@ -31,7 +31,7 @@ repository:
 html:
   use_repository_button: true
   use_issues_button: false
-  google_analytics_id: G-18MRGYYJ53
+  google_analytics_id: G-8CCTE8J64T
   baseurl: https://tktmyd.github.io/intro-elasticity
 
 sphinx:
