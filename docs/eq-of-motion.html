@@ -68,7 +68,7 @@
 <meta property="og:url"         content="https://tktmyd.github.io/intro-elasticity/eq-of-motion.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="弾性体の運動方程式" />
-<meta property="og:description" content="弾性体の運動方程式  弾性体に働く力を応力テンソルで記述することができたので，運動方程式を立てることができるようになった．  微小立体の運動方程式  1つの（あるいは複数の）点について運動方程式が立てられた質点の場合とは異なり，弾性体では弾性体内のあらゆる点が運動をする．そこでまず，弾性体の一部分（場所 \boldsy" />
+<meta property="og:description" content="弾性体の運動方程式  弾性体に働く力を応力テンソルで記述できましたので，これで運動方程式を立てられます．  微小立体の運動方程式  1つの（あるいは複数の）点について運動方程式が立てられた質点の場合とは異なり，弾性体では弾性体内のあらゆる点が運動をします． そこで，弾性体の一部分（場所 \boldsymbol{x} ）" />
 <meta property="og:image"       content="https://tktmyd.github.io/intro-elasticity/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -255,41 +255,56 @@
                 
   <div class="section" id="id1">
 <h1>弾性体の運動方程式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>弾性体に働く力を応力テンソルで記述することができたので，運動方程式を立てることができるようになった．</p>
+<p>弾性体に働く力を応力テンソルで記述できましたので，これで運動方程式を立てられます．</p>
 <div class="section" id="id2">
 <h2>微小立体の運動方程式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>1つの（あるいは複数の）点について運動方程式が立てられた質点の場合とは異なり，弾性体では弾性体内のあらゆる点が運動をする．そこでまず，弾性体の一部分（場所 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> ）から，体積 <span class="math notranslate nohighlight">\(dV = dx_1\times dx_2 \times dx_3\)</span> の直方体を切り出してきて，それについて運動方程式をたてることにしよう．
+<p>1つの（あるいは複数の）点について運動方程式が立てられた質点の場合とは異なり，弾性体では弾性体内のあらゆる点が運動をします．
+そこで，弾性体の一部分（場所 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> ）から，体積 <span class="math notranslate nohighlight">\(dV = dx_1\times dx_2 \times dx_3\)</span> の直方体を切り出してきて，それについて運動方程式をたてることにしましょう．
 この部分の元の位置からの変形（<strong>変位</strong>）を，位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> と時間 <span class="math notranslate nohighlight">\(t\)</span> に依存するベクトル <span class="math notranslate nohighlight">\(\boldsymbol{u}(\boldsymbol{x},t)\)</span> と書くことにすれば，運動方程式の左辺は質量と加速度の積として，</p>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-0">
 <span class="eqno">(131)<a class="headerlink" href="#equation-eq-of-motion-0" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \left[ \rho \left(\boldsymbol{x}\right) dx_1dx_2 dx_3 \right] \times \frac{ \partial^2 \boldsymbol{u}(\boldsymbol{x},t) }{ \partial t^2 }
 \end{align}\]</div>
-<p>と表せる．ここで <span class="math notranslate nohighlight">\(\rho\)</span> は弾性体の質量密度，つまり単位体積あたりの重さだ．単位体積あたりの重さに体積を乗ずることによって，直方体 <span class="math notranslate nohighlight">\(dV\)</span> 全体の重さが求まる．
-変位の時間に関する2階微分が加速度を表しているが，変位ベクトルは場の量であって，位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> にも依存するので，常微分ではなく偏微分記号が用いられている．</p>
-<p>運動方程式の右辺には，その物体にかかる力をすべて記述する必要がある．
-弾性体にかかる力には，2通りのものがあるのだった．一つが実体力 <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{x}, t)\)</span> で，これは単に体積あたりの力だ．もう一つは面力だが，面力は今考えている直方体 <span class="math notranslate nohighlight">\(dx_1 dx_2 dx_3 \)</span> の表面（6つの長方形）すべてに働くので，それらを重ね合わせる必要がある．</p>
+<p>と表せます．
+ここで <span class="math notranslate nohighlight">\(\rho\)</span> は弾性体の質量密度，つまり単位体積あたりの重さです．
+単位体積あたりの重さに体積を乗ずることによって，直方体 <span class="math notranslate nohighlight">\(dV\)</span> 全体の重さが求まります．
+弾性体の変位 <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> の時間に関する2階微分が加速度を表していますが，変位ベクトルは場の量であって，位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> にも依存するので，常微分ではなく偏微分記号が用いられています．</p>
+<p>運動方程式の右辺には，その物体にかかる力をすべて記述する必要があります．
+すでに<a class="reference internal" href="stress.html"><span class="doc std std-doc">応力</span></a>の節で学んだように，弾性体にかかる力には，2通りがあるのでした．
+そのひとつが実体力 <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{x}, t)\)</span> で，これは単に体積あたりの外部からの力です．
+もうひとつは面力です．面力は，今考えている直方体 <span class="math notranslate nohighlight">\(dx_1 dx_2 dx_3 \)</span> の表面（6つの長方形）の<strong>すべて</strong>に働くので，それらをすべて考慮する必要があります．</p>
 <div class="figure align-center" id="fig-rippou">
 <a class="reference internal image-reference" href="_images/x2-stress.png"><img alt="_images/x2-stress.png" src="_images/x2-stress.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">弾性体内の微小体積要素に働く <span class="math notranslate nohighlight">\(x_2\)</span> 方向の応力テンソル成分．</span><a class="headerlink" href="#fig-rippou" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="#fig-rippou"><span class="std std-numref"> Fig. 20</span></a>にあらためて立方体 <span class="math notranslate nohighlight">\(dx_1dx_2dx_3\)</span> にかかる応力を示した．
-特に <span class="math notranslate nohighlight">\(x_2\)</span> 方向に法線を持つ面（ <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面）にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力を詳しく見ていくことにしよう．</p>
+<p><a class="reference internal" href="#fig-rippou"><span class="std std-numref"> Fig. 20</span></a>に，立方体 <span class="math notranslate nohighlight">\(dx_1dx_2dx_3\)</span> にかかる応力をあらためて示しました．
+ここでは特に <span class="math notranslate nohighlight">\(x_2\)</span> 方向に法線を持つ面（ <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面）にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力を詳しく見ていくことにしましょう．</p>
+<p>このような面は， <span class="math notranslate nohighlight">\(x_2\)</span> と <span class="math notranslate nohighlight">\(x_2+dx_2\)</span> の2つがあります．
+ひとつめの位置 <span class="math notranslate nohighlight">\(x_2\)</span> （図左側）における面は，法線ベクトルが負の方向を向いているから，そこにかかる応力ベクトルは，</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>応力テンソルは位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}=(x_1,x_2,x_3)^T\)</span> の関数だが，見通しを良くするため <span class="math notranslate nohighlight">\(x_2\)</span> 以外の引数を省略した．</p>
+<p>応力テンソルは位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}=(x_1,x_2,x_3)^T\)</span> の関数ですが，見通しを良くするため <span class="math notranslate nohighlight">\(x_2\)</span> 以外の引数を省略しています．</p>
 </div>
-<p>このような面は， <span class="math notranslate nohighlight">\(x_2\)</span> と <span class="math notranslate nohighlight">\(x_2+dx_2\)</span> の2つがある．ひとつめの位置 <span class="math notranslate nohighlight">\(x_2\)</span> （図左側）における面は，法線ベクトルが負の方向を向いているから，そこにかかる応力ベクトルは，</p>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-1">
 <span class="eqno">(132)<a class="headerlink" href="#equation-eq-of-motion-1" title="Permalink to this equation">¶</a></span>\[\begin{align}
   T_2^{(-\hat{\boldsymbol{n}}_2)}(x_2) = - \sigma_{22}(x_2)
 \end{align}\]</div>
-<p>である．
+<p>です．
 もうひとつの面（右側）にかかる力は，法線は <span class="math notranslate nohighlight">\(+x_2\)</span> 方向だが場所が <span class="math notranslate nohighlight">\(dx_2\)</span> だけずれていて，</p>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-2">
 <span class="eqno">(133)<a class="headerlink" href="#equation-eq-of-motion-2" title="Permalink to this equation">¶</a></span>\[\begin{align}
   T^{(\hat{\boldsymbol{n}}_2)}_2(x_2+dx_2) = + \sigma_{22}(x_2+dx_2)
 \end{align}\]</div>
-<p>のトラクションがかかっている．トラクションは面積あたりの力であったので，この面の面積をトラクションに乗じて，かつ両方のトラクションの効果を足し合わせることにより， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力は</p>
+<p>のトラクションがかかっています．
+トラクションは面積あたりの力でしたから，この面の面積をトラクションに乗じて，かつ両方のトラクションの効果を足し合わせることにより， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面にかかる <span class="math notranslate nohighlight">\(x_2\)</span> 方向の力は</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{multline}
+\sigma_{22}(x_2+dx_2) \\
+\simeq \sigma_{22}(x_2) + \frac{\partial \sigma_{22} }{\partial x_2} dx_2
+\end{multline}\end{split}\]</div>
+</div>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-3">
 <span class="eqno">(134)<a class="headerlink" href="#equation-eq-of-motion-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{multline}
     \left(  T^{(\hat{\boldsymbol{n}}_2)}_2(x_2+dx_2) +   T_2^{(-\hat{\boldsymbol{n}}_2)}(x_2) \right) dx_1 dx_3 = \left[ \sigma_{22}(x_2+dx_2) - \sigma_{22}(x_2) \right] dx_1 dx_3 \\
@@ -299,14 +314,17 @@
         \frac{ \partial \sigma_{22} }{\partial x_2} dx_2
       \right] -  \sigma_{22}(x_2) \right) dx_1 dx_3 = \frac{  \partial \sigma_{22} }{\partial x_2} dx_1 dx_2 dx_3
 \end{multline}\end{split}\]</div>
-<p>と表される．ただし， <span class="math notranslate nohighlight">\(dx_2\)</span> が十分小さいという条件のもとで1次のテイラー展開（<span class="math notranslate nohighlight">\(\sigma_{22}(x_2+dx_2)\simeq \sigma_{22}(x_2) + (\partial \sigma_{22} / \partial x_2 ) dx_2\)</span>）を行った．</p>
-<p><span class="math notranslate nohighlight">\(x_2\)</span> 方向にかかる力は，まだこれだけではない．さらに， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面（ <span class="math notranslate nohighlight">\(x_3\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{23}\)</span> と <span class="math notranslate nohighlight">\(x_2\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面（ <span class="math notranslate nohighlight">\(x_1\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{21}\)</span> とがある．全く同じように計算すると，それぞれ</p>
+<p>と表されます．
+ただし， <span class="math notranslate nohighlight">\(dx_2\)</span> が十分小さいという条件のもとで1次のテイラー展開を適用しました．</p>
+<p><span class="math notranslate nohighlight">\(x_2\)</span> 方向にかかる力は，これだけではありません．
+<span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面（ <span class="math notranslate nohighlight">\(x_3\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{23}\)</span> と <span class="math notranslate nohighlight">\(x_2\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面（ <span class="math notranslate nohighlight">\(x_1\)</span> 方向に法線を持つ面）の <span class="math notranslate nohighlight">\(\sigma_{21}\)</span> とがありますね．全く同じように計算すると，それぞれ</p>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-4">
 <span class="eqno">(135)<a class="headerlink" href="#equation-eq-of-motion-4" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \frac{  \partial \sigma_{23} }{\partial x_3} dx_1 dx_2 dx_3, \quad
   \frac{  \partial \sigma_{21} }{\partial x_1} dx_1 dx_2 dx_3
 \end{align}\]</div>
-<p>である．すべてをまとめると， <span class="math notranslate nohighlight">\(x_2\)</span> 方向の運動方程式は</p>
+<p>です．
+これらすべての面力の和をとって，<span class="math notranslate nohighlight">\(x_2\)</span> 方向の運動方程式は</p>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-5">
 <span class="eqno">(136)<a class="headerlink" href="#equation-eq-of-motion-5" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{multline}
   \rho \left(\boldsymbol{x}\right)  \frac{ \partial^2 u_2(\boldsymbol{x},t) }{ \partial t^2 } dx_1 dx_2 dx_3
@@ -317,11 +335,12 @@
   +     f_2(\boldsymbol{x},t)
   \right] dx_1 dx_2 dx_3
 \end{multline}\end{split}\]</div>
-<p>と表される．</p>
+<p>と表されます．</p>
 </div>
 <div class="section" id="id3">
 <h2>運動方程式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>これまでは微小体積要素が満たす運動方程式を考えてきたが，その運動方程式の両辺を直方体の体積 <span class="math notranslate nohighlight">\(dx_1 dx_2 dx_3\)</span> で規格化することで，体積要素の大きさに依存しない，<strong>単位体積当たりの運動方程式</strong>が得られる． <span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_3\)</span> 方向についても全く同様に運動方程式を導ける．すべてを書き下すと，</p>
+<p>これまでは微小体積要素が満たす運動方程式を考えてました．さらに運動方程式の両辺を直方体の体積 <span class="math notranslate nohighlight">\(dx_1 dx_2 dx_3\)</span> で規格化することで，体積要素の大きさに依存しない，<strong>単位体積当たりの運動方程式</strong>が得られます．
+<span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_3\)</span> 方向についても全く同様に運動方程式を導けますから，すべてを書き下すと，</p>
 <div class="math notranslate nohighlight" id="equation-eq-equation-of-motion">
 <span class="eqno">(137)<a class="headerlink" href="#equation-eq-equation-of-motion" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
   \begin{split}
@@ -341,19 +360,21 @@
   f_3(\boldsymbol{x},t)   
 \end{split}
 \end{align}\end{split}\]</div>
-<p>で，全部をまとめて成分で表すと，</p>
+<p>が得られます．全部をまとめて成分で表すと，</p>
 <div class="math notranslate nohighlight" id="equation-eq-equation-of-motion2">
 <span class="eqno">(138)<a class="headerlink" href="#equation-eq-equation-of-motion2" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \rho \left(\boldsymbol{x}\right)  \frac{ \partial^2 u_i(\boldsymbol{x},t) }{ \partial t^2 } 
   =
   \sum_{j=1}^3 \frac{  \partial \sigma_{ij} (\boldsymbol{x},t) }{\partial x_j} +  f_i(\boldsymbol{x},t) 
 \end{align}\]</div>
-<p>のように簡略に表すこともできる．
-<a class="reference internal" href="#equation-eq-equation-of-motion">(137)</a>あるいは<a class="reference internal" href="#equation-eq-equation-of-motion2">(138)</a>が，一般的な弾性体の運動を記述する運動方程式である．</p>
-<p>弾性体の運動方程式は単位体積あたり方程式任意の点の変形を表し，そこにかかる力は実体力と応力の空間微分であることがわかった．応力は変形によってひずんだ弾性体がもとに戻ろうとする内力だが，それらが全て釣り合っていたら，それ以上変形（運動）は起こらない．運動が起こるのは，応力のバランスが崩れた（応力テンソル成分の空間微分がゼロでなくなった）ときなのだ．</p>
+<p>と，より簡潔に表せます．<a class="reference internal" href="#equation-eq-equation-of-motion">(137)</a>あるいは<a class="reference internal" href="#equation-eq-equation-of-motion2">(138)</a>が，一般的な弾性体の運動を記述する運動方程式です．</p>
+<p>弾性体の運動方程式は単位体積あたり方程式任意の点の変形を表し，そこにかかる力は実体力と応力の空間微分であることがわかりました．応力は変形によってひずんだ弾性体がもとに戻ろうとする内力だが，それらが全て釣り合っていたら，それ以上変形（運動）は起こりません．
+運動が起こるのは，応力のバランスが崩れた（応力テンソル成分の空間微分がゼロでなくなった）ときなのです．</p>
 <div class="section" id="id4">
 <h3>平衡方程式<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>弾性体力学（特に構造物への応用）においては，弾性体が力学的に釣り合った状態というのも重要だ．質点系の力学と同じく，力が釣り合った状態にあれば，弾性体は運動をしませんが，運動が起こらないから応力テンソルがゼロになっているとは限らない．運動方程式から加速度項をゼロにした<strong>平衡方程式</strong></p>
+<p>弾性体力学（特に構造物への応用）においては，弾性体が力学的に釣り合った状態というのも重要です．
+質点系の力学と同じく，力が釣り合った状態にあれば，弾性体は運動をしません．しかし，運動が起こらないから応力テンソルがゼロになっているとは限りません．
+運動方程式から加速度項をゼロにした<strong>平衡方程式</strong></p>
 <div class="math notranslate nohighlight" id="equation-eq-of-motion-6">
 <span class="eqno">(139)<a class="headerlink" href="#equation-eq-of-motion-6" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
   \begin{split}
@@ -370,7 +391,7 @@
     =0    
   \end{split}
 \end{align}\end{split}\]</div>
-<p>が成立しており，これを満たすように応力と体積力が空間分布することになる．</p>
+<p>が成立しており，これを満たすように応力と体積力が空間分布することになります．</p>
 </div>
 </div>
 </div>
