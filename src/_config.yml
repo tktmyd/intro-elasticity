@@ -2,9 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: 弾性体力学入門
-author: "" #Takuto Maeda
-logo: "" # logo.png
-copyright: '2021 Takuto Maeda. All Rights Reserved'
+author: "Takuto Maeda (&#64;&#116;&#107;&#116;&#109;&#121;&#100;)" #Takuto Maeda
+logo: logo.png # logo.png
+copyright: '2021. All Rights Reserved'
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
