@@ -286,12 +286,14 @@
 各点における変位は向き（動いた方向）と大きさ（動いた大きさ）を持っているので，ベクトルです．
 しかも，変位は弾性体内の位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> （これも位置を表すベクトルです）によって異なることがあるため，位置 <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> の関数でもあります．
 3次元空間では位置ベクトル <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> は3つの要素を持ちますから，変位ベクトルは3つの変数を持つ多変数関数でもあるのです．</p>
+<!--
+ ```{admonition} 数学メモ：場
+:class: tip, dropdown
+位置によって値が定まる物理量のことを，**『場』** ということがあります．いま扱っているのは変位の場なので，ひとまとめに変位場と呼びます．「場」は **field** の和訳語です．高校までの理科では別の訳語「界」が使われていましたが，たとえば電界と磁界は電場，磁場と同じ意味です．
+```
+-->
 <div class="tip dropdown admonition">
-<p class="admonition-title">数学メモ：場</p>
-<p>位置によって値が定まる物理量のことを，<strong>『場』</strong> ということがあります．いま扱っているのは変位の場なので，ひとまとめに変位場と呼びます．「場」は <strong>field</strong> の和訳語です．高校までの理科では別の訳語「界」が使われていましたが，たとえば電界と磁界は電場，磁場と同じ意味です．</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">座標系の表現</p>
+<p class="admonition-title">数学メモ：座標系の表現</p>
 <p>これまでは三次元空間上の位置といえば<a class="reference internal" href="#fig-xyz-123"><span class="std std-numref"> Fig. 1</span></a>a のように <span class="math notranslate nohighlight">\((x,y,z)\)</span> の記号を用いて表すのが普通だっでしょうが，本書では，<span class="math notranslate nohighlight">\((x,y,z)\)</span>のかわりに下付きの<strong>添字</strong>を使って， <span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1, x_2, x_3)\)</span> と<a class="reference internal" href="#fig-xyz-123"><span class="std std-numref"> Fig. 1</span></a>bのように表します．</p>
 <p>このような記法を用いるのは，これから沢山の記号が出てくるのに，位置を表すだけのために3つもアルファベットを使っていては記号が足りないという（切実な！）理由のためです．
 また，番号の添字を変数 <span class="math notranslate nohighlight">\(i\)</span> で表すと，たとえば <span class="math notranslate nohighlight">\(x_i\)</span>   <span class="math notranslate nohighlight">\((i=1,\cdots 3)\)</span> のような表し方ができ，計算の見通しが良くなるというメリットもあります．
