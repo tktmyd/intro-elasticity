@@ -1,6 +1,8 @@
-- file: intro
+format: jb-book
+root: intro
+chapters:
 - file: strain
-- file: stress  
+- file: stress
 - file: principal
 - file: eq-of-motion
 - file: constitutive
