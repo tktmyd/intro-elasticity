@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>応力 &#8212; 弾性体力学入門</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,38 +41,29 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://tktmyd.github.io/intro-elasticity/stress.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="主応力・主ひずみと座標回転" href="principal.html" />
     <link rel="prev" title="ひずみと変形" href="strain.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://tktmyd.github.io/intro-elasticity/stress.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="応力" />
-<meta property="og:description" content="応力  この節では，弾性体の変形をもたらす力である 応力 について学習します． 変形を表すひずみが単一の量でなく6つの独立成分を持つテンソルであったように，応力もまたテンソル量として表されることと，その意味を学びます．  応力・トラクションとその定義  いきなりですが，連続体（弾性体）に働きうる力には，2種類があります" />
-<meta property="og:image"       content="https://tktmyd.github.io/intro-elasticity/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -84,27 +72,31 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">弾性体力学入門</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">弾性体力学入門</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    弾性体力学入門
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="strain.html">
    ひずみと変形
@@ -137,11 +129,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="greek.html">
-   ギリシャ文字の一覧
+   補遺：ギリシャ文字の一覧
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -204,12 +197,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -218,12 +211,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    応力・トラクションとその定義
@@ -236,8 +228,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -274,27 +265,31 @@
 <a class="reference internal image-reference" href="_images/internal_force.png"><img alt="_images/internal_force.png" src="_images/internal_force.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">内力を理解するための思考実験．(a)弾性体の棒の両端に  <span class="math notranslate nohighlight">\(T\)</span>  の張力がかかっている．中心の点線は仮想的な切断面．(b)仮想切断面の左側とそこにかかる力．(c)仮想切断面の右側とそこにかかる力．</span><a class="headerlink" href="#fig-internal-force" title="Permalink to this image">¶</a></p>
 </div>
-<p>内力である面力は，どのように仮想的な面をとるかによってその力の向きや大きさが変わってきます．
-先の例では，内力は仮想切断面に垂直に働いていました．
-こんどは，<a class="reference internal" href="#fig-internal-force2"><span class="std std-numref"> Fig. 9</span></a>のように（もちろん仮想的に）斜めに切ったらどうでしょうか．
+<p>ほかにも，たとえば水中の物体には<strong>圧力</strong>（水圧；<a class="reference internal" href="#fig-waterpressure"><span class="std std-numref">Fig. 9</span></a>）がかかります．これも（水とその内側の物体を一連の系とみなしたときの）内力のひとつです．水圧はつねに物体表面に垂直に，同じ深さであれば同じ大きさの力が働きます．つまり，同じ深さでも，物体表面の無向きが変わると，その面に対してかかる力の向きが変わってしまうのです．</p>
+<div class="figure align-center" id="fig-waterpressure">
+<a class="reference internal image-reference" href="_images/waterpressure.png"><img alt="_images/waterpressure.png" src="_images/waterpressure.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">水中の円形物体にかかる水圧 <span class="math notranslate nohighlight">\(p\)</span> の模式図．本来は水圧は深さによって異なり，物体上辺と下辺ではその大きさが僅かにことなる（その差の分物体は<strong>浮力</strong>を受ける）が，ここでは便宜上その違いを省略している．</span><a class="headerlink" href="#fig-waterpressure" title="Permalink to this image">¶</a></p>
+</div>
+<p>このように，内力である面力は，どのように仮想的な面をとるかによってその力の向きや大きさが変わってきます．
+弾性体棒の例に戻って，こんどは，<a class="reference internal" href="#fig-internal-force2"><span class="std std-numref"> Fig. 10</span></a>のように（もちろん仮想的に）斜めに切ったらどうでしょうか．
 外力は同じですから，面には全体として左右に引っ張り合うような力が働きます．しかし，それは面に対しては斜めに働いているのです．
 つまりこの内力は，面に垂直な成分と，面を横滑りさせるような成分とに分解できます．先程の垂直断面のときとは違いますね．
 このように，内力とは <strong>物体に仮想的な面を考えたとき，面にかかる力</strong> です．
 その力は，<strong>面のとり方によって異な</strong>ります．</p>
 <div class="figure align-center" id="fig-internal-force2">
 <a class="reference internal image-reference" href="_images/internal_force2.png"><img alt="_images/internal_force2.png" src="_images/internal_force2.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">仮想面の方向に応じて変化する内力の模式図．</span><a class="headerlink" href="#fig-internal-force2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">仮想面の方向に応じて変化する内力の模式図．</span><a class="headerlink" href="#fig-internal-force2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>この図はいかにも弾性体ひとかたまりを取ってきた表面のように見えるかもしれませんが，そうではありません．弾性体の内部一部をくり抜いた物体の表面だと思ってください．</p>
 </div>
-<p>いま，<a class="reference internal" href="#fig-katamari"><span class="std std-numref"> Fig. 10</span></a>のように，弾性体のある領域の面の一部分の微小な面積要素 <span class="math notranslate nohighlight">\(dS\)</span> を取ってきて，そこに働く力全体を <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> としましょう．
+<p>いま，<a class="reference internal" href="#fig-katamari"><span class="std std-numref"> Fig. 11</span></a>のように，弾性体のある領域の面の一部分の微小な面積要素 <span class="math notranslate nohighlight">\(dS\)</span> を取ってきて，そこに働く力全体を <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> としましょう．
 これまでの議論と同じように，この力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> は，面の向きによって変わります．
 それを数学的に表現するためには，まず「面の向き」の表現が必要ですね．そこで，<strong>法線ベクトル</strong> <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> の出番です．法線ベクトルは，ある微小な面要素に垂直な方向をもち，大きさが<span class="math notranslate nohighlight">\(1\)</span>のベクトルです．</p>
 <div class="figure align-center" id="fig-katamari">
 <a class="reference internal image-reference" href="_images/SurfaceForce.png"><img alt="_images/SurfaceForce.png" src="_images/SurfaceForce.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">弾性体の塊（体積 <span class="math notranslate nohighlight">\(V\)</span> ）と，その面要素 <span class="math notranslate nohighlight">\(dS\)</span> に働く力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> の模式図． <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> は要素 <span class="math notranslate nohighlight">\(dS\)</span> の法線ベクトルである．</span><a class="headerlink" href="#fig-katamari" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">弾性体の塊（体積 <span class="math notranslate nohighlight">\(V\)</span> ）と，その面要素 <span class="math notranslate nohighlight">\(dS\)</span> に働く力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> の模式図． <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> は要素 <span class="math notranslate nohighlight">\(dS\)</span> の法線ベクトルである．</span><a class="headerlink" href="#fig-katamari" title="Permalink to this image">¶</a></p>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -336,7 +331,7 @@
 <p>粘性のない水（流体）の中であれば，圧力は常に面に垂直な方向しかとりません．
 しかし，固体中の面力はもうすこし複雑です．
 面力の大きな特徴は， <strong>力が面積要素の向きに依存する</strong> ということでした．
-このことを，弾性体内部の小さな立方体を取り出すことによって考えましょう（<a class="reference internal" href="#fig-bunkai"><span class="std std-numref"> Fig. 11</span></a>）．</p>
+このことを，弾性体内部の小さな立方体を取り出すことによって考えましょう（<a class="reference internal" href="#fig-bunkai"><span class="std std-numref"> Fig. 12</span></a>）．</p>
 <p><span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_2\)</span> ,  <span class="math notranslate nohighlight">\(x_3\)</span> それぞれの方向に法線を持つ面（ <span class="math notranslate nohighlight">\(x_2\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面,  <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_3\)</span> 面,  <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 面）に対して，トラクション <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_1)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_2)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_3)}\)</span> がかかります．
 ただし，</p>
 <div class="math notranslate nohighlight" id="equation-eq-normalvector-definition">
@@ -348,7 +343,7 @@
 <p>は各軸方向の法線ベクトルです．</p>
 <div class="figure align-center" id="fig-bunkai">
 <a class="reference internal image-reference" href="_images/Traction.png"><img alt="_images/Traction.png" src="_images/Traction.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">弾性体内の微小立体要素に働く力 <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_1)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_2)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_3)}\)</span> とその成分．</span><a class="headerlink" href="#fig-bunkai" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">弾性体内の微小立体要素に働く力 <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_1)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_2)}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_3)}\)</span> とその成分．</span><a class="headerlink" href="#fig-bunkai" title="Permalink to this image">¶</a></p>
 </div>
 <p>水（完全流体）中の圧力であれば，面にかかるトラクションは常に面の法線方向に並行ですが，弾性体内の力は「ねじれ」を許容するため，それ以外の方向にも力がかかり得ます．
 トラクションはベクトルですので，たとえば図中の <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}}_2)}\)</span> は，</p>
@@ -388,12 +383,12 @@
 <p>教科書によっては，応力テンソルの <span class="math notranslate nohighlight">\(i\)</span> と <span class="math notranslate nohighlight">\(j\)</span> の順番が逆転していたり，1つ目と2つ目の添字の意味が逆転していたり，いろいろのようだ．だが，このあとに示す応力テンソルの対称性によって，それらは実は「どっちでもいい」ことになります．</p>
 </div>
 <p>これらのうち， <span class="math notranslate nohighlight">\(\sigma_{11}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{22}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{33}\)</span> を <strong>法線応力（normal stress）</strong> ，残りの <span class="math notranslate nohighlight">\(\sigma_{23}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{13}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{12}\)</span> を <strong>剪断応力（shear stress）</strong> と呼んで区別することがあります．これらの名前の付け方はひずみテンソルと同じで，法線応力は物体を膨張・圧縮させようとする力に，剪断応力はねじれの力にそれぞれ相当します．
-<a class="reference internal" href="#fig-stress-12"><span class="std std-numref"> Fig. 12</span></a>に， <span class="math notranslate nohighlight">\(x_1\)</span> - <span class="math notranslate nohighlight">\(x_2\)</span> 面内の微小四角形の辺に働く応力テンソルの成分を示しました．
-<a class="reference internal" href="#fig-bunkai"><span class="std std-numref"> Fig. 11</span></a>では表現の都合上法線が座標軸正の方向を向いた面の応力（トラクション）しか表示していませんでしたが，実際には反対側の面にも（法線方向が反対なので）逆方向の力がかかります．
+<a class="reference internal" href="#fig-stress-12"><span class="std std-numref"> Fig. 13</span></a>に， <span class="math notranslate nohighlight">\(x_1\)</span> - <span class="math notranslate nohighlight">\(x_2\)</span> 面内の微小四角形の辺に働く応力テンソルの成分を示しました．
+<a class="reference internal" href="#fig-bunkai"><span class="std std-numref"> Fig. 12</span></a>では表現の都合上法線が座標軸正の方向を向いた面の応力（トラクション）しか表示していませんでしたが，実際には反対側の面にも（法線方向が反対なので）逆方向の力がかかります．
 したがって，法線応力は全体として（符号がプラスの場合には）物質を膨張させる張力なのです．</p>
 <div class="figure align-center" id="fig-stress-12">
 <a class="reference internal image-reference" href="_images/stress_12.png"><img alt="_images/stress_12.png" src="_images/stress_12.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">弾性体内の <span class="math notranslate nohighlight">\(x_1\)</span> - <span class="math notranslate nohighlight">\(x_2\)</span> 面内の微小要素に働く応力テンソルの成分．</span><a class="headerlink" href="#fig-stress-12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">弾性体内の <span class="math notranslate nohighlight">\(x_1\)</span> - <span class="math notranslate nohighlight">\(x_2\)</span> 面内の微小要素に働く応力テンソルの成分．</span><a class="headerlink" href="#fig-stress-12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id3">
@@ -409,7 +404,7 @@
 <p>より厳密には，角運動量の保存則を考える必要があります．ここでは簡略化された説明をしています．</p>
 </div>
 <p>この条件は，弾性体全体が回転しないという条件から導かれます．
-<a class="reference internal" href="#fig-stress-symmetry"><span class="std std-numref"> Fig. 13</span></a>に <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内の微小正方形にかかる応力テンソルを示しました．
+<a class="reference internal" href="#fig-stress-symmetry"><span class="std std-numref"> Fig. 14</span></a>に <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内の微小正方形にかかる応力テンソルを示しました．
 媒質全体が回転しないためには，明らかに</p>
 <div class="math notranslate nohighlight" id="equation-stress-5">
 <span class="eqno">(49)<a class="headerlink" href="#equation-stress-5" title="Permalink to this equation">¶</a></span>\[\begin{align}
@@ -423,7 +418,7 @@
 <p><span class="math notranslate nohighlight">\(\sigma_{13} = \sigma_{31}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{23}=\sigma_{32}\)</span> の対称性も同様に導かれます．</p>
 <div class="figure align-center" id="fig-stress-symmetry">
 <a class="reference internal image-reference" href="_images/stress_symmetry.png"><img alt="_images/stress_symmetry.png" src="_images/stress_symmetry.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">応力テンソルの対称性． <span class="math notranslate nohighlight">\(12\)</span> 平面の（微小）正方形にかかる応力テンソルのうち剪断応力テンソル成分を矢印で示す．</span><a class="headerlink" href="#fig-stress-symmetry" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">応力テンソルの対称性． <span class="math notranslate nohighlight">\(12\)</span> 平面の（微小）正方形にかかる応力テンソルのうち剪断応力テンソル成分を矢印で示す．</span><a class="headerlink" href="#fig-stress-symmetry" title="Permalink to this image">¶</a></p>
 </div>
 <p>応力テンソルが対称テンソルであることから， <span class="math notranslate nohighlight">\(\sigma_{12} = \sigma_{21}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{13} = \sigma_{31}\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_{23} = \sigma_{32}\)</span> です．
 よって，応力テンソルの独立な成分は6つです．</p>
@@ -437,12 +432,12 @@
 コーシーの関係式はたいへん強力で， <strong>応力テンソルの6つの独立な成分さえわかれば，弾性体内に働くあらゆる方向のトラクションを知ることができる</strong> ということを意味しています．</p>
 <p>この関係式は，釣り合いの状態にある微小三角錐（あるいは2次元であれば三角形）のトラクションを考察することで導出できます．
 ここでは簡単のため，ふたたび2次元の <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面だけを考えましょう．</p>
-<p>まず，<a class="reference internal" href="#fig-stress-equi"><span class="std std-numref"> Fig. 14</span></a>のように， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面における微小三角形に働く力を考えます．</p>
+<p>まず，<a class="reference internal" href="#fig-stress-equi"><span class="std std-numref"> Fig. 15</span></a>のように， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面における微小三角形に働く力を考えます．</p>
 <p>三角形の2辺はそれぞれ <span class="math notranslate nohighlight">\(x_1\)</span> 軸と <span class="math notranslate nohighlight">\(x_2\)</span> 軸に平行でその長さを <span class="math notranslate nohighlight">\(dx_1\)</span> と <span class="math notranslate nohighlight">\(dx_2\)</span> ，もう1つの辺は長さ <span class="math notranslate nohighlight">\(d\ell\)</span> で，その辺（3次元なら面）の法線ベクトルを <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> ，そこに働くトラクションベクトルを <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}=(T_1, T_2)\)</span> とします．
-残りの2つの面に働くトラクションベクトルの成分は，定義により<a class="reference internal" href="#fig-stress-equi"><span class="std std-numref"> Fig. 14</span></a> にある応力テンソル成分で表現できます．</p>
+残りの2つの面に働くトラクションベクトルの成分は，定義により<a class="reference internal" href="#fig-stress-equi"><span class="std std-numref"> Fig. 15</span></a> にある応力テンソル成分で表現できます．</p>
 <div class="figure align-center" id="fig-stress-equi">
 <a class="reference internal image-reference" href="_images/Equillibrium.png"><img alt="_images/Equillibrium.png" src="_images/Equillibrium.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">2次元 <span class="math notranslate nohighlight">\(12\)</span> 平面内における微小三角形に働く力の釣り合い．</span><a class="headerlink" href="#fig-stress-equi" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">2次元 <span class="math notranslate nohighlight">\(12\)</span> 平面内における微小三角形に働く力の釣り合い．</span><a class="headerlink" href="#fig-stress-equi" title="Permalink to this image">¶</a></p>
 </div>
 <p>それでは， <span class="math notranslate nohighlight">\(x_1\)</span> 方向と <span class="math notranslate nohighlight">\(x_2\)</span> 方向それぞれの力の釣り合いを考えましょう．
 面に働く力はトラクションベクトルにその面の面積（この場合は2次元なので辺の長さ）を乗じたものですから， <span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_2\)</span> 方向それぞれについて，</p>
@@ -545,16 +540,36 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="strain.html" title="previous page">ひずみと変形</a>
-    <a class='right-next' id="next-link" href="principal.html" title="next page">主応力・主ひずみと座標回転</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="strain.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">ひずみと変形</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="principal.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">主応力・主ひずみと座標回転</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -569,21 +584,16 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8CCTE8J64T"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-8CCTE8J64T');
+                </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'G-8CCTE8J64T', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>主応力・主ひずみと座標回転 &#8212; 弾性体力学入門</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,38 +41,29 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://tktmyd.github.io/intro-elasticity/principal.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="弾性体の運動方程式" href="eq-of-motion.html" />
     <link rel="prev" title="応力" href="stress.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://tktmyd.github.io/intro-elasticity/principal.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="主応力・主ひずみと座標回転" />
-<meta property="og:description" content="主応力・主ひずみと座標回転  ひずみ・応力の固有値問題  これまでに導入されたひずみテンソルは，弾性体内の2点間の相対位置ベクトル \boldsymbol{d} を与えると，その間の（回転を除いた）変形 \boldsymbol{u} が得られるもの    \begin{align}   \boldsymbol{u} =" />
-<meta property="og:image"       content="https://tktmyd.github.io/intro-elasticity/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -84,27 +72,31 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">弾性体力学入門</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">弾性体力学入門</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    弾性体力学入門
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="strain.html">
    ひずみと変形
@@ -142,6 +134,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -204,12 +197,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -218,12 +211,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    ひずみ・応力の固有値問題
@@ -275,8 +267,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -819,14 +810,14 @@
 <span class="eqno">(100)<a class="headerlink" href="#equation-principal-22" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \boldsymbol{v} = \boldsymbol{R}(\theta) \boldsymbol{u}
 \end{align}\]</div>
-<p>と，それによって得られるベクトル <span class="math notranslate nohighlight">\(\boldsymbol{v} \)</span> は， <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> を角度 <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転したもの（<a class="reference internal" href="#fig-rotation"><span class="std std-numref"> Fig. 15</span></a>a）になるのでした．その逆行列が</p>
+<p>と，それによって得られるベクトル <span class="math notranslate nohighlight">\(\boldsymbol{v} \)</span> は， <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> を角度 <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転したもの（<a class="reference internal" href="#fig-rotation"><span class="std std-numref"> Fig. 16</span></a>a）になるのでした．その逆行列が</p>
 <div class="math notranslate nohighlight" id="equation-principal-23">
 <span class="eqno">(101)<a class="headerlink" href="#equation-principal-23" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \boldsymbol{u} = \boldsymbol{R}^{-1}(\theta) \boldsymbol{v}
 \end{align}\]</div>
 <p>と書けますが，これは角度 <span class="math notranslate nohighlight">\(-\theta\)</span> の回転行列です．
 したがって， <span class="math notranslate nohighlight">\(\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)\)</span> が成り立ちます．「角度 <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転する操作の逆は，角度 <span class="math notranslate nohighlight">\(-\theta\)</span> の回転である」という意味です．
-一方， <span class="math notranslate nohighlight">\(\boldsymbol{R}(-\theta)\)</span> は，ベクトルを <span class="math notranslate nohighlight">\(-\theta\)</span> 回転させるのではなく，<strong>座標系を <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転させた</strong>，と見ることもできます（<a class="reference internal" href="#fig-rotation"><span class="std std-numref"> Fig. 15</span></a>b）．</p>
+一方， <span class="math notranslate nohighlight">\(\boldsymbol{R}(-\theta)\)</span> は，ベクトルを <span class="math notranslate nohighlight">\(-\theta\)</span> 回転させるのではなく，<strong>座標系を <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転させた</strong>，と見ることもできます（<a class="reference internal" href="#fig-rotation"><span class="std std-numref"> Fig. 16</span></a>b）．</p>
 <p>この関係を用いると，<a class="reference internal" href="#equation-eq-diag-stress">(99)</a>は<strong>応力テンソルを回転した座標系で表したもの</strong>という意味をもつことが分かってきます．以下，そのことを示していきましょう．</p>
 <div class="dropdown admonition">
 <p class="admonition-title">演習：回転行列の逆行列</p>
@@ -834,7 +825,7 @@
 </div>
 <div class="figure align-center" id="fig-rotation">
 <a class="reference internal image-reference" href="_images/rotation.png"><img alt="_images/rotation.png" src="_images/rotation.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">座標の回転と座標系の回転．(a)では，ある位置ベクトルを回転行列によって <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転している．同じ操作は，ベクトルの位置を固定したまま，(b)のように座標系を反対方向に <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転させた <span class="math notranslate nohighlight">\(x_1'\)</span> – <span class="math notranslate nohighlight">\(x_2'\)</span> 座標系で元の点の位置を表現することもできる．この場合，(c)のように <span class="math notranslate nohighlight">\(x_1'\)</span> – <span class="math notranslate nohighlight">\(x_2'\)</span> を紙面水平鉛直に沿うように描画しなおすと，(a)において回転されたベクトルの位置に一致している．</span><a class="headerlink" href="#fig-rotation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">座標の回転と座標系の回転．(a)では，ある位置ベクトルを回転行列によって <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転している．同じ操作は，ベクトルの位置を固定したまま，(b)のように座標系を反対方向に <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転させた <span class="math notranslate nohighlight">\(x_1'\)</span> – <span class="math notranslate nohighlight">\(x_2'\)</span> 座標系で元の点の位置を表現することもできる．この場合，(c)のように <span class="math notranslate nohighlight">\(x_1'\)</span> – <span class="math notranslate nohighlight">\(x_2'\)</span> を紙面水平鉛直に沿うように描画しなおすと，(a)において回転されたベクトルの位置に一致している．</span><a class="headerlink" href="#fig-rotation" title="Permalink to this image">¶</a></p>
 </div>
 <p>まず，応力テンソルのコーシーの関係式に戻ります：</p>
 <div class="math notranslate nohighlight" id="equation-principal-24">
@@ -1035,10 +1026,10 @@
   \end{pmatrix}
 \end{align}\end{split}\]</div>
 <p>と対角化されました．</p>
-<p><a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 16</span></a>は，(a)に<a class="reference internal" href="#equation-eq-straion-rotation-1">(111)</a> のひずみによる変形場を，(b)に回転後の<a class="reference internal" href="#equation-eq-straion-rotation-2">(119)</a> による変形場をそれぞれ示します．<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 16</span></a>aでは <span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_2\)</span> 軸の方向には座標軸に直交した変形が得られていますが，<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 16</span></a>(b)では，たしかに主方向である <span class="math notranslate nohighlight">\(x_1'\)</span> と <span class="math notranslate nohighlight">\(x_2'\)</span> 方向には<strong>軸方向にだけ</strong>変形しているということがわかるでしょう．また，注意深く<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 16</span></a>aと<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 16</span></a>bを比べると，(a)に対して(b)のベクトル場は45度時計回りに回転していることも確認できるでしょう．</p>
+<p><a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 17</span></a>は，(a)に<a class="reference internal" href="#equation-eq-straion-rotation-1">(111)</a> のひずみによる変形場を，(b)に回転後の<a class="reference internal" href="#equation-eq-straion-rotation-2">(119)</a> による変形場をそれぞれ示します．<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 17</span></a>aでは <span class="math notranslate nohighlight">\(x_1\)</span> ,  <span class="math notranslate nohighlight">\(x_2\)</span> 軸の方向には座標軸に直交した変形が得られていますが，<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 17</span></a>(b)では，たしかに主方向である <span class="math notranslate nohighlight">\(x_1'\)</span> と <span class="math notranslate nohighlight">\(x_2'\)</span> 方向には<strong>軸方向にだけ</strong>変形しているということがわかるでしょう．また，注意深く<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 17</span></a>aと<a class="reference internal" href="#fig-strain-rotation"><span class="std std-numref"> Fig. 17</span></a>bを比べると，(a)に対して(b)のベクトル場は45度時計回りに回転していることも確認できるでしょう．</p>
 <div class="figure align-center" id="fig-strain-rotation">
 <a class="reference internal image-reference" href="_images/strain_rotation.png"><img alt="_images/strain_rotation.png" src="_images/strain_rotation.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">ひずみによる変形場の回転の例．</span><a class="headerlink" href="#fig-strain-rotation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">ひずみによる変形場の回転の例．</span><a class="headerlink" href="#fig-strain-rotation" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -1050,11 +1041,11 @@
 <p class="sidebar-title"></p>
 <p>面ではなくて線だろう，と思うかもしれませんが，2次元の問題ではこの線がは <span class="math notranslate nohighlight">\(z\)</span> 方向（紙面の手前と奥行き方向）に無限に続いていると仮定しています．ですから，これはあくまでも <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 断面を切る面なのです．</p>
 </div>
-<p><span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内における2次元の変形を考えます．<a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref"> Fig. 17</span></a>のように，法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> を持つ面を考え，そこに働くトラクションを調べることにしましょう．我々はもうコーシーの関係式を知っているのですから，面の法線ベクトルを求め，それを応力テンソルに作用させれば，どんな面に対してもトラクションベクトルを求めることができます．</p>
+<p><span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内における2次元の変形を考えます．<a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref"> Fig. 18</span></a>のように，法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> を持つ面を考え，そこに働くトラクションを調べることにしましょう．我々はもうコーシーの関係式を知っているのですから，面の法線ベクトルを求め，それを応力テンソルに作用させれば，どんな面に対してもトラクションベクトルを求めることができます．</p>
 <p>実用上は，ある角度 <span class="math notranslate nohighlight">\(\theta\)</span> が与えられたときに，その角度の面にかかるトラクションの，面に対する法線方向や接線方向のトラクションを調べるということがよくあります．本節では，図示によって法線・接線方向のトラクションを調べることができる，モール（Mohr）の円という強力な方法を紹介します．</p>
 <div class="figure align-center" id="fig-mohr-layout">
 <a class="reference internal image-reference" href="_images/Mohr_Layout.png"><img alt="_images/Mohr_Layout.png" src="_images/Mohr_Layout.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">2次元 <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内における応力場とその内部に考える面（点線）にはたらくトラクション <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}\)</span> ．四角形周辺の矢印がこの場に働く応力テンソル成分とその方向を，四角形中の２つの座標軸は <span class="math notranslate nohighlight">\(12\)</span> 直交座標系と，面と面に直交する方向からなる <span class="math notranslate nohighlight">\(vw\)</span> 座標系．</span><a class="headerlink" href="#fig-mohr-layout" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">2次元 <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内における応力場とその内部に考える面（点線）にはたらくトラクション <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}\)</span> ．四角形周辺の矢印がこの場に働く応力テンソル成分とその方向を，四角形中の２つの座標軸は <span class="math notranslate nohighlight">\(12\)</span> 直交座標系と，面と面に直交する方向からなる <span class="math notranslate nohighlight">\(vw\)</span> 座標系．</span><a class="headerlink" href="#fig-mohr-layout" title="Permalink to this image">¶</a></p>
 </div>
 <p><span class="math notranslate nohighlight">\(x_3\)</span> 方向を無視した2次元空間での応力テンソルは</p>
 <div class="math notranslate nohighlight" id="equation-principal-33">
@@ -1102,7 +1093,7 @@
 <p>で得ることができます．</p>
 <p>この計算で得られたのは，トラクションの <span class="math notranslate nohighlight">\(x_1\)</span> 方向と <span class="math notranslate nohighlight">\(x_2\)</span> 方向の成分 <span class="math notranslate nohighlight">\( T_1^{(\hat{ \boldsymbol{n} })}\)</span> ,  <span class="math notranslate nohighlight">\( T_2^{(\hat{ \boldsymbol{n}})}\)</span> です．
 では，今考えている法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> の面の法線方向に働く応力（法線応力）や接線方向に働く応力（剪断応力）はどうでしょうか．
-それは，トラクションベクトルの<a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref"> Fig. 17</span></a>中の <span class="math notranslate nohighlight">\(v\)</span> – <span class="math notranslate nohighlight">\(w\)</span> 座標軸方向の値を求めることに相当します．
+それは，トラクションベクトルの<a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref"> Fig. 18</span></a>中の <span class="math notranslate nohighlight">\(v\)</span> – <span class="math notranslate nohighlight">\(w\)</span> 座標軸方向の値を求めることに相当します．
 <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 座標系と比べて <span class="math notranslate nohighlight">\(v\)</span> – <span class="math notranslate nohighlight">\(w\)</span> 座標系は <span class="math notranslate nohighlight">\(+\theta\)</span> だけ回転しているのですから， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 座標系で表したベクトルを <span class="math notranslate nohighlight">\(v\)</span> – <span class="math notranslate nohighlight">\(w\)</span> 座標系でみると，あたかも <span class="math notranslate nohighlight">\(-\theta\)</span> だけ反対方向に回転したかのように見えるはずです．
 つまり， <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 座標系で求まったトラクションベクトルを <span class="math notranslate nohighlight">\(-\theta\)</span> だけ回転することにより，法線応力と剪断応力が求まるのです．
 それぞれの値を <span class="math notranslate nohighlight">\(T_v^{(\hat{ \boldsymbol{n} })}\)</span> ,  <span class="math notranslate nohighlight">\(T_w^{(\hat{ \boldsymbol{n} })}\)</span> とすると，</p>
@@ -1188,7 +1179,7 @@
     \sigma_{12} = 0
   \end{split}
 \end{align}\end{split}\]</div>
-<p>であると仮定します（<a class="reference internal" href="#fig-mohr-layout-simplified"><span class="std std-numref"> Fig. 18</span></a>）．
+<p>であると仮定します（<a class="reference internal" href="#fig-mohr-layout-simplified"><span class="std std-numref"> Fig. 19</span></a>）．
 外部からかかる剪断応力 <span class="math notranslate nohighlight">\(\sigma_{12}\)</span> がゼロというのは，一見強い仮定に見えるかもしれません．
 しかし，前節で学んだように，どんな場合でも適切に座標系を回転することで<a class="reference internal" href="#equation-eq-mohr-notation1">(127)</a>を満たすようにできることができるのでした．ですから，どんな応力状態であっても，回転によってこの仮定の状況に落とし込むことができます．そのとき， <span class="math notranslate nohighlight">\(\sigma_1\)</span> と <span class="math notranslate nohighlight">\(\sigma_2\)</span> は主応力に相当します．
 また，面に対する法線方向の応力を圧縮を正として <span class="math notranslate nohighlight">\(N=-T_v^{(\hat{ \boldsymbol{n}})}\)</span> , 剪断方向の応力をそのまま <span class="math notranslate nohighlight">\(S=T_w^{(\hat{ \boldsymbol{n} })}\)</span> としましょう．
@@ -1210,7 +1201,7 @@
 <p>が得られます．この式は <span class="math notranslate nohighlight">\(N\)</span> – <span class="math notranslate nohighlight">\(S\)</span> 軸上の円を表していることから，<strong>モールの円</strong>と呼ばれています．</p>
 <div class="figure align-center" id="fig-mohr-layout-simplified">
 <a class="reference internal image-reference" href="_images/Mohr_Layout_Simplified.png"><img alt="_images/Mohr_Layout_Simplified.png" src="_images/Mohr_Layout_Simplified.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text"><a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref"> Fig. 17</span></a>からいくつかの仮定のもと（詳しくは本文）に単純化したレイアウト．</span><a class="headerlink" href="#fig-mohr-layout-simplified" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text"><a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref"> Fig. 18</span></a>からいくつかの仮定のもと（詳しくは本文）に単純化したレイアウト．</span><a class="headerlink" href="#fig-mohr-layout-simplified" title="Permalink to this image">¶</a></p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">数学メモ：円の方程式</p>
@@ -1220,12 +1211,12 @@
   \left(x-a\right)^2 + \left( y-b \right)^2 = r^2
 \end{align}\]</div>
 </div>
-<p>モールの円は，与えられた外部からの応力 <span class="math notranslate nohighlight">\(\sigma_1\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_2\)</span> に対して，任意の角度 <span class="math notranslate nohighlight">\(\theta\)</span> の面にかかる法線応力 <span class="math notranslate nohighlight">\(N\)</span> と剪断応力 <span class="math notranslate nohighlight">\(S\)</span> の組が，グラフの円上のどこかに来る，ということを意味しています（<a class="reference internal" href="#fig-mohr-circle"><span class="std std-numref"> Fig. 19</span></a>）．
+<p>モールの円は，与えられた外部からの応力 <span class="math notranslate nohighlight">\(\sigma_1\)</span> ,  <span class="math notranslate nohighlight">\(\sigma_2\)</span> に対して，任意の角度 <span class="math notranslate nohighlight">\(\theta\)</span> の面にかかる法線応力 <span class="math notranslate nohighlight">\(N\)</span> と剪断応力 <span class="math notranslate nohighlight">\(S\)</span> の組が，グラフの円上のどこかに来る，ということを意味しています（<a class="reference internal" href="#fig-mohr-circle"><span class="std std-numref"> Fig. 20</span></a>）．
 しかも，円上の位置は <span class="math notranslate nohighlight">\(N\)</span> 軸から反時計回りに角度 <span class="math notranslate nohighlight">\(2\theta\)</span> の位置である，ということもわかります．
 モールの円を作図することで，内部にかかっている応力を図解で求めることができるのです．</p>
 <div class="figure align-center" id="fig-mohr-circle">
 <a class="reference internal image-reference" href="_images/Mohr_Circle.png"><img alt="_images/Mohr_Circle.png" src="_images/Mohr_Circle.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">モールの円．円の <span class="math notranslate nohighlight">\(N\)</span> 軸から角度 <span class="math notranslate nohighlight">\(2 \theta\)</span> 反時計回りの点の位置が，その面にかかる法線応力と剪断応力を表している．</span><a class="headerlink" href="#fig-mohr-circle" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">モールの円．円の <span class="math notranslate nohighlight">\(N\)</span> 軸から角度 <span class="math notranslate nohighlight">\(2 \theta\)</span> 反時計回りの点の位置が，その面にかかる法線応力と剪断応力を表している．</span><a class="headerlink" href="#fig-mohr-circle" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -1254,16 +1245,36 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="stress.html" title="previous page">応力</a>
-    <a class='right-next' id="next-link" href="eq-of-motion.html" title="next page">弾性体の運動方程式</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="stress.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">応力</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="eq-of-motion.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">弾性体の運動方程式</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -1278,21 +1289,16 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8CCTE8J64T"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-8CCTE8J64T');
+                </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'G-8CCTE8J64T', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>
