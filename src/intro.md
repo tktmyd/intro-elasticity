@@ -13,6 +13,12 @@
 
 ## License
 
-Webサイトで公開されるコンテンツはクリエイティブ・コモンズ4.0表示（CC-BY 4.0）で提供します．また，本リポジトリに含まれるソースコードはMITライセンスで提供します．
+Webサイトで公開されるコンテンツは[クリエイティブ・コモンズ4.0表示（CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/)で提供します．また，本リポジトリに含まれるソースコードは[MITライセンス](https://opensource.org/licenses/MIT)で提供します．
 
-The web contents are distributed under CC-BY 4.0. The source codes are distributed under MIT license. See LICENSE for details. 
+The web contents are distributed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). The source codes are distributed under [MIT license](https://opensource.org/licenses/MIT). See LICENSE for details. 
+
+
+## Version & DOI
+
+- Version: 2021-10-02
+- doi: [10.5281/zenodo.5544977](https://doi.org/10.5281/zenodo.5544977)
