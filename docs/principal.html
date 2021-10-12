@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -129,7 +130,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="greek.html">
-   ギリシャ文字の一覧
+   補遺：ギリシャ文字の一覧
   </a>
  </li>
 </ul>
@@ -276,7 +277,8 @@
         
               <div>
                 
-  <div class="section" id="id1">
+   <div class="newpage"></div>
+<div class="section" id="id1">
 <h1>主応力・主ひずみと座標回転<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>ひずみ・応力の固有値問題<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -293,7 +295,7 @@
 <p>でした．
 これらの関係は，いずれもあるベクトル（ <span class="math notranslate nohighlight">\(\boldsymbol{d}\)</span> ,  <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> ）を別のベクトル（ <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{T}^{(\hat{\boldsymbol{n}})}\)</span> ）に変換（写像）するもの，とやや抽象的に捉えることができます．
 また，この変換は，<strong>線形</strong>であるという顕著な特徴を持っています．</p>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：線形性</p>
 <p>ある関数 <span class="math notranslate nohighlight">\(f(x)\)</span> が<strong>線形</strong>であるとは，変数 <span class="math notranslate nohighlight">\(a\)</span> ,  <span class="math notranslate nohighlight">\(b\)</span> と定数 <span class="math notranslate nohighlight">\(k\)</span> に対して以下の2つの条件を満たすことをいいます．</p>
 <div class="math notranslate nohighlight" id="equation-eq-linearity-1">
@@ -306,14 +308,14 @@
 \end{align}\end{split}\]</div>
 <p>たとえば， <span class="math notranslate nohighlight">\(f(x)=3x\)</span> は線形ですが， <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span> は線形ではありません．</p>
 </div>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：線形性の確認</p>
 <p>以下の関数は線形でしょうか？定義を満たすかどうかを確かめて判定しなさい．</p>
 <p>(i)  <span class="math notranslate nohighlight">\(f(x) = 3 x + 4\)</span></p>
 <p>(ii)  <span class="math notranslate nohighlight">\(f(x) = e^x\)</span></p>
 <p>(iii)  <span class="math notranslate nohighlight">\(f(x) = x^2 + 3x  + 1\)</span></p>
 </div>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：線形変換</p>
 <p>ベクトルをベクトルに変換する関数 <span class="math notranslate nohighlight">\(\boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x})\)</span> が，線形性を満たす，すなわち</p>
 <div class="math notranslate nohighlight" id="equation-eq-linearity-2">
@@ -331,7 +333,7 @@
 \end{align}\]</div>
 <p>と書くことができます．</p>
 </div>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：線形変換と行列・テンソル</p>
 <p>(i) もし関数 <span class="math notranslate nohighlight">\(\boldsymbol{f}\)</span> が  <span class="math notranslate nohighlight">\( \boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x})  = \boldsymbol{A}\boldsymbol{x}\)</span>  と書けるとき，その右辺が線形性<a class="reference internal" href="#equation-eq-linearity-2">(58)</a>を満たすことを示しなさい．</p>
 <p>(ii) 任意のベクトル  <span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1, x_2, x_3)\)</span> は，各軸方向の単位ベクトル（法線ベクトルに等しい）を用いて， <span class="math notranslate nohighlight">\(\boldsymbol{x} = x_1 \hat{\boldsymbol{n}}_1 + x_2 \hat{\boldsymbol{n}}_2  + x_3 \hat{\boldsymbol{n}}_3\)</span> と表すことができます．
@@ -395,7 +397,7 @@
 \end{align}\end{split}\]</div>
 <p>が成立しているのです．</p>
 <p>この関係<a class="reference internal" href="#equation-eq-linear-normal-traction-special">(61)</a>は，数学的には行列 <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}\)</span> の<strong>固有値問題</strong>に相当します．以下では，この問題を解きつつ，それがどういう物理的意味を持つのかを詳しく調べていくことにしましょう．</p>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：固有値・固有ベクトル</p>
 <p>行列（あるいは2階のテンソル） <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> とベクトル <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> が，スカラー量 <span class="math notranslate nohighlight">\(\lambda\)</span> に対して</p>
 <div class="math notranslate nohighlight" id="equation-principal-2">
@@ -501,7 +503,7 @@
 もちろん <span class="math notranslate nohighlight">\(x=y=0\)</span> はこの関係性を満たしいるので，解のひとつではある．だが， <span class="math notranslate nohighlight">\(x=1, y=-2\)</span> でも， <span class="math notranslate nohighlight">\(x=2, y=-4\)</span> でも同様に同じ方程式を満たしているのです．
 このような解を<strong>非自明な解</strong>（non-trivial solution）といいます．
 連立方程式が唯一解を持つかどうかは，係数行列の<strong>行列式</strong>から判別できることが知られています．</p>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：逆行列と連立方程式</p>
 <p>行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> を係数にもつ連立方程式</p>
 <div class="math notranslate nohighlight" id="equation-eq-linear-matrix">
@@ -524,7 +526,7 @@
 また，行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> が逆行列を持つ条件は，その行列式 <span class="math notranslate nohighlight">\(\det(\boldsymbol{A})\)</span> がゼロではないことです．</p>
 <p>逆に， <span class="math notranslate nohighlight">\(\det(\boldsymbol{A})=0\)</span> のとき，その行列を係数として持つ定数項がゼロの連立方程式 <span class="math notranslate nohighlight">\(\boldsymbol{A} \boldsymbol{x} = \boldsymbol{0}\)</span> は，非自明な解を持ちます．</p>
 </div>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：行列式と逆行列</p>
 <p>行列式は2次元の行列</p>
 <div class="math notranslate nohighlight" id="equation-principal-10">
@@ -551,7 +553,7 @@
 \end{align}\end{split}\]</div>
 <p>と表されます．</p>
 </div>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：逆行列</p>
 <p>(i) <a class="reference internal" href="#equation-eq-linear-matrix">(72)</a>の両辺に左から <span class="math notranslate nohighlight">\(\boldsymbol{A}^{-1}\)</span> を掛けることによって，<a class="reference internal" href="#equation-eq-linear-matrix-sol">(74)</a>を証明しなさい．</p>
 <p>(ii) 次の連立方程式が唯一解を持つかどうかを判別しなさい．
@@ -612,7 +614,7 @@
 <p>と表されます．
 一般に，2次方程式の実数解の個数は根号内（判別式）の符号によって定まり，解が常に2つあるとは限りません．
 しかし，この場合は根号内が2つの実数の組の2乗和で必ず正の値を取りますから，<strong>応力テンソルの固有値は常に2つ存在する</strong>ことが言えます．</p>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：応力テンソルの固有値</p>
 <p>2次方程式<a class="reference internal" href="#equation-eq-stress-eigen-eq">(78)</a>の解が<a class="reference internal" href="#equation-eq-stress-eigenvalue">(80)</a>であることを証明しなさい．</p>
 </div>
@@ -648,7 +650,7 @@
 \end{align}\end{split}\]</div>
 <p>がこの問題の固有ベクトルです．
 長さが <span class="math notranslate nohighlight">\(|\hat{\boldsymbol{n}}_{1}|=|\hat{\boldsymbol{n}}_{2}|=1\)</span> に規格化されているので，かならず角度変数を用いて<a class="reference internal" href="#equation-eq-eigenvector">(82)</a>のように書くことができるのです．</p>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：固有ベクトルの角度変数表示</p>
 <p>ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}=(\hat{n}_1,\hat{n}_2)^T\)</span> の長さが1である（ <span class="math notranslate nohighlight">\(|\hat{\boldsymbol{n}}|=1\)</span> ）であるとします．このとき，</p>
 <div class="math notranslate nohighlight" id="equation-principal-14">
@@ -677,7 +679,7 @@
   = \lambda_1  \left( \hat{\boldsymbol{n}}_{1} \cdot \hat{\boldsymbol{n}}_{2} \right)
 \end{align}\]</div>
 <p>と書けます．</p>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：内積と角度</p>
 <p>2つのベクトル <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> ,  <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> の内積は，2次元の場合</p>
 <div class="math notranslate nohighlight" id="equation-principal-16">
@@ -773,11 +775,11 @@
   \end{pmatrix}
 \end{align}\end{split}\]</div>
 <p>と表されます．</p>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：対角行列</p>
 <p>行列 <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> が対角成分 <span class="math notranslate nohighlight">\(A_{ii}\)</span> だけ値を持ち，非対角成分は <span class="math notranslate nohighlight">\({A}_{ij} = 0\)</span>   <span class="math notranslate nohighlight">\((i\neq j)\)</span> であるとき，この行列は<strong>対角行列</strong>であるといいます．一般の行列を何らかの線形変換によって対角行列を求めることを，行列を<strong>対角化する</strong>ともいいます．</p>
 </div>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：固有値の対角行列を用いた表現</p>
 <p><a class="reference internal" href="#equation-eq-eigen-orthogonal">(97)</a>式の行列 <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> と<a class="reference internal" href="#equation-eq-eigen-totyu">(96)</a>式の法線ベクトルの角度変数を用いた表現をそれぞれ代入することで，両式が等価であることを示しなさい．</p>
 </div>
@@ -819,7 +821,7 @@
 したがって， <span class="math notranslate nohighlight">\(\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)\)</span> が成り立ちます．「角度 <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転する操作の逆は，角度 <span class="math notranslate nohighlight">\(-\theta\)</span> の回転である」という意味です．
 一方， <span class="math notranslate nohighlight">\(\boldsymbol{R}(-\theta)\)</span> は，ベクトルを <span class="math notranslate nohighlight">\(-\theta\)</span> 回転させるのではなく，<strong>座標系を <span class="math notranslate nohighlight">\(\theta\)</span> だけ回転させた</strong>，と見ることもできます（<a class="reference internal" href="#fig-rotation"><span class="std std-numref"> Fig. 16</span></a>b）．</p>
 <p>この関係を用いると，<a class="reference internal" href="#equation-eq-diag-stress">(99)</a>は<strong>応力テンソルを回転した座標系で表したもの</strong>という意味をもつことが分かってきます．以下，そのことを示していきましょう．</p>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：回転行列の逆行列</p>
 <p><span class="math notranslate nohighlight">\(2\times 2\)</span> の回転行列の逆行列 <span class="math notranslate nohighlight">\(\boldsymbol{R}^{-1}(\theta)\)</span> をその成分から直接計算し， <span class="math notranslate nohighlight">\(\boldsymbol{R}^{-1}(\theta)=\boldsymbol{R}(-\theta)\)</span> を示しなさい．</p>
 </div>
@@ -856,7 +858,7 @@
   \boldsymbol{R} ^{-1} \boldsymbol{R} = \boldsymbol{I}
 \end{align}\]</div>
 <p>の関係を用いました．</p>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：回転と逆回転の積</p>
 <p><a class="reference internal" href="#equation-eq-r-rinv-i">(106)</a>式は， <span class="math notranslate nohighlight">\(\theta\)</span> 回転して <span class="math notranslate nohighlight">\(-\theta\)</span> 回転したら元（なにもしない状態）に戻るということを意味しています．直感的には明らかでしょうが，2次元の回転行列の成分から，積 <span class="math notranslate nohighlight">\(\boldsymbol{R} ^{-1} \boldsymbol{R}\)</span> を計算し，それが確かに単位行列になることを計算によって確かめなさい</p>
 </div>
@@ -899,7 +901,7 @@
 \end{align}\end{split}\]</div>
 <p>のように回転によって対角化されます．
 その時の回転行列が，応力テンソルの固有ベクトルで作られることも同じです．</p>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：実対称行列の固有値問題</p>
 <p>ここでは応力テンソルに対して，その固有値が実数でかならず2つ（2次元の場合）あり，かつ固有ベクトル同士が直交する，ということを示してきました．しかし，実はその証明に使った条件はたった一つ，<strong>応力テンソルが対称テンソル</strong>であるということだけです．</p>
 <p>実はより一般に，実対称行列（成分が実数の対称行列）は，その大きさと同じだけの個数の実数の固有値を持ち，それらの固有値に対応する固有ベクトルは，必ず互いに直交するということが知られています．
@@ -1004,7 +1006,7 @@
 \end{pmatrix}
 \end{align}\end{split}\]</div>
 <p>です．</p>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習：固有ベクトルの推定</p>
 <p>負の固有値 <span class="math notranslate nohighlight">\(\lambda=- \varepsilon_{12}\)</span> に対する固有ベクトルが<a class="reference internal" href="#equation-eq-eigenvalue2">(117)</a>であることを証明しなさい．</p>
 </div>
@@ -1203,7 +1205,7 @@
 <a class="reference internal image-reference" href="_images/Mohr_Layout_Simplified.png"><img alt="_images/Mohr_Layout_Simplified.png" src="_images/Mohr_Layout_Simplified.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text"><a class="reference internal" href="#fig-mohr-layout"><span class="std std-numref"> Fig. 18</span></a>からいくつかの仮定のもと（詳しくは本文）に単純化したレイアウト．</span><a class="headerlink" href="#fig-mohr-layout-simplified" title="Permalink to this image">¶</a></p>
 </div>
-<div class="tip dropdown admonition">
+<div class="tip admonition">
 <p class="admonition-title">数学メモ：円の方程式</p>
 <p><span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面で，半径 <span class="math notranslate nohighlight">\(r\)</span> ，中心 <span class="math notranslate nohighlight">\((a,b)\)</span> を持つ円の方程式は以下のように表される．</p>
 <div class="math notranslate nohighlight" id="equation-principal-39">

@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -237,7 +238,8 @@
         
               <div>
                 
-  <div class="section" id="id1">
+  <div class="newpage"></div>
+<div class="section" id="id1">
 <h1>応力<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>この節では，弾性体の変形をもたらす力である <strong>応力</strong> について学習します．
 変形を表すひずみが単一の量でなく6つの独立成分を持つテンソルであったように，応力もまたテンソル量として表されることと，その意味を学びます．</p>
@@ -280,16 +282,16 @@
 <a class="reference internal image-reference" href="_images/internal_force2.png"><img alt="_images/internal_force2.png" src="_images/internal_force2.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">仮想面の方向に応じて変化する内力の模式図．</span><a class="headerlink" href="#fig-internal-force2" title="Permalink to this image">¶</a></p>
 </div>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>この図はいかにも弾性体ひとかたまりを取ってきた表面のように見えるかもしれませんが，そうではありません．弾性体の内部一部をくり抜いた物体の表面だと思ってください．</p>
-</div>
 <p>いま，<a class="reference internal" href="#fig-katamari"><span class="std std-numref"> Fig. 11</span></a>のように，弾性体のある領域の面の一部分の微小な面積要素 <span class="math notranslate nohighlight">\(dS\)</span> を取ってきて，そこに働く力全体を <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> としましょう．
 これまでの議論と同じように，この力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> は，面の向きによって変わります．
 それを数学的に表現するためには，まず「面の向き」の表現が必要ですね．そこで，<strong>法線ベクトル</strong> <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> の出番です．法線ベクトルは，ある微小な面要素に垂直な方向をもち，大きさが<span class="math notranslate nohighlight">\(1\)</span>のベクトルです．</p>
 <div class="figure align-center" id="fig-katamari">
 <a class="reference internal image-reference" href="_images/SurfaceForce.png"><img alt="_images/SurfaceForce.png" src="_images/SurfaceForce.png" style="width: 60%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">弾性体の塊（体積 <span class="math notranslate nohighlight">\(V\)</span> ）と，その面要素 <span class="math notranslate nohighlight">\(dS\)</span> に働く力 <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> の模式図． <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> は要素 <span class="math notranslate nohighlight">\(dS\)</span> の法線ベクトルである．</span><a class="headerlink" href="#fig-katamari" title="Permalink to this image">¶</a></p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>この図はいかにも弾性体ひとかたまりを取ってきた表面のように見えるかもしれませんが，そうではありません．弾性体の内部一部をくり抜いた物体の表面だと思ってください．</p>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -315,7 +317,7 @@
 トラクションの単位は面積あたりの力なので，SI単位系で N/m <span class="math notranslate nohighlight">\({}^2\)</span> をとります．圧力と同じ（圧力はトラクションの一種）です．</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>同じ弾性体力学でも，分野によって定義が異なる場合があります．</p>
+<p>同じ弾性体力学に基づく学問でも，分野によってトラクションの向きの定義が異なる場合があります．</p>
 </div>
 <p>ところで，トラクションは向きも重要です．
 ここでは， トラクションを法線ベクトル <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> の向きの反対側から正の側に向かう力を正と定義します．つまり，ある面の法線ベクトルの方向（外向き）に膨張する力を正に取るということです．</p>
@@ -485,11 +487,11 @@
 <p>3次元の場合は，三角形の代わりに三角錐（すい）を用いて考察することになります．
 煩雑ですが，考え方は2次元と同じでそれほど難しくはありません．
 興味があれば他の弾性体力学の教科書を参照してください．</p>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習問題：コーシーの関係式</p>
 <p>式<a class="reference internal" href="#equation-eq-kitei-kankei">(52)</a>と<a class="reference internal" href="#equation-eq-traction-tsuriai">(51)</a>から，コーシーの関係式<a class="reference internal" href="#equation-eq-traction-represent">(53)</a>を導出されることを計算して確かめなさい．</p>
 </div>
-<div class="dropdown admonition">
+<div class="admonition">
 <p class="admonition-title">演習問題：応力テンソルとトラクション</p>
 <p>2次元 <span class="math notranslate nohighlight">\(x_1\)</span> – <span class="math notranslate nohighlight">\(x_2\)</span> 平面内の応力テンソルが</p>
 <div class="amsmath math notranslate nohighlight">

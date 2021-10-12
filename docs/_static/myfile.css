@@ -1,0 +1,8 @@
+@media print {
+    .bd-toc {
+        visibility: hidden;
+    }
+    .newpage {
+        break-after: page; 
+    }
+}
