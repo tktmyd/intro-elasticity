@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,19 +34,19 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -280,7 +280,7 @@
               <div>
                 
   <div class="newpage"></div>
-<div class="section" id="id1">
+<div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>構成関係式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>構成関係式の導入<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -309,7 +309,7 @@
 <p>これまでのテンソルは行列とまったく同じ扱いをしてきましたが，これは添字が4つもあるので，行列とは明らかに異なります．応力テンソルやひずみテンソルといった2階のテンソル（添字2つのテンソル）は，ベクトル（添字1つ）をベクトルに移す線形写像でしたが，弾性係数テンソルは添字4つの4階のテンソルであり，2階のテンソルを2階のテンソルに写像する関係を与えるものです．添字が多くなって複雑だが，式<a class="reference internal" href="#equation-eq-constitutive-eq-general">(141)</a>は行列とベクトルの積（あるいは2階のテンソルによるベクトルの線形写像）の式を拡張した形になっています．</p>
 </div>
 <p>ここで <span class="math notranslate nohighlight">\(C_{ijkl}\)</span> は<strong>弾性係数テンソル</strong>と呼ばれるパラメタで， <span class="math notranslate nohighlight">\(i, j, k, l\)</span> それぞれが <span class="math notranslate nohighlight">\(1, 2, 3\)</span> の値をとり得ます．ですから，弾性係数テンソルの個数は <span class="math notranslate nohighlight">\(3^4=81\)</span> 個です．
-81個もパラメタがあるのかとうんざりするかもしれません．ですが，心配無用．すでに調べたひずみテンソルと応力テンソルの対称性に加えて，**弾性体の特徴が方向に依存しない（等方性）**という仮定をすることによって，81個のうち独立なパラメタはなんと2個まで減らせるということが知られているのです．その導出はこの入門文書の範囲を超えるので，ここではその結果を正しいものと受け入れてもらいます．</p>
+81個もパラメタがあるのかとうんざりするかもしれません．ですが，心配無用．すでに調べたひずみテンソルと応力テンソルの対称性に加えて， <strong>弾性体の特徴が方向に依存しない（等方性）</strong> という仮定をすることによって，81個のうち独立なパラメタはなんと2個まで減らせるということが知られているのです．その導出はこの入門文書の範囲を超えるので，ここではその結果を正しいものと受け入れてもらいます．</p>
 <p>線形弾性体の構成関係式は，</p>
 <div class="math notranslate nohighlight" id="equation-eq-constitutive-lame">
 <span class="eqno">(142)<a class="headerlink" href="#equation-eq-constitutive-lame" title="Permalink to this equation">¶</a></span>\[\begin{align}
@@ -354,7 +354,7 @@
 <p>日本語で弾性「定数」と呼ばれる習慣がりますが，実際には値が一定であるという意味の「定数」ではありません．
 これらのパラメタは弾性体の特徴を表すもので，弾性体の性質によって（一定ではない）異なる値を取ります．</p>
 </div>
-<p>この構成関係式に現れたパラメタ <span class="math notranslate nohighlight">\(\lambda\)</span> と <span class="math notranslate nohighlight">\(\mu\)</span> を<strong>ラメ（Lam’e）の定数</strong>と呼びます．
+<p>この構成関係式に現れたパラメタ <span class="math notranslate nohighlight">\(\lambda\)</span> と <span class="math notranslate nohighlight">\(\mu\)</span> を<strong>ラメ（Lamé）の定数</strong>と呼びます．
 ちょっと分量が多いですが，構成関係式を全成分書き下してみましょう．</p>
 <div class="math notranslate nohighlight" id="equation-eq-constitutive-equation">
 <span class="eqno">(145)<a class="headerlink" href="#equation-eq-constitutive-equation" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
@@ -394,7 +394,7 @@
 線形等方弾性体の場合には，</p>
 <div class="math notranslate nohighlight" id="equation-eq-complience-isotropic">
 <span class="eqno">(147)<a class="headerlink" href="#equation-eq-complience-isotropic" title="Permalink to this equation">¶</a></span>\[\begin{align}
-  \varepsilon_{ij} = - \frac{\lambda}{2 \mu(3\lambda +2 \mu)} \sigma_{kk}\delta_{ij} + \frac{1}{2\mu} \sigma_{ij}
+  \varepsilon_{ij} = - \frac{\lambda}{2 \mu(3\lambda +2 \mu)} \delta_{ij} \sum_{k=1}^3 \sigma_{kk} + \frac{1}{2\mu} \sigma_{ij}
 \end{align}\]</div>
 <p>であることが知られています．</p>
 <div class="admonition">

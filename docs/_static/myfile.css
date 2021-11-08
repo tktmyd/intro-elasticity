@@ -5,4 +5,10 @@
     .newpage {
         break-after: page; 
     }
+    p{
+        font-size: 1.2em;
+    }
+    div.math{
+        font-size: 1.2em;
+    }
 }
